@@ -1,0 +1,168 @@
+# config for analysis
+
+# most CPUs to ever use at once for a job
+max_cpus: 8
+
+# list of Illumina sequencing runs of barcodes
+barcode_runs: data/barcode_runs.csv
+
+# sequencing counts to cells ratio should exceed this for escape samples
+escape_min_counts_to_cells_ratio: 2.5
+# sequencing counts should exceed this for reference samples
+reference_min_counts: 2.5e+7
+
+# wildtype sequence of mutagenized gene
+wildtype_sequence: data/wildtype_sequence.fasta
+site_number_offset: 330  # add this to sequential sites to get RBD numbering
+
+# URL from which we download codon-variant table
+codon_variant_table_url: https://media.githubusercontent.com/media/jbloomlab/SARS-CoV-2-RBD_DMS/master/results/variants/codon_variant_table.csv
+
+# URLs from which we download binding & expression of mutants & variants
+mut_bind_expr_url: https://media.githubusercontent.com/media/jbloomlab/SARS-CoV-2-RBD_DMS/master/results/single_mut_effects/single_mut_effects.csv
+variant_expr_url: https://media.githubusercontent.com/media/jbloomlab/SARS-CoV-2-RBD_DMS/master/results/expression_meanFs/expression_meanFs.csv
+variant_bind_url: https://media.githubusercontent.com/media/jbloomlab/SARS-CoV-2-RBD_DMS/master/results/binding_Kds/binding_Kds.csv
+
+# Parameters for processing Illumina barcodes, assuming this structure:
+#  [R2 binds] - [upstream] - [barcode] - [downstream] - [R1 binds]
+#  This orientation is hard-wired in the barcode parser, but here it is opposite
+#  Therefore, supplied the "downstream" sequence as reverse complemented upstream
+# Passed to `dms_variants.illuminabarcodeparser.IlluminaBarcodeParser`:
+illumina_barcode_parser_params:
+  bclen: 16
+  upstream: GCTCGCGGCCGC
+  downstream: ''
+  minq: 20
+  upstream_mismatch: 1
+  downstream_mismatch: 0
+
+# Parameters used when computed escape scores:
+escape_score_type: frac_escape  # type of escape score, see dms_variants
+escape_score_pseudocount: 0.5  # added to observed counts
+escape_score_floor_E: 0  # floor on escape fractions
+escape_score_ceil_E: 1  # ceiling on escape fractions
+# Group variants by this when calculating escape scores; sensible values are
+# "barcode" (to calculate a score for each barcoded variant) or
+# "aa_substitutions" (to group all variants with same amino-acid substitutions):
+escape_score_group_by: barcode
+# How to group variants for homologs:
+escape_score_homolog_group_by: aa_substitutions
+# Filter variants (after grouping according to `escape_group_by`) with
+# pre-selection counts < this quantile of stop codon variants, thereby
+# removing low count "noise":
+escape_score_stop_quantile_filter: 0.99
+# Filter variants with ACE2-binding scores < this threshold, which is
+# determined from the deep mutational scan (Starr et al, 2020):
+escape_score_min_bind_variant: -2.35
+# Filter variants with expression < this threshold, which separates the
+# two modes of expression in the deep mutational scan (Starr et al, 2020):
+escape_score_min_expr_variant: -1.0
+# Filter variants with any mutations with binding or expression scores
+# <= these values
+escape_score_min_bind_mut: -2.35
+escape_score_min_expr_mut: -1.0
+# **Prior to fitting global epistasis models**, remove variants that have
+# substitutions that are not observed in at least this many variants in a
+# single-mutant **and / or** any context:
+global_epistasis_filter_by_subs_observed_single: 0
+global_epistasis_filter_by_subs_observed_any: 2
+global_epistasis_filter_by_subs_observed_and_or: or
+# Only retain mutation-level escape fraction estimates when there are
+# **either** >= the indicated number of filtered variants (after grouping
+# according to `escape_group_by`) with the mutation as a single mutant
+# or in any context for that library:
+escape_frac_min_single_mut_measurements: 1
+escape_frac_min_any_mut_measurements: 2
+# In order to compute an "average" escape fraction for a mutation, require
+# it to be in at least this many libraries **or** to be observed at
+# least this many total times as a single mutant across all libraries:
+escape_frac_avg_min_libraries: 2
+escape_frac_avg_min_single: 2
+
+# Parameters for calling sites of strong escape based on site escape metric.
+# There are several different calling thresholds defined:
+strong_escape_sites_calling_params:
+  default:
+    exceed_median: 10  # must exceed median across sites by > this
+    frac_max: 0.1  # must be > this much of max escape site
+    min_value: 0  # must be > than this
+  sensitive:
+    exceed_median: 5  # must exceed median across sites by > this
+    frac_max: 0.05  # must be > this much of max escape site
+    min_value: 0  # must be > than this
+
+# Parameters in escape frac output file that enable dms-view
+# visualization on PDB 6m0j:
+escape_frac_protein_chain: E  # use this chain
+
+# Site- and mutation-level metrics for escape profiles
+site_metric: site_total_escape_frac_epistasis_model
+mut_metric: mut_escape_frac_epistasis_model
+# Specify how to plot escape profiles
+escape_profiles_config: data/escape_profiles_config.yaml
+# Site color schemes for escape profiles
+site_color_schemes: data/site_color_schemes.csv
+# Set default y-axis max for escape profiles. The y-axis ymax is
+# scaled to larger of max site escape for antibody / sera **or** so
+# indicated quantile of site escape is at the indicated fraction of y-axis
+# height. See: https://jbloomlab.github.io/dmslogo/set_ylims.html. Can be
+# overridden for specific escape profiles in `data/escape_profiles_config.yaml`.
+escape_profile_ymax:
+  quantile: 0.5
+  frac: 0.05
+
+# multidimensional scaling configuration
+mds_config: data/mds_config.yaml
+
+# structural mappings configuration
+output_pdbs_config: data/output_pdbs_config.yaml
+
+# contact residue annotations configuration
+structural_contacts_config: data/structural_annotation_config.yaml
+
+# Keep only homologs that bind ACE2 reasonably well and so survived pre-sort:
+homologs_to_keep:
+  - SARS-CoV-2
+  - GD-Pangolin
+  - RaTG13
+  - SARS-CoV
+  - WIV16
+  - LYRa11
+
+# Input files for analyses from the data subdirectory
+RBD_sites: data/RBD_sites.csv
+gisaid_spikes: data/spikeprot1112.fasta.xz
+sarbecovirus_alignment: data/RBDs_aligned.fasta
+
+# escape selection results
+escape_selection_results: data/escape_selection_results.yaml
+
+# output directories / files
+summary_dir: results/summary
+codon_variant_table: results/prior_DMS_data/codon_variant_table.csv
+mut_bind_expr: results/prior_DMS_data/mutant_ACE2binding_expression.csv
+variant_expr: results/prior_DMS_data/variant_expression.csv
+variant_bind: results/prior_DMS_data/variant_ACE2binding.csv
+counts_dir: results/counts
+variant_counts: results/counts/variant_counts.csv
+counts_to_cells_csv: results/counts/counts_to_cells.csv
+escape_scores_dir: results/escape_scores
+escape_score_samples: results/escape_scores/samples.csv
+escape_scores: results/escape_scores/scores.csv
+escape_scores_homologs: results/escape_scores/scores_homologs.csv
+escape_fracs: results/escape_scores/escape_fracs.csv
+escape_fracs_homologs: results/escape_scores/escape_fracs_homologs.csv
+escape_profiles_dir: results/escape_profiles
+escape_profiles_dms_colors: results/escape_profiles/escape_profiles_dms_colors.csv
+strong_escape_sites: results/escape_profiles/strong_escape_sites.csv
+mds_dir: results/multidimensional_scaling
+homologs_dir: results/homologs
+gisaid_mutations_dir: results/GISAID_mutations
+rbd_alignment: results/GISAID_mutations/RBD_alignment.fasta
+gisaid_mutation_counts: results/GISAID_mutations/mutation_counts.csv
+pdb_outputs_dir: results/pdb_outputs
+supp_data_dir: results/supp_data
+structural_contacts_dir: results/structural_contacts
+structural_contacts: results/structural_contacts/structural_contacts.csv
+antibody_contacts: results/structural_contacts/antibody_contacts.csv
+escape_selections_dir: results/escape_selections

@@ -1,0 +1,8 @@
+results/counts/variant_counts.csv filter=lfs diff=lfs merge=lfs -text
+results/escape_scores/escape_fracs.csv filter=lfs diff=lfs merge=lfs -text
+results/escape_scores/escape_fracs_homologs.csv filter=lfs diff=lfs merge=lfs -text
+results/escape_scores/scores.csv filter=lfs diff=lfs merge=lfs -text
+results/escape_scores/scores_homologs.csv filter=lfs diff=lfs merge=lfs -text
+data/GISAID/spike_GISAID_aligned.fasta filter=lfs diff=lfs merge=lfs -text
+
+*.ipynb filter=strip-notebook-metadata diff=strip-notebook-metadata

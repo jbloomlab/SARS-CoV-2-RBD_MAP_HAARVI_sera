@@ -1,0 +1,43 @@
+# Information about outputting B-factor re-assigned PDBs and dms-view inputs
+#
+# Top-level keys are PDBs
+# Under each PDB key, specify:
+#  pdbfile -> path to file containing PDB
+#  chains -> list of chain(s) to which we map colors, typically RBD chains
+#  conditions -> conditions (antibodies / sera) for which we write this PDB,
+#                set to ALL  for all conditions
+
+# 6m0j is ACE2 bound RBD
+6m0j:
+  pdbfile: data/pdbs/6M0J.pdb
+  chains:
+    - E
+  conditions: ALL
+
+# 6w41 is CR3022 bound to RBD
+6w41:
+  pdbfile: data/pdbs/6W41.pdb
+  chains:
+    - C
+  conditions:
+    - CR3022_400
+    - ACE2-CR3022_150
+    - ACE2-CR3022_750
+
+# 6xdg is REGN10933+REGN10987 bound to RBD
+6xdg:
+  pdbfile: data/pdbs/6xdg.pdb
+  chains:
+    - E
+  conditions:
+    - REGN10933_400
+    - REGN10987_400
+    - REGN10933+REGN10987_400
+
+# 7C01 is CB6 bound to RBD
+7c01:
+  pdbfile: data/pdbs/7c01_single.pdb
+  chains:
+    - A
+  conditions:
+    - CB6_400

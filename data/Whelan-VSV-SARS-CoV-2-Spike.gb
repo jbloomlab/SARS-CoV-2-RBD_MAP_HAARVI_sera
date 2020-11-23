@@ -1,0 +1,161 @@
+LOCUS       VSV-SARS-CoV-2_S_reference_sequence        3822 bp    DNA     linear   UNA 01-SEP-2020
+DEFINITION  synthetic circular DNA.
+ACCESSION   urn.local...1xr-ccvwpj8
+VERSION     urn.local...1xr-ccvwpj8
+KEYWORDS    .
+SOURCE      synthetic DNA construct
+  ORGANISM  synthetic DNA construct.
+FEATURES             Location/Qualifiers
+     CDS             1..3822
+                     /codon_start=1
+                     /note="Wuhan 2019-nCoV"
+                     /translation="MFVFLVLLPLVSSQCVNLTTRTQLPPAYTNSFTRGVYYPDKVFR
+                     SSVLHSTQDLFLPFFSNVTWFHAIHVSGTNGTKRFDNPVLPFNDGVYFASTEKSNIIR
+                     GWIFGTTLDSKTQSLLIVNNATNVVIKVCEFQFCNDPFLGVYYHKNNKSWMESEFRVY
+                     SSANNCTFEYVSQPFLMDLEGKQGNFKNLREFVFKNIDGYFKIYSKHTPINLVRDLPQ
+                     GFSALEPLVDLPIGINITRFQTLLALHRSYLTPGDSSSGWTAGAAAYYVGYLQPRTFL
+                     LKYNENGTITDAVDCALDPLSETKCTLKSFTVEKGIYQTSNFRVQPTESIVRFPNITN
+                     LCPFGEVFNATRFASVYAWNRKRISNCVADYSVLYNSASFSTFKCYGVSPTKLNDLCF
+                     TNVYADSFVIRGDEVRQIAPGQTGKIADYNYKLPDDFTGCVIAWNSNNLDSKVGGNYN
+                     YLYRLFRKSNLKPFERDISTEIYQAGSTPCNGVEGFNCYFPLQSYGFQPTNGVGYQPY
+                     RVVVLSFELLHAPATVCGPKKSTNLVKNKCVNFNFNGLTGTGVLTESNKKFLPFQQFG
+                     RDIADTTDAVRDPQTLEILDITPCSFGGVSVITPGTNTSNQVAVLYQDVNCTEVPVAI
+                     HADQLTPTWRVYSTGSNVFQTRAGCLIGAEHVNNSYECDIPIGAGICASYQTQTNSPR
+                     RARSVASQSIIAYTMSLGAENSVAYSNNSIAIPTNFTISVTTEILPVSMTKTSVDCTM
+                     YICGDSTECSNLLLQYGSFCTQLNRALTGIAVEQDKNTQEVFAQVKQIYKTPPIKDFG
+                     GFNFSQILPDPSKPSKRSFIEDLLFNKVTLADAGFIKQYGDCLGDIAARDLICAQKFN
+                     GLTVLPPLLTDEMIAQYTSALLAGTITSGWTFGAGAALQIPFAMQMAYRFNGIGVTQN
+                     VLYENQKLIANQFNSAIGKIQDSLSSTASALGKLQDVVNQNAQALNTLVKQLSSNFGA
+                     ISSVLNDILSRLDKVEAEVQIDRLITGRLQSLQTYVTQQLIRAAEIRASANLAATKMS
+                     ECVLGQSKRVDFCGKGYHLMSFPQSAPHGVVFLHVTYVPAQEKNFTTAPAICHDGKAH
+                     FPREGVFVSNGTHWFVTQRNFYEPQIITTDNTFVSGNCDVVIGIVNNTVYDPLQPELD
+                     SFKEELDKYFKNHTSPDVDLGDISGINASVVNIQKEIDRLNEVAKNLNESLIDLQELG
+                     KYEQYIKWPWYIWLGFIAGLIAIVMVTIMLCCMTSCCSCLKGCCSCGSCCKFDEDDSE
+                     PVLKGVKLHYT"
+                     /label="Wuhan 2019-nCoV"
+     source          <1..>3822
+                     /organism="synthetic DNA construct"
+                     /mol_type="other DNA"
+                     /label="source synthetic DNA construct"
+     primer_bind     757..778
+                     /label="p179 Forward (4610..4631)"
+     primer_bind     complement(851..870)
+                     /label="p178 Reverse (4704..4723)"
+     primer_bind     1698..1718
+                     /label="p181 Forward (5551..5571)"
+     primer_bind     complement(1811..1831)
+                     /label="p180 Reverse (5664..5684)"
+     primer_bind     2031..2050
+                     /%GC="60.0"
+                     /Hairpin_Tm="None"
+                     /Self_Dimer_Tm="7.2"
+                     /Tm="60.0"
+                     /Pair_Dimer_Tm="None"
+                     /Sequence="GACTAATTCTCCTCGGCGGG"
+                     /created_by="primer3"
+                     /Product_Size=36
+                     /annotation_group="41483066046040ae34da80-46ad-479b-8254-f
+                     dc632f3a961urn:sequence:genbank:."
+                     /#_Off-target_Sites=0
+                     /Off-target_Template="Exported"
+                     /label="5,884 F"
+     primer_bind     complement(2031..2050)
+                     /%GC="60.0"
+                     /Hairpin_Tm="45.0"
+                     /Self_Dimer_Tm="None"
+                     /Tm="60.0"
+                     /Pair_Dimer_Tm="None"
+                     /Sequence="CCCGCCGAGGAGAATTAGTC"
+                     /created_by="primer3"
+                     /Product_Size=2179
+                     /annotation_group="4148307509643565c30767-ad8b-469a-87e5-d
+                     05a17ca3554urn:sequence:genbank:."
+                     /#_Off-target_Sites=0
+                     /Off-target_Template="Exported"
+                     /label="5,903 R"
+     primer_bind     complement(2047..2066)
+                     /%GC="60.0"
+                     /Hairpin_Tm="37.0"
+                     /Self_Dimer_Tm="None"
+                     /Tm="60.0"
+                     /Pair_Dimer_Tm="None"
+                     /Sequence="CTAGCTACACTACGTGCCCG"
+                     /created_by="primer3"
+                     /Product_Size=36
+                     /annotation_group="41483066046040ae34da80-46ad-479b-8254-f
+                     dc632f3a961urn:sequence:genbank:."
+                     /#_Off-target_Sites=0
+                     /Off-target_Template="Exported"
+                     /label="5,919 R"
+     primer_bind     2639..2658
+                     /label="p183 Forward (6492..6511)"
+     primer_bind     complement(2766..2788)
+                     /label="p182 Reverse (6619..6641)"
+     primer_bind     3260..3278
+                     /label="p184 Forward (7113..7131)"
+ORIGIN      
+        1 atgtttgttt ttcttgtttt attgccacta gtctctagtc agtgtgttaa tcttacaacc
+       61 agaactcaat taccccctgc atacactaat tctttcacac gtggtgttta ttaccctgac
+      121 aaagttttca gatcctcagt tttacattca actcaggact tgttcttacc tttcttttcc
+      181 aatgttactt ggttccatgc tatacatgtc tctgggacca atggtactaa gaggtttgat
+      241 aaccctgtcc taccatttaa tgatggtgtt tattttgctt ccactgagaa gtctaacata
+      301 ataagaggct ggatttttgg tactacttta gattcgaaga cccagtccct acttattgtt
+      361 aataacgcta ctaatgttgt tattaaagtc tgtgaatttc aattttgtaa tgatccattt
+      421 ttgggtgttt attaccacaa aaacaacaaa agttggatgg aaagtgagtt cagagtttat
+      481 tctagtgcga ataattgcac ttttgaatat gtctctcagc cttttcttat ggaccttgaa
+      541 ggaaaacagg gtaatttcaa aaatcttagg gaatttgtgt ttaagaatat tgatggttat
+      601 tttaaaatat attctaagca cacgcctatt aatttagtgc gtgatctccc tcagggtttt
+      661 tcggctttag aaccattggt agatttgcca ataggtatta acatcactag gtttcaaact
+      721 ttacttgctt tacatagaag ttatttgact cctggtgatt cttcttcagg ttggacagct
+      781 ggtgctgcag cttattatgt gggttatctt caacctagga cttttctatt aaaatataat
+      841 gaaaatggaa ccattacaga tgctgtagac tgtgcacttg accctctctc agaaacaaag
+      901 tgtacgttga aatccttcac tgtagaaaaa ggaatctatc aaacttctaa ctttagagtc
+      961 caaccaacag aatctattgt tagatttcct aatattacaa acttgtgccc ttttggtgaa
+     1021 gtttttaacg ccaccagatt tgcatctgtt tatgcttgga acaggaagag aatcagcaac
+     1081 tgtgttgctg attattctgt cctatataat tccgcatcat tttccacttt taagtgttat
+     1141 ggagtgtctc ctactaaatt aaatgatctc tgctttacta atgtctatgc agattcattt
+     1201 gtaattagag gtgatgaagt cagacaaatc gctccagggc aaactggaaa gattgctgat
+     1261 tataattata aattaccaga tgattttaca ggctgcgtta tagcttggaa ttctaacaat
+     1321 cttgattcta aggttggtgg taattataat tacctgtata gattgtttag gaagtctaat
+     1381 ctcaaacctt ttgagagaga tatttcaact gaaatctatc aggccggtag cacaccttgt
+     1441 aatggtgttg aaggttttaa ttgttacttt cctttacaat catatggttt ccaacccact
+     1501 aatggtgttg gttaccaacc atacagagta gtagtacttt cttttgaact tctacatgca
+     1561 ccagcaactg tttgtggacc taaaaagtct actaatttgg ttaaaaacaa atgtgtcaat
+     1621 ttcaacttca atggtttaac aggcacaggt gttcttactg agtctaacaa aaagtttctg
+     1681 cctttccaac aatttggcag agacattgct gacactactg atgctgtccg tgatccacag
+     1741 acacttgaga ttcttgacat tacaccatgt tcttttggtg gtgtcagtgt tataacacca
+     1801 ggaacaaata cttctaacca ggttgctgtt ctttatcagg atgttaactg cacagaagtc
+     1861 cctgttgcta ttcatgcaga tcaacttact cctacttggc gtgtttattc tacaggttct
+     1921 aatgtttttc aaacacgtgc aggctgttta ataggggctg aacatgtcaa caactcatat
+     1981 gagtgtgaca tacccattgg tgcaggtata tgcgctagtt atcagactca gactaattct
+     2041 cctcggcggg cacgtagtgt agctagtcaa tccatcattg cctacactat gtcacttggt
+     2101 gcagaaaatt cagttgctta ctctaataac tctattgcca tacccacaaa ttttactatt
+     2161 agtgttacca cagaaattct accagtgtct atgaccaaga catcagtaga ttgtacaatg
+     2221 tacatttgtg gtgattcaac tgaatgcagc aatcttttgt tgcaatatgg cagtttttgt
+     2281 acacaattaa accgtgcttt aactggaata gctgttgaac aagacaaaaa cacccaagaa
+     2341 gtttttgcac aagtcaaaca aatttacaaa acaccaccaa ttaaagattt tggtggtttt
+     2401 aatttttcac aaatattacc agatccatca aaaccaagca agaggtcatt tattgaagat
+     2461 ctacttttca acaaagtgac acttgcagat gctggcttca tcaaacaata tggtgattgc
+     2521 cttggtgata ttgctgctag agacctcatt tgtgcacaaa agtttaacgg ccttactgtt
+     2581 ttgccacctt tgctcacaga tgaaatgatt gctcaataca cttctgcact gttagcgggt
+     2641 acaatcactt ctggttggac ctttggtgca ggtgctgcat tacaaatacc atttgctatg
+     2701 caaatggctt ataggtttaa tggtattgga gttacacaga atgttctcta tgagaaccaa
+     2761 aaattgattg ccaaccaatt taatagtgct attggcaaaa ttcaagactc actttcttcc
+     2821 acagcaagtg cacttggaaa acttcaagat gtggtcaacc aaaatgcaca agctttaaac
+     2881 acgcttgtta aacaacttag ctccaatttt ggtgcaattt caagtgtttt aaatgatatc
+     2941 ctttcacgtc ttgacaaagt tgaggctgaa gtgcaaattg ataggttgat cacaggcaga
+     3001 cttcaaagtt tgcagacata tgtgactcaa caattaatta gagctgcaga aatcagagct
+     3061 tctgctaatc ttgctgctac taaaatgtca gagtgtgtac ttggacaatc aaaaagagtt
+     3121 gatttttgtg gaaagggcta tcatcttatg tccttccctc agtcagcacc tcatggtgta
+     3181 gtcttcttgc atgtgactta tgtccctgca caagaaaaga acttcacaac tgctcctgcc
+     3241 atttgtcatg atggaaaagc acactttcct cgtgaaggtg tctttgtttc aaatggcaca
+     3301 cactggtttg taacacaaag gaatttttat gaaccacaaa tcattactac agacaacaca
+     3361 tttgtgtctg gtaactgtga tgttgtaata ggaattgtca acaacacagt ttatgatcct
+     3421 ttgcaacctg aattagactc attcaaggag gagttagata aatattttaa gaatcataca
+     3481 tcaccagatg ttgatttagg tgacatctct ggcattaatg cttcagttgt aaacattcaa
+     3541 aaagaaattg accgcctcaa tgaggttgcc aagaatttaa atgaatctct catcgatctc
+     3601 caagaacttg gaaagtatga gcagtatata aaatggccat ggtacatttg gctaggtttt
+     3661 atagctggct tgattgccat agtaatggtg acaattatgc tttgctgtat gaccagttgc
+     3721 tgtagttgtc tcaagggctg ttgttcttgt ggatcctgct gcaaatttga tgaagacgac
+     3781 tctgagccag tgctcaaagg agtcaaatta cattacacat aa
+//

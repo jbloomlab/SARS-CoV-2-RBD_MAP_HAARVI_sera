@@ -1,0 +1,28 @@
+name: SARS-CoV-2-RBD_MAP
+channels:
+  - bioconda
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.7
+  - pip
+  - sra-tools
+  - nodejs
+  - mafft
+  - jupyter
+  - jupyterlab
+  - jupyter_contrib_nbextensions
+  - jupytext
+  - nbdime
+  - snakemake
+  - altair
+  - scikit-learn
+  - git-lfs
+  - pip:
+    - adjustText
+    - dms-variants
+    - logomaker
+    - natsort
+    - neutcurve
+    - pdb_prot_align
+    - seaborn

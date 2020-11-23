@@ -1,0 +1,93 @@
+#commands to load pdbs for antibody mapping
+
+set seq_view, 0
+
+load ../results/pdb_outputs/CR3022_400_6m0j_max_escape.pdb
+load ../results/pdb_outputs/COV2-2050_400_6m0j_max_escape.pdb
+load ../results/pdb_outputs/COV2-2082_400_6m0j_max_escape.pdb
+load ../results/pdb_outputs/COV2-2094_400_6m0j_max_escape.pdb
+load ../results/pdb_outputs/COV2-2096_400_6m0j_max_escape.pdb
+load ../results/pdb_outputs/COV2-2130_400_6m0j_max_escape.pdb
+load ../results/pdb_outputs/COV2-2165_400_6m0j_max_escape.pdb
+load ../results/pdb_outputs/COV2-2196_400_6m0j_max_escape.pdb
+load ../results/pdb_outputs/COV2-2479_400_6m0j_max_escape.pdb
+load ../results/pdb_outputs/COV2-2499_400_6m0j_max_escape.pdb
+load ../results/pdb_outputs/COV2-2677_400_6m0j_max_escape.pdb
+load ../results/pdb_outputs/COV2-2832_400_6m0j_max_escape.pdb
+
+set_name CR3022_400_6m0j_max_escape, CR3022_max
+set_name COV2-2050_400_6m0j_max_escape, COV2-2050_max
+set_name COV2-2082_400_6m0j_max_escape, COV2-2082_max
+set_name COV2-2094_400_6m0j_max_escape, COV2-2094_max
+set_name COV2-2096_400_6m0j_max_escape, COV2-2096_max
+set_name COV2-2130_400_6m0j_max_escape, COV2-2130_max
+set_name COV2-2165_400_6m0j_max_escape, COV2-2165_max
+set_name COV2-2196_400_6m0j_max_escape, COV2-2196_max
+set_name COV2-2479_400_6m0j_max_escape, COV2-2479_max
+set_name COV2-2499_400_6m0j_max_escape, COV2-2499_max
+set_name COV2-2677_400_6m0j_max_escape, COV2-2677_max
+set_name COV2-2832_400_6m0j_max_escape, COV2-2832_max
+
+hide all
+create ACE2, CR3022_max and chain A
+remove CR3022_max and chain A
+remove COV2-2050_max and chain A
+remove COV2-2082_max and chain A
+remove COV2-2094_max and chain A
+remove COV2-2096_max and chain A
+remove COV2-2130_max and chain A
+remove COV2-2165_max and chain A
+remove COV2-2196_max and chain A
+remove COV2-2479_max and chain A
+remove COV2-2499_max and chain A
+remove COV2-2677_max and chain A
+remove COV2-2832_max and chain A
+
+show cartoon, ACE2; color gray20, ACE2; set cartoon_transparency, 0.5, ACE2
+
+show surface, CR3022_max; show sticks, CR3022_max and resn NAG; spectrum b, white red, CR3022_max, minimum=0
+show surface, COV2-2050_max; show sticks, COV2-2050_max and resn NAG; spectrum b, white red, COV2-2050_max, minimum=0
+show surface, COV2-2082_max; show sticks, COV2-2082_max and resn NAG; spectrum b, white red, COV2-2082_max, minimum=0
+show surface, COV2-2094_max; show sticks, COV2-2094_max and resn NAG; spectrum b, white red, COV2-2094_max, minimum=0
+show surface, COV2-2096_max; show sticks, COV2-2096_max and resn NAG; spectrum b, white red, COV2-2096_max, minimum=0
+show surface, COV2-2130_max; show sticks, COV2-2130_max and resn NAG; spectrum b, white red, COV2-2130_max, minimum=0
+show surface, COV2-2165_max; show sticks, COV2-2165_max and resn NAG; spectrum b, white red, COV2-2165_max, minimum=0
+show surface, COV2-2196_max; show sticks, COV2-2196_max and resn NAG; spectrum b, white red, COV2-2196_max, minimum=0
+show surface, COV2-2479_max; show sticks, COV2-2479_max and resn NAG; spectrum b, white red, COV2-2479_max, minimum=0
+show surface, COV2-2499_max; show sticks, COV2-2499_max and resn NAG; spectrum b, white red, COV2-2499_max, minimum=0
+show surface, COV2-2677_max; show sticks, COV2-2677_max and resn NAG; spectrum b, white red, COV2-2677_max, minimum=0
+show surface, COV2-2832_max; show sticks, COV2-2832_max and resn NAG; spectrum b, white red, COV2-2832_max, minimum=0
+
+hide all
+show surface, CR3022_max
+show surface, COV2-2050_max
+show surface, COV2-2082_max
+show surface, COV2-2094_max
+show surface, COV2-2096_max
+show surface, COV2-2130_max
+show surface, COV2-2165_max
+show surface, COV2-2196_max
+show surface, COV2-2479_max
+show surface, COV2-2499_max
+show surface, COV2-2677_max
+show surface, COV2-2832_max
+
+show surface, RBD_bind; spectrum b, blue white, RBD_bind, minimum=-2, maximum=0; show sticks, RBD_bind and resn NAG
+show surface, RBD_expr; spectrum b, blue white, RBD_expr, minimum=-2, maximum=0; show sticks, RBD_expr and resn NAG
+
+set_view (0.179795116,   -0.585253060,    0.790621936,-0.975049794,    0.000042952,    0.221752375,-0.129811451,   -0.810812414,   -0.570666671,0.002255535,    0.000589155, -237.384719849,-32.869243622,   26.272405624,   17.597675323,-55707.390625000, 56183.121093750,  -20.000000000 )
+
+show surface, CR3022_max
+show surface, COV2-2050_max
+show surface, COV2-2082_max
+show surface, COV2-2094_max
+show surface, COV2-2096_max
+show surface, COV2-2130_max
+show surface, COV2-2165_max
+show surface, COV2-2196_max
+show surface, COV2-2479_max
+show surface, COV2-2499_max
+show surface, COV2-2677_max
+show surface, COV2-2832_max
+
+save surface_escape.pse

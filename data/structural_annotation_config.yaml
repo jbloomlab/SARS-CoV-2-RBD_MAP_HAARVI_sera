@@ -1,0 +1,228 @@
+# Information about outputting B-factor re-assigned PDBs and dms-view inputs
+#
+# Top-level keys are antibodies/ligands for which we want to annotate structural contacts
+# Under each antibody key, specify:
+#  pdbfile -> path to file containing PDB
+#  chains_RBD -> chain(s) of RBDs in structure
+#  chains_ligand -> chain(s) of ligands (Ab, ACE2)
+#  distance_cutoff -> for annotating structural contacts, distance cutoff
+#                     (typically 4 Angstrom for high-res with resolved side chains, 8
+#                     Angstrom for low res cryo-EM with only backbone atoms)
+
+# 6m0j is ACE2 bound RBD
+ACE2:
+  name: ACE2
+  pdbfile: data/pdbs/6M0J.pdb
+  chains_RBD:
+    - E
+  chains_ligand:
+    - A
+  distance_cutoff:
+    - 4
+
+# 6w41 is CR3022 bound to RBD
+CR3022:
+  name: CR3022
+  pdbfile: data/pdbs/6W41.pdb
+  chains_RBD:
+    - C
+  chains_ligand:
+    - H
+    - L
+  distance_cutoff:
+    - 4
+
+# 6xdg is REGN10933+REGN10987 bound to RBD
+REGN10933:
+  name: REGN10933
+  pdbfile: data/pdbs/6xdg.pdb
+  chains_RBD:
+    - E
+  chains_ligand:
+    - B
+    - D
+  distance_cutoff:
+    - 4
+
+# 6xdg is REGN10933+REGN10987 bound to RBD
+REGN10987:
+  name: REGN10987
+  pdbfile: data/pdbs/6xdg.pdb
+  chains_RBD:
+    - E
+  chains_ligand:
+    - A
+    - C
+  distance_cutoff:
+    - 4
+
+# 7C01 is CB6 bound to RBD
+7c01:
+  name: CB6
+  pdbfile: data/pdbs/7c01_single.pdb
+  chains_RBD:
+    - A
+  chains_ligand:
+    - H
+    - L
+  distance_cutoff:
+    - 4
+
+# 6xcn is C105 bound to Spike, state 2 (3 up)
+6xcn:
+  name: C105
+  pdbfile: data/pdbs/6xcn.pdb
+  chains_RBD:
+    - A
+    - C
+    - E
+  chains_ligand:
+    - B
+    - D
+    - F
+    - G
+    - H
+    - L
+  distance_cutoff:
+    - 4
+6xcm:
+  name: C105
+  pdbfile: data/pdbs/6xcm.pdb
+  chains_RBD:
+    - A
+    - B
+    - C
+  chains_ligand:
+    - H
+    - L
+    - "N"
+    - S
+  distance_cutoff:
+    - 4
+
+# 6wps is S309 bound to spike (3 down)
+6wps:
+  name: S309
+  pdbfile: data/pdbs/6wps.pdb
+  chains_RBD:
+    - A
+    - B
+    - E
+  chains_ligand:
+    - C
+    - D
+    - F
+    - G
+    - H
+    - L
+  distance_cutoff:
+    - 4
+
+7k90:
+  name: C144
+  pdbfile: data/pdbs/7k90.pdb
+  chains_RBD:
+    - A
+    - B
+    - C
+  chains_ligand:
+    - H
+    - M
+    - O
+    - L
+    - "N"
+    - P
+  distance_cutoff:
+    - 4
+
+7k8s: # all down conformation
+  name: C002
+  pdbfile: data/pdbs/7k8s.pdb
+  chains_RBD:
+    - A
+    - B
+    - C
+  chains_ligand:
+    - H
+    - M
+    - O
+    - L
+    - "N"
+    - P
+  distance_cutoff:
+    - 4
+
+7k8t: # 1 up conformation
+  name: C002
+  pdbfile: data/pdbs/7k8t.pdb
+  chains_RBD:
+    - A
+    - B
+    - C
+  chains_ligand:
+    - H
+    - M
+    - O
+    - L
+    - "N"
+    - P
+  distance_cutoff:
+    - 4
+
+7k8x: # all down conformation
+  name: C121
+  pdbfile: data/pdbs/7k8x.pdb
+  chains_RBD:
+    - A
+    - B
+    - C
+  chains_ligand:
+    - D
+    - E
+    - F
+    - G
+  distance_cutoff:
+    - 4
+
+7k8y: # 1 up conformation
+  name: C121
+  pdbfile: data/pdbs/7k8y.pdb
+  chains_RBD:
+    - B
+    - D
+    - E
+  chains_ligand:
+    - G
+    - I
+  distance_cutoff:
+    - 4
+
+7k8z: # all down conformation
+  name: C135
+  pdbfile: data/pdbs/7k8z.pdb
+  chains_RBD:
+    - A
+    - B
+    - C
+  chains_ligand:
+    - H
+    - M
+    - L
+    - "N"
+  distance_cutoff:
+    - 4
+
+7k8v: # all down conformation
+  name: C110
+  pdbfile: data/pdbs/7k8v.pdb
+  chains_RBD:
+    - A
+    - B
+    - C
+  chains_ligand:
+    - H
+    - M
+    - L
+    - "N"
+  distance_cutoff:
+    - 4

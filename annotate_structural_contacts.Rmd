@@ -1,0 +1,113 @@
+---
+title: "Annotate antibody structural contacts"
+author: "Tyler Starr"
+date: "10/11/2020"
+output:
+  github_document:
+    toc: true
+    html_preview: false
+editor_options:
+  chunk_output_type: inline
+---
+This notebook analyzes antibody-bound RBD crystal and cryo-EM structures to annotate structural contacts. It generates a csv listing structurally-defined contact residues for each ligand (i.e. Ab or ACE2).
+
+```{r setup, message=FALSE, warning=FALSE, error=FALSE}
+require("knitr")
+knitr::opts_chunk$set(echo = T)
+knitr::opts_chunk$set(dev.args = list(png = list(type = "cairo")))
+
+#list of packages to install/load
+packages = c("yaml","bio3d","tidyverse")
+#install any packages not already installed
+installed_packages <- packages %in% rownames(installed.packages())
+if(any(installed_packages == F)){
+  install.packages(packages[!installed_packages])
+}
+#load packages
+invisible(lapply(packages, library, character.only=T))
+
+#read in config file
+config <- read_yaml("config.yaml")
+
+#read in config file for determining which structure and chains to determine as contacts
+contacts_config <- read_yaml(file=config$structural_contacts_config)
+
+#make output directory
+if(!file.exists(config$structural_contacts_dir)){
+  dir.create(file.path(config$structural_contacts_dir))
+}
+```
+Session info for reproducing environment:
+```{r print_sessionInfo}
+sessionInfo()
+```
+
+## Annotate sites on the RBD that contact antibody
+
+We use the `binding.site` function from the `bio3d` package to identify residues that are structural complexes within each pdb. We iterate through the values in `structural_annotation_config.yaml` to perform this calculation for each structure described by that configuration file.
+
+### Important note:
+Chains cannot be called `N` in the config file. This will lead to an error (read as not a character). 
+Change all `N` chains to `"N"`.
+
+```{r annotate_contacts}
+#empty data frame to append contacts to
+structural_contacts <- data.frame(name=character(0), pdb=character(0), chain=character(0),position=numeric(0))
+antibody_contacts <- data.frame(name=character(0), pdb=character(0), chain=character(0), position=numeric(0))
+
+for(entry in contacts_config){
+  pdb <- read.pdb(file=entry$pdbfile)
+  # get the name of the pdb file to be include in output CSV file
+  pdb_short <- strsplit(entry$pdbfile, split = "/") %>% 
+    unlist() %>% tail(n=1) %>% strsplit("\\.") %>% unlist() %>% head(n=1)
+  contacts <- binding.site(pdb,
+                         a.inds=atom.select(pdb,chain=entry$chains_RBD),
+                         b.inds=atom.select(pdb,chain=entry$chains_ligand),
+                         cutoff=entry$distance_cutoff, hydrogens=F)
+  if (is.vector(contacts)){
+    structural_contacts <- rbind(structural_contacts, 
+                                 data.frame(name=entry$name, 
+                                            pdb=pdb_short, 
+                                            chain = contacts$chain, 
+                                            position = contacts$resno)
+                                 )
+  }
+
+}
+```
+
+## Annotate sites on the antibody that contact the RBD
+This is slightly more complicated because each antibody has multiple chains. We examine each chain individually, and output a separate CSV file that includes the chain designation.
+In addition, there are some antibody chains that do not contact the RBD at all, so we must deal with this edge case.
+
+## IMPORTANT DISCLAIMER!!!!
+Importantly, some PDB files (such as is the case for the CR3022 antibody, PDB 6W41) annotate the CDR loops with letters that are stripped when read by the `bio3d` package so you should check each PDB file individually to make sure this is not the case, otherwise there will be problems with this script.
+```{r annotate_antibody_contacts}
+# make a separate file for the sites on the antibody that contact RBD
+for(entry in contacts_config){
+  pdb <- read.pdb(file=entry$pdbfile)
+  # get the name of the pdb file to be include in output CSV file
+  pdb_short <- strsplit(entry$pdbfile, split = "/") %>% 
+    unlist() %>% tail(n=1) %>% strsplit("\\.") %>% unlist() %>% head(n=1)
+  contacts <- binding.site(pdb,
+                         a.inds=atom.select(pdb,chain=entry$chains_ligand),
+                         b.inds=atom.select(pdb,chain=entry$chains_RBD),
+                         cutoff=entry$distance_cutoff, hydrogens=F)
+  if (is.vector(contacts)){
+    antibody_contacts <- rbind(antibody_contacts, 
+                               data.frame(name=entry$name, 
+                                          pdb=pdb_short, 
+                                          chain = contacts$chain, 
+                                          position = contacts$resno))
+
+  }
+
+ }
+
+```
+## Save list of structural contacts
+
+```{r output_structural_contacts}
+write.csv(structural_contacts,file=config$structural_contacts,row.names=F,quote=F)
+write.csv(antibody_contacts,file=config$antibody_contacts,row.names=F,quote=F)
+```

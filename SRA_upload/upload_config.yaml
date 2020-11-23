@@ -1,0 +1,12 @@
+# the BioSample accession
+biosample_accession: SAMN16054076
+
+# name of CSV file listing barcode runs to uploade
+barcode_runs: barcode_runs_Crowe_antibodies.csv
+
+# the following come from the SRA FTP upload instructions
+ftp_username: subftp
+ftp_account_folder: uploads/jbloom_fhcrc.org_IuMBgK44
+
+# Meaningful name for this sample's FTP folder:
+ftp_subfolder: Crowe_antibody_barcodes

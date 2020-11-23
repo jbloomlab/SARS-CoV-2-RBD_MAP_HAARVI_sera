@@ -1,0 +1,177 @@
+# Specify configuration of escape profile and related plots.
+#
+# Each entry should be a key with the name of the plot. It then can
+# have the following nested keys:
+#   conditions -> specify antibodies / sera and names to use when plotting
+#   plot_auto_identified_sites -> provide name of one of the thresholds for
+#                                 identifying sites of strong escape, or false
+#                                 to not plot auto-identified strong sites.
+#   add_sites -> list of any additional sites to plot
+#   exclude_sites -> list of any sites to exclude from plot
+#   site_color_scheme -> site-level color scheme in `site_color_schemes.csv`
+#                        **or** color for all sites
+#   mutation_colors -> dict keyed by mutation (e.g., P484) with value being color
+#   color_by_dms -> make copies of escape profiles colored by DMS bind / expr
+#   make_supp_data -> make supplemental data / dms-view file
+#   single_nt_only -> only include single-nt mutations relative to Genbank file
+#                     specified here in escape profiles.
+#   draw_line_plot -> set to false to not show line plot in escape profile
+#   analyze_natural_mutations -> analyze naturally occuring mutations at sites
+#                                of strong escape.
+#   natural_mutations_mincounts -> plot escape grid for all sites of strong
+#                                  escape with >= this many mutation counts.
+#   escape_profile_ymax -> override default for this parameter specified
+#                          in main `config.yaml`.
+#   shade_sites -> shade the stacks for certain sites. Key by the antibody name
+#                  (using the short names defined as values in `conditions`),
+#                  and then the values are maps of site to the list [color, alpha]
+
+
+human_sera:  # name of plot
+  conditions:  # antibodies / sera to show and names to use for them
+    23_d21_1250: 23_d21
+    23_d45_1250: 23_d45
+    23_d120_500: 23_d120
+    1C_d26_200: 1C_d26
+    1C_d113_200: 1C_d113
+    24C_d32_200: 24C_d32
+    24C_d104_200: 24C_d104
+    6C_d33_500: 6C_d33
+    6C_d76_500: 6C_d76
+    22C_d28_200: 22C_d28
+    22C_d104_200: 22C_d104
+    25C_d48_200: 25C_d48
+    25C_d115_80: 25C_d115
+    25_d18_500: 25_d18
+    25_d94_200: 25_d94
+    12C_d61_160: 12C_d61
+    12C_d152_80: 12C_d152
+    23C_d26_80: 23C_d26
+    23C_d102_80: 23C_d102
+    13_d15_200: 13_d15
+    13_d121_1250: 13_d121
+    7C_d29_500: 7C_d29
+    7C_d103_200: 7C_d103
+  # plot automatically identified sites?
+  plot_auto_identified_sites: default
+  # add these sites if they aren't automatically identified
+  add_sites: []
+  # exclude these sites even if not automatically identified
+  exclude_sites: []
+  # name of site-level color scheme in `site_color_schemes.csv` **or**
+  # color for all sites
+  site_color_scheme: subdomain
+  # make escape profiles colored by DMS bind / expr measurements?
+  color_by_dms: True
+  # make supplemental data files for this antibody set
+  make_supp_data: true
+  # analyze naturally occurring mutations at strong sites of escape
+  analyze_natural_mutations: true
+  natural_mutations_mincounts: 5  # plot sites with >= this many mutation counts
+
+REGN_cocktail:
+  conditions:
+    REGN10933_400: REGN10933
+    REGN10987_400: REGN10987
+    REGN10933+REGN10987_400: REGN10933 + REGN10987
+  plot_auto_identified_sites: default
+  add_sites: []
+  exclude_sites: []
+  site_color_scheme: subdomain
+  color_by_dms: true
+
+REGN_cocktail_sensitive:
+  conditions:
+    REGN10933_400: REGN10933
+    REGN10987_400: REGN10987
+    REGN10933+REGN10987_400: REGN10933 + REGN10987
+  plot_auto_identified_sites: sensitive
+  add_sites: []
+  exclude_sites: []
+  site_color_scheme: subdomain
+  color_by_dms: true
+
+REGN_cocktail_single_nt:
+  conditions:
+    REGN10933_400: REGN10933
+    REGN10987_400: REGN10987
+    REGN10933+REGN10987_400: REGN10933 + REGN10987
+  plot_auto_identified_sites: default
+  add_sites: []
+  exclude_sites: []
+  site_color_scheme: subdomain
+  color_by_dms: true
+  single_nt_only: ./data/Baum_Spike.gb
+  draw_line_plot: false
+
+REGN_antibodies:
+  conditions:
+    REGN10933_400: REGN10933
+    REGN10987_400: REGN10987
+  plot_auto_identified_sites: default
+  add_sites: [439]
+  exclude_sites: []
+  site_color_scheme: subdomain
+  color_by_dms: true
+
+REGN_antibodies_demo_highlight:
+  conditions:
+    REGN10933_400: REGN10933
+    REGN10987_400: REGN10987
+  plot_auto_identified_sites: default
+  add_sites: [439]
+  exclude_sites: []
+  site_color_scheme: subdomain
+  color_by_dms: true
+  shade_sites:
+    REGN10933:
+      439: [gray, 0.15]
+      453: [yellow, 0.15]
+    REGN10987:
+      439: [yellow, 0.15]
+      453: [gray, 0.15]
+
+REGN_antibodies_single_nt:
+  conditions:
+    REGN10933_400: REGN10933
+    REGN10987_400: REGN10987
+  plot_auto_identified_sites: default
+  add_sites: [439]
+  exclude_sites: []
+  site_color_scheme: subdomain
+  color_by_dms: true
+  single_nt_only: ./data/Baum_Spike.gb
+  draw_line_plot: false
+
+validation_colored_sera:
+  conditions:
+    1C_d26_200: 1C_d26
+    1C_d113_200: 1C_d113
+  plot_auto_identified_sites: default
+  add_sites: []
+  exclude_sites: []
+  site_color_scheme: gray
+  mutation_colors:
+    P484: red
+    K456: red
+  draw_line_plot: false
+
+REGN_single_nt_colorescape:
+  conditions:
+    REGN10933_400: REGN10933
+    REGN10987_400: REGN10987
+    REGN10933+REGN10987_400: REGN10933 + REGN10987
+  plot_auto_identified_sites: default
+  add_sites: []
+  exclude_sites: []
+  site_color_scheme: gray
+  mutation_colors:
+    E417: red
+    F453: red
+    F455: red
+    V486: red
+    K493: red
+    Q444: red
+    A445: red
+  single_nt_only: ./data/Baum_Spike.gb
+  draw_line_plot: false

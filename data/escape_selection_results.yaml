@@ -1,0 +1,42 @@
+# Results of escape mutant selections.
+
+Crowe_selections:
+  spike_sequence: ./data/Whelan-VSV-SARS-CoV-2-Spike.gb
+  min_size: 0.75  # smallest point size (e.g., unobserved mutations)
+  max_size: 1  # point size proportional to n observations with this max
+  size_scale: 0.25  # scale all point sizes by this much
+  # colors, shapes, alphas for each category of mutation:
+  shapes: ['o', 'x', 'D', '^']
+  colors: ['green', 'gray', 'red', 'orange']
+  alphas: [0.4, 0.3, 0.95, 0.95]
+  antibodies:
+    COV2-2094_400:  # selection column in raw data
+      display_name: COV2-2094
+      replicates_total: 24
+      replicates_escape: 8
+      mutations:
+        K378E: 7
+        K378N: 1
+    COV2-2165_400:
+      display_name: COV2-2165
+      replicates_total: 56
+      replicates_escape: 0
+    COV2-2479_400:  # total of 3 mutants selected
+      display_name: COV2-2479
+      replicates_total: 56
+      replicates_escape: 3
+      mutations:
+        E484K: 3
+    COV2-2050_400:  # total of 5 mutants selected
+      display_name: COV2-2050
+      replicates_total: 30
+      replicates_escape: 4
+      mutations:
+        E484K: 4
+    COV2-2499_400:
+      display_name: COV2-2499
+      replicates_total: 16
+      replicates_escape: 5
+      mutations:
+        G446D: 3
+        Q498R: 2
