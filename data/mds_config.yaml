@@ -12,7 +12,7 @@
 #                   layouts. Try different seeds here if you want to tweak
 #                   appearance from default.
 #   pie_size -> size of the "pies" representing the antibodies / sera,
-#               bigger means larger. 
+#               bigger means larger.
 #   pie_alpha -> transparency of the pies, smaller means more transparent.
 #   expand_points -> how much to repel text labels from points in plot;
 #                    larger values push text further from points, see
@@ -55,7 +55,25 @@ human_sera:  # name of plot
   random_state: 3
   pie_alpha: 0.5
 
-Crowe_antibodies:
+human_sera_early:  # name of plot
+  conditions:  # antibodies / sera to show and names to use for them
+    23_d21_1250: 23_d21
+    1C_d26_200: 1C_d26
+    24C_d32_200: 24C_d32
+    6C_d33_500: 6C_d33
+    22C_d28_200: 22C_d28
+    25C_d48_200: 25C_d48
+    25_d18_500: 25_d18
+    12C_d61_160: 12C_d61
+    23C_d26_80: 23C_d26
+    13_d15_200: 13_d15
+    7C_d29_500: 7C_d29
+  color_scheme: subdomain
+  plot_size: 6
+  random_state: 3
+  pie_alpha: 0.5
+
+all_sera_antibodies:
   conditions:
     CR3022_400: rCR3022
     COV2-2677_400: COV2-2677
@@ -67,15 +85,83 @@ Crowe_antibodies:
     COV2-2050_400: COV2-2050
     COV2-2096_400: COV2-2096
     COV2-2499_400: COV2-2499
+    CB6_400: CB6
+    REGN10933_400: REGN10933
+    REGN10987_400: REGN10987
+    23_d21_1250: 23_d21
+    23_d45_1250: 23_d45
+    23_d120_500: 23_d120
+    1C_d26_200: 1C_d26
+    1C_d113_200: 1C_d113
+    24C_d32_200: 24C_d32
+    24C_d104_200: 24C_d104
+    6C_d33_500: 6C_d33
+    6C_d76_500: 6C_d76
+    22C_d28_200: 22C_d28
+    22C_d104_200: 22C_d104
+    25C_d48_200: 25C_d48
+    25C_d115_80: 25C_d115
+    25_d18_500: 25_d18
+    25_d94_200: 25_d94
+    12C_d61_160: 12C_d61
+    12C_d152_80: 12C_d152
+    23C_d26_80: 23C_d26
+    23C_d102_80: 23C_d102
+    13_d15_200: 13_d15
+    13_d121_1250: 13_d121
+    7C_d29_500: 7C_d29
+    7C_d103_200: 7C_d103
   color_scheme: subdomain
-  plot_size: 5.5
-  expand_points: [1.3, 1.7]
+  plot_size: 6
+  random_state: 3
+  pie_alpha: 0.5
   default_circle_color: gray
   circle_colors:
-    COV2-2196: red
-    COV2-2130: red
+    23_d21: red
+    23_d45: blue
+    23_d120: blue
+    1C_d26: red
+    1C_d113: blue
+    24C_d32: red
+    24C_d104: blue
+    6C_d33: red
+    6C_d76: blue
+    22C_d28: red
+    22C_d104: blue
+    25C_d48: red
+    25C_d115: blue
+    25_d18: red
+    25_d94: blue
+    12C_d61: red
+    12C_d152: blue
+    23C_d26: red
+    23C_d102: blue
+    13_d15: red
+    13_d121: blue
+    7C_d29: red
+    7C_d103: blue
   default_label_color: gray
   label_colors:
-    COV2-2196: red
-    COV2-2130: red
-  random_state: 3
+    23_d21: red
+    23_d45: blue
+    23_d120: blue
+    1C_d26: red
+    1C_d113: blue
+    24C_d32: red
+    24C_d104: blue
+    6C_d33: red
+    6C_d76: blue
+    22C_d28: red
+    22C_d104: blue
+    25C_d48: red
+    25C_d115: blue
+    25_d18: red
+    25_d94: blue
+    12C_d61: red
+    12C_d152: blue
+    23C_d26: red
+    23C_d102: blue
+    13_d15: red
+    13_d121: blue
+    7C_d29: red
+    7C_d103: blue
