@@ -619,7 +619,13 @@ with multiprocessing.Pool(ncpus) as pool:
         
 ```
 
-    Drawing 23 profiles using 8 CPUs...
+    Drawing 11 profiles using 8 CPUs...
+
+
+    /fh/fast/bloom_j/software/miniconda3/envs/SARS-CoV-2-RBD_MAP/lib/python3.7/site-packages/dmslogo/facet.py:196: UserWarning: Tight layout not applied. The left and right margins cannot be made large enough to accommodate all axes decorations. 
+    /fh/fast/bloom_j/software/miniconda3/envs/SARS-CoV-2-RBD_MAP/lib/python3.7/site-packages/dmslogo/facet.py:196: UserWarning: Tight layout not applied. The left and right margins cannot be made large enough to accommodate all axes decorations. 
+
+
     
     Plotted profile 1 to:
      results/escape_profiles/human_sera_stackedlogo.pdf
@@ -628,7 +634,7 @@ with multiprocessing.Pool(ncpus) as pool:
 
 
     
-![png](escape_profiles_files/escape_profiles_26_1.png)
+![png](escape_profiles_files/escape_profiles_26_3.png)
     
 
 
@@ -640,7 +646,7 @@ with multiprocessing.Pool(ncpus) as pool:
 
 
     
-![png](escape_profiles_files/escape_profiles_26_3.png)
+![png](escape_profiles_files/escape_profiles_26_5.png)
     
 
 
@@ -652,26 +658,14 @@ with multiprocessing.Pool(ncpus) as pool:
 
 
     
-![png](escape_profiles_files/escape_profiles_26_5.png)
-    
-
-
-    
-    Plotted profile 4 to:
-     results/escape_profiles/REGN_cocktail_stackedlogo.pdf
-     results/escape_profiles/REGN_cocktail_stackedlogo.png.
-
-
-
-    
 ![png](escape_profiles_files/escape_profiles_26_7.png)
     
 
 
     
-    Plotted profile 5 to:
-     results/escape_profiles/REGN_cocktail_color_by_bind_stackedlogo.pdf
-     results/escape_profiles/REGN_cocktail_color_by_bind_stackedlogo.png.
+    Plotted profile 4 to:
+     results/escape_profiles/human_sera_early_lineplot_stackedlogo.pdf
+     results/escape_profiles/human_sera_early_lineplot_stackedlogo.png.
 
 
 
@@ -681,9 +675,9 @@ with multiprocessing.Pool(ncpus) as pool:
 
 
     
-    Plotted profile 6 to:
-     results/escape_profiles/REGN_cocktail_color_by_expr_stackedlogo.pdf
-     results/escape_profiles/REGN_cocktail_color_by_expr_stackedlogo.png.
+    Plotted profile 5 to:
+     results/escape_profiles/human_sera_early_stackedlogo.pdf
+     results/escape_profiles/human_sera_early_stackedlogo.png.
 
 
 
@@ -693,9 +687,9 @@ with multiprocessing.Pool(ncpus) as pool:
 
 
     
-    Plotted profile 7 to:
-     results/escape_profiles/REGN_cocktail_sensitive_stackedlogo.pdf
-     results/escape_profiles/REGN_cocktail_sensitive_stackedlogo.png.
+    Plotted profile 6 to:
+     results/escape_profiles/human_sera_late_stackedlogo.pdf
+     results/escape_profiles/human_sera_late_stackedlogo.png.
 
 
 
@@ -705,9 +699,9 @@ with multiprocessing.Pool(ncpus) as pool:
 
 
     
-    Plotted profile 8 to:
-     results/escape_profiles/REGN_cocktail_sensitive_color_by_bind_stackedlogo.pdf
-     results/escape_profiles/REGN_cocktail_sensitive_color_by_bind_stackedlogo.png.
+    Plotted profile 7 to:
+     results/escape_profiles/7C_validations_stackedlogo.pdf
+     results/escape_profiles/7C_validations_stackedlogo.png.
 
 
 
@@ -717,9 +711,9 @@ with multiprocessing.Pool(ncpus) as pool:
 
 
     
-    Plotted profile 9 to:
-     results/escape_profiles/REGN_cocktail_sensitive_color_by_expr_stackedlogo.pdf
-     results/escape_profiles/REGN_cocktail_sensitive_color_by_expr_stackedlogo.png.
+    Plotted profile 8 to:
+     results/escape_profiles/1C_validations_stackedlogo.pdf
+     results/escape_profiles/1C_validations_stackedlogo.png.
 
 
 
@@ -729,9 +723,9 @@ with multiprocessing.Pool(ncpus) as pool:
 
 
     
-    Plotted profile 10 to:
-     results/escape_profiles/REGN_cocktail_single_nt_stackedlogo.pdf
-     results/escape_profiles/REGN_cocktail_single_nt_stackedlogo.png.
+    Plotted profile 9 to:
+     results/escape_profiles/23C_validations_stackedlogo.pdf
+     results/escape_profiles/23C_validations_stackedlogo.png.
 
 
 
@@ -741,9 +735,9 @@ with multiprocessing.Pool(ncpus) as pool:
 
 
     
-    Plotted profile 11 to:
-     results/escape_profiles/REGN_cocktail_single_nt_color_by_bind_stackedlogo.pdf
-     results/escape_profiles/REGN_cocktail_single_nt_color_by_bind_stackedlogo.png.
+    Plotted profile 10 to:
+     results/escape_profiles/24C_validations_stackedlogo.pdf
+     results/escape_profiles/24C_validations_stackedlogo.png.
 
 
 
@@ -753,146 +747,14 @@ with multiprocessing.Pool(ncpus) as pool:
 
 
     
-    Plotted profile 12 to:
-     results/escape_profiles/REGN_cocktail_single_nt_color_by_expr_stackedlogo.pdf
-     results/escape_profiles/REGN_cocktail_single_nt_color_by_expr_stackedlogo.png.
+    Plotted profile 11 to:
+     results/escape_profiles/25_validations_stackedlogo.pdf
+     results/escape_profiles/25_validations_stackedlogo.png.
 
 
 
     
 ![png](escape_profiles_files/escape_profiles_26_23.png)
-    
-
-
-    
-    Plotted profile 13 to:
-     results/escape_profiles/REGN_antibodies_stackedlogo.pdf
-     results/escape_profiles/REGN_antibodies_stackedlogo.png.
-
-
-
-    
-![png](escape_profiles_files/escape_profiles_26_25.png)
-    
-
-
-    
-    Plotted profile 14 to:
-     results/escape_profiles/REGN_antibodies_color_by_bind_stackedlogo.pdf
-     results/escape_profiles/REGN_antibodies_color_by_bind_stackedlogo.png.
-
-
-
-    
-![png](escape_profiles_files/escape_profiles_26_27.png)
-    
-
-
-    
-    Plotted profile 15 to:
-     results/escape_profiles/REGN_antibodies_color_by_expr_stackedlogo.pdf
-     results/escape_profiles/REGN_antibodies_color_by_expr_stackedlogo.png.
-
-
-
-    
-![png](escape_profiles_files/escape_profiles_26_29.png)
-    
-
-
-    
-    Plotted profile 16 to:
-     results/escape_profiles/REGN_antibodies_demo_highlight_stackedlogo.pdf
-     results/escape_profiles/REGN_antibodies_demo_highlight_stackedlogo.png.
-
-
-
-    
-![png](escape_profiles_files/escape_profiles_26_31.png)
-    
-
-
-    
-    Plotted profile 17 to:
-     results/escape_profiles/REGN_antibodies_demo_highlight_color_by_bind_stackedlogo.pdf
-     results/escape_profiles/REGN_antibodies_demo_highlight_color_by_bind_stackedlogo.png.
-
-
-
-    
-![png](escape_profiles_files/escape_profiles_26_33.png)
-    
-
-
-    
-    Plotted profile 18 to:
-     results/escape_profiles/REGN_antibodies_demo_highlight_color_by_expr_stackedlogo.pdf
-     results/escape_profiles/REGN_antibodies_demo_highlight_color_by_expr_stackedlogo.png.
-
-
-
-    
-![png](escape_profiles_files/escape_profiles_26_35.png)
-    
-
-
-    
-    Plotted profile 19 to:
-     results/escape_profiles/REGN_antibodies_single_nt_stackedlogo.pdf
-     results/escape_profiles/REGN_antibodies_single_nt_stackedlogo.png.
-
-
-
-    
-![png](escape_profiles_files/escape_profiles_26_37.png)
-    
-
-
-    
-    Plotted profile 20 to:
-     results/escape_profiles/REGN_antibodies_single_nt_color_by_bind_stackedlogo.pdf
-     results/escape_profiles/REGN_antibodies_single_nt_color_by_bind_stackedlogo.png.
-
-
-
-    
-![png](escape_profiles_files/escape_profiles_26_39.png)
-    
-
-
-    
-    Plotted profile 21 to:
-     results/escape_profiles/REGN_antibodies_single_nt_color_by_expr_stackedlogo.pdf
-     results/escape_profiles/REGN_antibodies_single_nt_color_by_expr_stackedlogo.png.
-
-
-
-    
-![png](escape_profiles_files/escape_profiles_26_41.png)
-    
-
-
-    
-    Plotted profile 22 to:
-     results/escape_profiles/validation_colored_sera_stackedlogo.pdf
-     results/escape_profiles/validation_colored_sera_stackedlogo.png.
-
-
-
-    
-![png](escape_profiles_files/escape_profiles_26_43.png)
-    
-
-
-    
-    Plotted profile 23 to:
-     results/escape_profiles/REGN_single_nt_colorescape_stackedlogo.pdf
-     results/escape_profiles/REGN_single_nt_colorescape_stackedlogo.png.
-
-
-
-    
-![png](escape_profiles_files/escape_profiles_26_45.png)
     
 
 

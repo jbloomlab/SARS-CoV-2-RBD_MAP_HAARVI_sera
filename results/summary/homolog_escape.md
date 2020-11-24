@@ -135,7 +135,7 @@ for name, specs in escape_profiles_config.items():
 
 
     
-    Analyzing homolog escape for REGN_cocktail, saving plot to results/homologs/REGN_cocktail_homolog_escape.pdf
+    Analyzing homolog escape for human_sera_early_lineplot, saving plot to results/homologs/human_sera_early_lineplot_homolog_escape.pdf
 
 
 
@@ -145,7 +145,7 @@ for name, specs in escape_profiles_config.items():
 
 
     
-    Analyzing homolog escape for REGN_cocktail_sensitive, saving plot to results/homologs/REGN_cocktail_sensitive_homolog_escape.pdf
+    Analyzing homolog escape for human_sera_early, saving plot to results/homologs/human_sera_early_homolog_escape.pdf
 
 
 
@@ -155,7 +155,7 @@ for name, specs in escape_profiles_config.items():
 
 
     
-    Analyzing homolog escape for REGN_cocktail_single_nt, saving plot to results/homologs/REGN_cocktail_single_nt_homolog_escape.pdf
+    Analyzing homolog escape for human_sera_late, saving plot to results/homologs/human_sera_late_homolog_escape.pdf
 
 
 
@@ -165,7 +165,7 @@ for name, specs in escape_profiles_config.items():
 
 
     
-    Analyzing homolog escape for REGN_antibodies, saving plot to results/homologs/REGN_antibodies_homolog_escape.pdf
+    Analyzing homolog escape for 7C_validations, saving plot to results/homologs/7C_validations_homolog_escape.pdf
 
 
 
@@ -175,7 +175,7 @@ for name, specs in escape_profiles_config.items():
 
 
     
-    Analyzing homolog escape for REGN_antibodies_demo_highlight, saving plot to results/homologs/REGN_antibodies_demo_highlight_homolog_escape.pdf
+    Analyzing homolog escape for 1C_validations, saving plot to results/homologs/1C_validations_homolog_escape.pdf
 
 
 
@@ -185,7 +185,7 @@ for name, specs in escape_profiles_config.items():
 
 
     
-    Analyzing homolog escape for REGN_antibodies_single_nt, saving plot to results/homologs/REGN_antibodies_single_nt_homolog_escape.pdf
+    Analyzing homolog escape for 23C_validations, saving plot to results/homologs/23C_validations_homolog_escape.pdf
 
 
 
@@ -195,7 +195,7 @@ for name, specs in escape_profiles_config.items():
 
 
     
-    Analyzing homolog escape for validation_colored_sera, saving plot to results/homologs/validation_colored_sera_homolog_escape.pdf
+    Analyzing homolog escape for 24C_validations, saving plot to results/homologs/24C_validations_homolog_escape.pdf
 
 
 
@@ -205,7 +205,7 @@ for name, specs in escape_profiles_config.items():
 
 
     
-    Analyzing homolog escape for REGN_single_nt_colorescape, saving plot to results/homologs/REGN_single_nt_colorescape_homolog_escape.pdf
+    Analyzing homolog escape for 25_validations, saving plot to results/homologs/25_validations_homolog_escape.pdf
 
 
 
