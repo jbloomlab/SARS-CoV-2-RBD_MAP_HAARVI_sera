@@ -1,0 +1,172 @@
+# Specify configuration of RBD depletion validation plots
+
+# There are a lot of ways we could order the serum samples -- it is so complicated!
+# 1. as in dms-view (this is super handy when we are constantly referring back to dms-view) and should probably be used while the data are still in the preliminary stages of analysis for this reason!
+# 2. as the logo plots are ordered in the main repo (probably the final way we want to do this)
+# 3. as ordered in Crawford et al 2020
+# 4. according to greatest neut potency derived from RBD-targeting antibodies
+
+published_metadata: data/Crawford_SuppFile2.csv # this is Supplementary File 2 from Crawford et al. (2020)
+sample_information: data/depletion_samples.csv # this is the mapping file with information specific to our study
+
+elisa_input_files:
+  - data/elisa_data_concatenated.csv
+
+neut_input_files: # make sure it is in this format:
+  data/201012_depletion_neuts.csv: 201012
+  data/201026_depletion_neuts_updated.csv: 201026
+  data/201030_depletion_neuts.csv: 201030
+  data/201106_depletion_neuts.csv: 201106
+  data/201111_depletion_neuts.csv: 201111
+
+# the neutralization limit of detection is equal to the starting dilution
+NT50_LOD: 20
+
+neut_samples_ignore: # these are identified by manually looking through input files and finding samples that don't belong in final analysis
+  - 13_d15_2xbeads
+  - RegTest50
+  - RegTest25
+
+neut_ignore_dilutions: # cells were not added to "Row G" for all 23C samples (both timepoints, pre- and post-depletion).
+  # so here I am indicating the samples and their dilutions
+  # these should be key: value sample (befor being renamed): dilution (float)
+  23C_d26: 0.000205761
+  23C_d102: 0.000205761
+
+neut_ignore_dates:
+  24C_d32: 201026
+  24C_d104: 201026
+  1C_d26: 201026
+
+# some samples are not relevant to this study. drop them from analysis.
+elisa_samples_ignore:
+  - 13_d15 (2x more beads used)
+  - EZ-7A
+  - 23_d45 # this was the one done with only one round of depletion, which was incomplete. The 2nd round of depletion was better; see below.
+
+# some samples were run on multiple days but with the incorrect dilutions on some days to get comparable AUCs.
+# Therefore we must drop those now
+# these should be keyed sample: date (before renaming samples, as this will be done at the beginning of the notebook)
+elisa_ignore_dates:
+  2017-2018 serum pool: 201020
+  1C_d26: 201021
+
+# specify alternate names
+display_names: # here give only the alternate name specified in the CSV file
+  REGN10987_50ug/mL: "rREGN10987 (50ug/mL)"
+  REGN10987_25ug/mL: "rREGN10987 (25ug/mL)"
+  REGN10987_5ug/mL: "rREGN10987 (5ug/mL)"
+  4A8_50ug/mL: "r4A8 (50ug/mL)"
+  12C_d152: 12C_d152
+  12C_d61: 12C_d61
+  13_d121: 13_d121
+  13_d15: 13_d15
+  1C_d113: 1C_d113
+  1C_d26: 1C_d26
+  22C_d104: 22C_d104
+  22C_d28: 22C_d28
+  23C_d102: 23C_d102
+  23C_d26: 23C_d26
+  23_d120: 23_d120
+  23_d21: 23_d21
+  23_d45 (re-depleted): 23_d45
+  24C_d104: 24C_d104
+  24C_d32: 24C_d32
+  24C_d32r: 24C_d32r
+  25C_d115: 25C_d115
+  25C_d48: 25C_d48
+  25_d18: 25_d18
+  25_d94: 25_d94
+  6C_d33: 6C_d33
+  6C_d76: 6C_d76
+  7C_d103: 7C_d103
+  7C_d29: 7C_d29
+  3C_d27: 3C_d27
+  3C_d105: 3C_d105
+  11C_d26: 11C_d26
+  11C_d97: 11C_d97
+  13C_d32: 13C_d32
+  13C_d110: 13C_d110
+  17C_d32: 17C_d32
+  17C_d109: 17C_d109
+  72C_d48: 72C_d48
+  72C_d79: 72C_d79
+  117C_d35: 117C_d35
+  117C_d99: 117C_d99
+  2017-2018 serum pool: pre-pandemic
+
+# groups, in order, using alternate names.
+# I tried to make this a dictionary of lists, but it was not being read in properly,
+# so I have made it a list of lists, which I think isn't as good
+# (you can see there is some weird clunky stuff in the pipeline now)
+depletion_groups: # here give only the alternate name specified above!
+  - antibody_controls:
+    - "rREGN10987 (50ug/mL)"
+    - "rREGN10987 (25ug/mL)"
+    - "rREGN10987 (5ug/mL)"
+    - "r4A8 (50ug/mL)"
+  - serum_samples: # these should be in order (currently the order is the same as the logo plots)
+    - 12C_d152
+    - 12C_d61
+    - 13_d121
+    - 13_d15
+    - 1C_d113
+    - 1C_d26
+    - 22C_d104
+    - 22C_d28
+    - 23C_d102
+    - 23C_d26
+    - 23_d120
+    - 23_d21
+    - 23_d45
+    - 24C_d104
+    - 24C_d32
+    - 24C_d32r
+    - 25C_d115
+    - 25C_d48
+    - 25_d18
+    - 25_d94
+    - 6C_d33
+    - 6C_d76
+    - 7C_d103
+    - 7C_d29
+    - 3C_d27
+    - 3C_d105
+    - 11C_d26
+    - 11C_d97
+    - 13C_d32
+    - 13C_d110
+    - 17C_d32
+    - 17C_d109
+    - 72C_d48
+    - 72C_d79
+    - 117C_d35
+    - 117C_d99
+    - pre-pandemic
+
+elisa_background_sample: pre-pandemic
+
+mapped_samples: # these should be in order (currently the order is the same as the logo plots)
+    - 12C_d152
+    - 12C_d61
+    - 13_d121
+    - 13_d15
+    - 1C_d113
+    - 1C_d26
+    - 22C_d104
+    - 22C_d28
+    - 23C_d102
+    - 23C_d26
+    - 23_d120
+    - 23_d21
+    - 23_d45
+    - 24C_d104
+    - 24C_d32
+    - 25C_d115
+    - 25C_d48
+    - 25_d18
+    - 25_d94
+    - 6C_d33
+    - 6C_d76
+    - 7C_d103
+    - 7C_d29
