@@ -69,109 +69,142 @@ human_sera:  # name of plot
   analyze_natural_mutations: true
   natural_mutations_mincounts: 5  # plot sites with >= this many mutation counts
 
-REGN_cocktail:
-  conditions:
-    REGN10933_400: REGN10933
-    REGN10987_400: REGN10987
-    REGN10933+REGN10987_400: REGN10933 + REGN10987
+human_sera_early_lineplot:  # name of plot
+  conditions:  # antibodies / sera to show and names to use for them
+    23_d21_1250: 23_d21
+    1C_d26_200: 1C_d26
+    24C_d32_200: 24C_d32
+    6C_d33_500: 6C_d33
+    22C_d28_200: 22C_d28
+    25C_d48_200: 25C_d48
+    25_d18_500: 25_d18
+    12C_d61_160: 12C_d61
+    23C_d26_80: 23C_d26
+    13_d15_200: 13_d15
+    7C_d29_500: 7C_d29
   plot_auto_identified_sites: default
   add_sites: []
   exclude_sites: []
+  draw_line_plot: true
   site_color_scheme: subdomain
-  color_by_dms: true
+  color_by_dms: false
+  make_supp_data: false
+  analyze_natural_mutations: false
+  natural_mutations_mincounts: 5
 
-REGN_cocktail_sensitive:
-  conditions:
-    REGN10933_400: REGN10933
-    REGN10987_400: REGN10987
-    REGN10933+REGN10987_400: REGN10933 + REGN10987
-  plot_auto_identified_sites: sensitive
-  add_sites: []
-  exclude_sites: []
-  site_color_scheme: subdomain
-  color_by_dms: true
-
-REGN_cocktail_single_nt:
-  conditions:
-    REGN10933_400: REGN10933
-    REGN10987_400: REGN10987
-    REGN10933+REGN10987_400: REGN10933 + REGN10987
+human_sera_early:  # name of plot
+  conditions:  # antibodies / sera to show and names to use for them
+    23_d21_1250: 23_d21
+    1C_d26_200: 1C_d26
+    24C_d32_200: 24C_d32
+    6C_d33_500: 6C_d33
+    22C_d28_200: 22C_d28
+    25C_d48_200: 25C_d48
+    25_d18_500: 25_d18
+    12C_d61_160: 12C_d61
+    23C_d26_80: 23C_d26
+    13_d15_200: 13_d15
+    7C_d29_500: 7C_d29
   plot_auto_identified_sites: default
   add_sites: []
   exclude_sites: []
-  site_color_scheme: subdomain
-  color_by_dms: true
-  single_nt_only: ./data/Baum_Spike.gb
   draw_line_plot: false
-
-REGN_antibodies:
-  conditions:
-    REGN10933_400: REGN10933
-    REGN10987_400: REGN10987
-  plot_auto_identified_sites: default
-  add_sites: [439]
-  exclude_sites: []
   site_color_scheme: subdomain
-  color_by_dms: true
+  color_by_dms: false
+  make_supp_data: false
+  analyze_natural_mutations: false
+  natural_mutations_mincounts: 5
 
-REGN_antibodies_demo_highlight:
-  conditions:
-    REGN10933_400: REGN10933
-    REGN10987_400: REGN10987
+human_sera_late:  # name of plot
+  conditions:  # antibodies / sera to show and names to use for them
+    23_d45_1250: 23_d45
+    23_d120_500: 23_d120
+    1C_d113_200: 1C_d113
+    24C_d104_200: 24C_d104
+    6C_d76_500: 6C_d76
+    22C_d104_200: 22C_d104
+    25C_d115_80: 25C_d115
+    25_d94_200: 25_d94
+    12C_d152_80: 12C_d152
+    23C_d102_80: 23C_d102
+    13_d121_1250: 13_d121
+    7C_d103_200: 7C_d103
   plot_auto_identified_sites: default
-  add_sites: [439]
+  add_sites: []
   exclude_sites: []
-  site_color_scheme: subdomain
-  color_by_dms: true
-  shade_sites:
-    REGN10933:
-      439: [gray, 0.15]
-      453: [yellow, 0.15]
-    REGN10987:
-      439: [yellow, 0.15]
-      453: [gray, 0.15]
-
-REGN_antibodies_single_nt:
-  conditions:
-    REGN10933_400: REGN10933
-    REGN10987_400: REGN10987
-  plot_auto_identified_sites: default
-  add_sites: [439]
-  exclude_sites: []
-  site_color_scheme: subdomain
-  color_by_dms: true
-  single_nt_only: ./data/Baum_Spike.gb
   draw_line_plot: false
+  site_color_scheme: subdomain
+  color_by_dms: false
+  make_supp_data: false
+  analyze_natural_mutations: false
+  natural_mutations_mincounts: 5
 
-validation_colored_sera:
+7C_validations:
+  conditions:
+    7C_d29_500: 7C_d29
+    7C_d103_200: 7C_d103
+  plot_auto_identified_sites: false
+  add_sites: [456]
+  exclude_sites: []
+  site_color_scheme: gray
+  mutation_colors:
+    A456: red
+    V456: red
+  draw_line_plot: True
+
+1C_validations:
   conditions:
     1C_d26_200: 1C_d26
     1C_d113_200: 1C_d113
-  plot_auto_identified_sites: default
-  add_sites: []
+  plot_auto_identified_sites: false
+  add_sites: [456,484]
   exclude_sites: []
   site_color_scheme: gray
   mutation_colors:
-    P484: red
     K456: red
-  draw_line_plot: false
+    P484: red
+    Q484: red
+  draw_line_plot: True
 
-REGN_single_nt_colorescape:
+23C_validations:
   conditions:
-    REGN10933_400: REGN10933
-    REGN10987_400: REGN10987
-    REGN10933+REGN10987_400: REGN10933 + REGN10987
-  plot_auto_identified_sites: default
-  add_sites: []
+    23C_d26_80: 23C_d26
+    23C_d102_80: 23C_d102
+  plot_auto_identified_sites: false
+  add_sites: [484,446,485]
   exclude_sites: []
   site_color_scheme: gray
   mutation_colors:
-    E417: red
-    F453: red
-    F455: red
-    V486: red
-    K493: red
-    Q444: red
-    A445: red
-  single_nt_only: ./data/Baum_Spike.gb
-  draw_line_plot: false
+    V446: red
+    R485: red
+    Q484: red
+  draw_line_plot: True
+
+24C_validations:
+  conditions:
+    24C_d32_200: 24C_d32
+    24C_d104_200: 24C_d104
+  plot_auto_identified_sites: false
+  add_sites: [456,484]
+  exclude_sites: []
+  site_color_scheme: gray
+  mutation_colors:
+    A456: red
+    K456: red
+    P484: red
+    Q484: red
+  draw_line_plot: True
+
+25_validations:
+  conditions:
+    25_d18_500: 25_d18
+    25_d94_200: 25_d94
+  plot_auto_identified_sites: false
+  add_sites: [446,456,484]
+  exclude_sites: []
+  site_color_scheme: gray
+  mutation_colors:
+    V456: red
+    P484: red
+    V446: red
+  draw_line_plot: True
