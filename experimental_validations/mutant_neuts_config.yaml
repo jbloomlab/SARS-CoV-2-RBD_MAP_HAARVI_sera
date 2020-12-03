@@ -1,0 +1,98 @@
+# Specify configuration of mutant validation plots
+
+published_metadata: data/Crawford_SuppFile2.csv # this is Supplementary File 2 from Crawford et al. (2020)
+
+# path to file containing rbd depletion fold change data
+rbd_depletion_foldchange: neut_results/rbd_depletion_foldchange_ic50.csv
+
+neut_input_files: # make sure it is in this format:
+  data/201019_mutneuts.csv: 201019
+  data/201106_F456K_E484P.csv: 201106
+  data/201116_mutneuts.csv: 201116
+  data/201119_mutneuts.csv: 201119
+
+# enter all the samples and stuff to ignore here - none for now
+neut_samples_ignore: False
+
+# the neutralization limit of detection is equal to the starting dilution
+NT50_LOD: 20
+
+# specify alternate names
+display_names: # here give only the alternate name specified in the CSV file
+  REGN10987_50ug/mL: "rREGN10987 (50ug/mL)"
+  REGN10987_25ug/mL: "rREGN10987 (25ug/mL)"
+  REGN10987_5ug/mL: "rREGN10987 (5ug/mL)"
+  4A8_50ug/mL: "r4A8 (50ug/mL)"
+  12C_d152: 12C_d152
+  12C_d61: 12C_d61
+  13_d121: 13_d121
+  13_d15: 13_d15
+  1C_d113: 1C_d113
+  1C_d26: 1C_d26
+  22C_d104: 22C_d104
+  22C_d28: 22C_d28
+  23C_d102: 23C_d102
+  23C_d26: 23C_d26
+  23_d120: 23_d120
+  23_d21: 23_d21
+  23_d45 (re-depleted): 23_d45
+  24C_d104: 24C_d104
+  24C_d32: 24C_d32
+  24C_d32r: 24C_d32r
+  25C_d115: 25C_d115
+  25C_d48: 25C_d48
+  25_d18: 25_d18
+  25_d94: 25_d94
+  6C_d33: 6C_d33
+  6C_d76: 6C_d76
+  7C_d103: 7C_d103
+  7C_d29: 7C_d29
+  3C_d27: 3C_d27
+  3C_d105: 3C_d105
+  11C_d26: 11C_d26
+  11C_d97: 11C_d97
+  13C_d32: 13C_d32
+  13C_d110: 13C_d110
+  17C_d32: 17C_d32
+  17C_d109: 17C_d109
+  72C_d48: 72C_d48
+  72C_d79: 72C_d79
+  117C_d35: 117C_d35
+  117C_d99: 117C_d99
+  2017-2018 serum pool: pre-pandemic
+  CB6: CB6
+  COV2-2165: COV2-2165
+  COV2-2082: COV2-2082
+  COV2-2832: COV2-2832
+
+antibody_controls:
+  - CB6
+  - COV2-2165
+  - COV2-2082
+  - COV2-2832
+
+serum_samples: # these should be in order (currently the order is the same as the logo plots)
+  - 12C_d152
+  - 12C_d61
+  - 13_d121
+  - 13_d15
+  - 1C_d113
+  - 1C_d26
+  - 22C_d104
+  - 22C_d28
+  - 23C_d102
+  - 23C_d26
+  - 23_d120
+  - 23_d21
+  - 23_d45
+  - 24C_d104
+  - 24C_d32
+  - 24C_d32r
+  - 25C_d115
+  - 25C_d48
+  - 25_d18
+  - 25_d94
+  - 6C_d33
+  - 6C_d76
+  - 7C_d103
+  - 7C_d29
