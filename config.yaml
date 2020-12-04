@@ -90,6 +90,11 @@ strong_escape_sites_calling_params:
     exceed_median: 5  # must exceed median across sites by > this
     frac_max: 0.05  # must be > this much of max escape site
     min_value: 0  # must be > than this
+  sensitive_max_mut:
+    exceed_median: 5  # must exceed median across sites by > this
+    frac_max: 0.05  # must be > this much of max escape site
+    min_value: 0  # must be > than this
+    min_value_mut: 0.5  # keep site if any mutation selection > than this
 
 # Parameters in escape frac output file that enable dms-view
 # visualization on PDB 6m0j:
