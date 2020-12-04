@@ -208,3 +208,71 @@ human_sera_late:  # name of plot
     P484: red
     V446: red
   draw_line_plot: True
+
+human_sera_sensitive:  # name of plot
+  conditions:  # antibodies / sera to show and names to use for them
+    23_d21_1250: 23_d21
+    23_d45_1250: 23_d45
+    23_d120_500: 23_d120
+    1C_d26_200: 1C_d26
+    1C_d113_200: 1C_d113
+    24C_d32_200: 24C_d32
+    24C_d104_200: 24C_d104
+    6C_d33_500: 6C_d33
+    6C_d76_500: 6C_d76
+    22C_d28_200: 22C_d28
+    22C_d104_200: 22C_d104
+    25C_d48_200: 25C_d48
+    25C_d115_80: 25C_d115
+    25_d18_500: 25_d18
+    25_d94_200: 25_d94
+    12C_d61_160: 12C_d61
+    12C_d152_80: 12C_d152
+    23C_d26_80: 23C_d26
+    23C_d102_80: 23C_d102
+    13_d15_200: 13_d15
+    13_d121_1250: 13_d121
+    7C_d29_500: 7C_d29
+    7C_d103_200: 7C_d103
+  plot_auto_identified_sites: sensitive
+  add_sites: []
+  exclude_sites: []
+  site_color_scheme: subdomain
+  color_by_dms: False
+  make_supp_data: false
+  analyze_natural_mutations: true
+  natural_mutations_mincounts: 5
+
+human_sera_sensitive_max_mut:  # name of plot
+  conditions:  # antibodies / sera to show and names to use for them
+    23_d21_1250: 23_d21
+    23_d45_1250: 23_d45
+    23_d120_500: 23_d120
+    1C_d26_200: 1C_d26
+    1C_d113_200: 1C_d113
+    24C_d32_200: 24C_d32
+    24C_d104_200: 24C_d104
+    6C_d33_500: 6C_d33
+    6C_d76_500: 6C_d76
+    22C_d28_200: 22C_d28
+    22C_d104_200: 22C_d104
+    25C_d48_200: 25C_d48
+    25C_d115_80: 25C_d115
+    25_d18_500: 25_d18
+    25_d94_200: 25_d94
+    12C_d61_160: 12C_d61
+    12C_d152_80: 12C_d152
+    23C_d26_80: 23C_d26
+    23C_d102_80: 23C_d102
+    13_d15_200: 13_d15
+    13_d121_1250: 13_d121
+    7C_d29_500: 7C_d29
+    7C_d103_200: 7C_d103
+  plot_auto_identified_sites: sensitive_max_mut
+  add_sites: []
+  exclude_sites: []
+  site_color_scheme: subdomain
+  color_by_dms: False
+  make_supp_data: false
+  analyze_natural_mutations: true
+  natural_mutations_mincounts: 5

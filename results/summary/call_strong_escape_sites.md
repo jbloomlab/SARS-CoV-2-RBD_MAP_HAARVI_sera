@@ -193,9 +193,16 @@ for threshold, params in config['strong_escape_sites_calling_params'].items():
           f"  2. Selection at site is >{frac_max} of the max for any site\n"
           f"  3. Selection at site is >{min_value}")
     
+    if 'min_value_mut' in params:
+        min_value_mut = params['min_value_mut']
+        print(f"Sites are also called as significant if they have **any** mutation with escape fraction > {min_value_mut}")
+    else:
+        min_value_mut = None
+    
     site_threshold_df = site_threshold_df.append(
         escape_fracs
-        [['condition', 'site', site_metric]]
+        .assign(max_mut=lambda x: x.groupby(['condition', 'site'])[mut_metric].transform('max'))
+        [['condition', 'site', site_metric, 'max_mut']]
         .drop_duplicates()
         .assign(
             threshold=threshold,
@@ -207,7 +214,8 @@ for threshold, params in config['strong_escape_sites_calling_params'].items():
             meet_frac_max=lambda x: x[site_metric] > x['frac_max'],
             min_value=lambda x: min_value,
             meet_min_value=lambda x: x[site_metric] > x['min_value'],
-            strong_site=lambda x: x['meet_exceed_median'] & x['meet_frac_max'] & x['meet_min_value'],
+            meet_mut_min_value=lambda x: False if min_value_mut is None else x['max_mut'] > min_value_mut,
+            strong_site=lambda x: (x['meet_exceed_median'] & x['meet_frac_max'] & x['meet_min_value']) | x['meet_mut_min_value'],
             n_strong_sites=lambda x: x.groupby('condition')['strong_site'].transform('sum'),
             )
         )
@@ -234,6 +242,13 @@ site_threshold_df = (
       1. Selection at site exceeds median by >5 fold
       2. Selection at site is >0.05 of the max for any site
       3. Selection at site is >0
+    
+    Calling sites of strong escape for the sensitive_max_mut calling parameters:
+    Here are criteria used to call sites of strong escape for the sensitive_max_mut params:
+      1. Selection at site exceeds median by >5 fold
+      2. Selection at site is >0.05 of the max for any site
+      3. Selection at site is >0
+    Sites are also called as significant if they have **any** mutation with escape fraction > 0.5
 
 
 Now plot the selection for all sites for all conditions, indicating which sites are strong escape and using lines to draw the three thresholds:
@@ -332,6 +347,10 @@ strong_sites.to_csv(config['strong_escape_sites'], index=False)
       <th>sensitive</th>
       <td>71</td>
     </tr>
+    <tr>
+      <th>sensitive_max_mut</th>
+      <td>73</td>
+    </tr>
   </tbody>
 </table>
 
@@ -347,6 +366,7 @@ strong_sites.to_csv(config['strong_escape_sites'], index=False)
       <th>condition</th>
       <th>site</th>
       <th>site_total_escape_frac_epistasis_model</th>
+      <th>max_mut</th>
       <th>threshold</th>
       <th>median</th>
       <th>max</th>
@@ -356,6 +376,7 @@ strong_sites.to_csv(config['strong_escape_sites'], index=False)
       <th>meet_frac_max</th>
       <th>min_value</th>
       <th>meet_min_value</th>
+      <th>meet_mut_min_value</th>
       <th>strong_site</th>
       <th>n_strong_sites</th>
     </tr>
@@ -366,6 +387,7 @@ strong_sites.to_csv(config['strong_escape_sites'], index=False)
       <td>12C_d152_80</td>
       <td>446</td>
       <td>1.051</td>
+      <td>0.1430</td>
       <td>default</td>
       <td>0.1038</td>
       <td>2.998</td>
@@ -375,6 +397,7 @@ strong_sites.to_csv(config['strong_escape_sites'], index=False)
       <td>True</td>
       <td>0</td>
       <td>True</td>
+      <td>False</td>
       <td>True</td>
       <td>11</td>
     </tr>
@@ -383,6 +406,7 @@ strong_sites.to_csv(config['strong_escape_sites'], index=False)
       <td>12C_d152_80</td>
       <td>447</td>
       <td>2.226</td>
+      <td>0.2120</td>
       <td>default</td>
       <td>0.1038</td>
       <td>2.998</td>
@@ -392,6 +416,7 @@ strong_sites.to_csv(config['strong_escape_sites'], index=False)
       <td>True</td>
       <td>0</td>
       <td>True</td>
+      <td>False</td>
       <td>True</td>
       <td>11</td>
     </tr>
@@ -400,6 +425,7 @@ strong_sites.to_csv(config['strong_escape_sites'], index=False)
       <td>12C_d152_80</td>
       <td>448</td>
       <td>2.107</td>
+      <td>0.2296</td>
       <td>default</td>
       <td>0.1038</td>
       <td>2.998</td>
@@ -409,6 +435,7 @@ strong_sites.to_csv(config['strong_escape_sites'], index=False)
       <td>True</td>
       <td>0</td>
       <td>True</td>
+      <td>False</td>
       <td>True</td>
       <td>11</td>
     </tr>
@@ -417,6 +444,7 @@ strong_sites.to_csv(config['strong_escape_sites'], index=False)
       <td>12C_d152_80</td>
       <td>449</td>
       <td>2.872</td>
+      <td>0.2164</td>
       <td>default</td>
       <td>0.1038</td>
       <td>2.998</td>
@@ -426,6 +454,7 @@ strong_sites.to_csv(config['strong_escape_sites'], index=False)
       <td>True</td>
       <td>0</td>
       <td>True</td>
+      <td>False</td>
       <td>True</td>
       <td>11</td>
     </tr>
@@ -434,6 +463,7 @@ strong_sites.to_csv(config['strong_escape_sites'], index=False)
       <td>12C_d152_80</td>
       <td>452</td>
       <td>2.547</td>
+      <td>0.1929</td>
       <td>default</td>
       <td>0.1038</td>
       <td>2.998</td>
@@ -443,6 +473,7 @@ strong_sites.to_csv(config['strong_escape_sites'], index=False)
       <td>True</td>
       <td>0</td>
       <td>True</td>
+      <td>False</td>
       <td>True</td>
       <td>11</td>
     </tr>

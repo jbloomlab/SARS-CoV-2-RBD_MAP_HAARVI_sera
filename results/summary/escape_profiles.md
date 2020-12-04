@@ -619,7 +619,7 @@ with multiprocessing.Pool(ncpus) as pool:
         
 ```
 
-    Drawing 11 profiles using 8 CPUs...
+    Drawing 13 profiles using 8 CPUs...
 
 
     /fh/fast/bloom_j/software/miniconda3/envs/SARS-CoV-2-RBD_MAP/lib/python3.7/site-packages/dmslogo/facet.py:196: UserWarning: Tight layout not applied. The left and right margins cannot be made large enough to accommodate all axes decorations. 
@@ -755,6 +755,30 @@ with multiprocessing.Pool(ncpus) as pool:
 
     
 ![png](escape_profiles_files/escape_profiles_26_23.png)
+    
+
+
+    
+    Plotted profile 12 to:
+     results/escape_profiles/human_sera_sensitive_stackedlogo.pdf
+     results/escape_profiles/human_sera_sensitive_stackedlogo.png.
+
+
+
+    
+![png](escape_profiles_files/escape_profiles_26_25.png)
+    
+
+
+    
+    Plotted profile 13 to:
+     results/escape_profiles/human_sera_sensitive_max_mut_stackedlogo.pdf
+     results/escape_profiles/human_sera_sensitive_max_mut_stackedlogo.png.
+
+
+
+    
+![png](escape_profiles_files/escape_profiles_26_27.png)
     
 
 
