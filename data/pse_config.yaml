@@ -1,0 +1,144 @@
+# config file to make .pse files
+
+# 6xcn is C105 bound to Spike, state 2 (3 up)
+6xcn:
+  antibody: 'C105'
+  selection: '400'
+  trimer: True
+  RBD_chains:
+    - A
+    - C
+    - E
+  heavy_chains:
+    - B
+    - F
+    - H
+  light_chains:
+    - D
+    - G
+    - L
+
+# 6xcm is C105 bound to Spike, 2 up conformation
+6xcm:
+  antibody: 'C105'
+  selection: '400'
+  trimer: True
+  RBD_chains:
+    - A
+    - B
+    - C
+  heavy_chains:
+    - H
+    - "N"
+  light_chains:
+    - L
+    - S
+
+7k90:
+  antibody: 'C144'
+  selection: '400'
+  trimer: True
+  RBD_chains:
+    - A
+    - B
+    - C
+  heavy_chains:
+    - H
+    - M
+    - O
+  light_chains:
+    - L
+    - "N"
+    - P
+
+7k8s: # all down conformation
+  antibody: 'C002'
+  selection: '400'
+  trimer: True
+  RBD_chains:
+    - A
+    - B
+    - C
+  heavy_chains:
+    - H
+    - M
+    - O
+  light_chains:
+    - L
+    - "N"
+    - P
+
+7k8t: # 1 up conformation
+  antibody: 'C002'
+  selection: '400'
+  trimer: True
+  RBD_chains:
+    - A
+    - B
+    - C
+  heavy_chains:
+    - H
+    - M
+    - O
+  light_chains:
+    - L
+    - "N"
+    - P
+
+7k8x: # all down conformation
+  antibody: 'C121'
+  selection: '400'
+  trimer: True
+  RBD_chains:
+    - A
+    - B
+    - C
+  heavy_chains:
+    - D
+    - E
+  light_chains:
+    - F
+    - G
+
+7k8y: # 1 up conformation
+  antibody: 'C121'
+  selection: '400'
+  trimer: True
+  RBD_chains:
+    - B
+    - D
+    - E
+  heavy_chains:
+    - G
+  light_chains:
+    - I
+
+7k8z: # all down conformation
+  antibody: 'C135'
+  selection: '400'
+  trimer: True
+  RBD_chains:
+    - A
+    - B
+    - C
+  heavy_chains:
+    - H
+    - M
+  light_chains:
+    - L
+    - "N"
+
+7k8v: # all down conformation
+  antibody: 'C110'
+  selection: '400'
+  trimer: True
+  RBD_chains:
+    - A
+    - B
+    - C
+  heavy_chains:
+    - H
+    - M
+  light_chains:
+    - L
+    - "N"
