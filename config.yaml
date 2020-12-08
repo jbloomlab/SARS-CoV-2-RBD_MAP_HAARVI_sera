@@ -143,7 +143,7 @@ sarbecovirus_alignment: data/RBDs_aligned.fasta
 escape_selection_results: data/escape_selection_results.yaml
 
 # configs and directories for custom analyses can go here:
-pse_config: ../data/pse_config.yaml
+pse_config_6m0j: ../data/pse_config_6m0j.yaml
 pse_dir: ../results/pymol_commands
 
 # output directories / files
