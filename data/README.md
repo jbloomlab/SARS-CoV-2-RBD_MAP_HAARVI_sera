@@ -40,17 +40,19 @@ This directory contains input data used for the analysis and configuration for s
 
    * "The generation of infectious rVSV/SARS-CoV-2/GFP chimeric viruses
      stocks has been previously described (24). Two plaque purified
-     variants designated rVSV/SARS-CoV-2/GFP1D7 and rVSV/SARS-CoV-2/
-     GFP2E1 that encode F157S/R685M (1D7) and D215G/R683G (2E1)
+     variants designated rVSV/SARS-CoV-2/GFP1D7 and rVSV/SARS-CoV-2/
+     GFP2E1 that encode F157S/R685M (1D7) and D215G/R683G (2E1)
      substitutions were used in these studies."
 
    * "For selection of viruses resistant to plasma or monoclonal
-     antibodies, rVSV/SARS-CoV-2/GFP1D7 and rVSV/SARS-CoV-2/GFP2E1 
-     populations containing 106 infectious particles were incubated with
+     antibodies, rVSV/SARS-CoV-2/GFP1D7 and rVSV/SARS-CoV-2/GFP2E1 
+     populations containing 106 infectious particles were incubated with
      dilutions of monoclonal antibodies (10μg/ml, 5μg/ml) or COVID19
-     plasma (1:50, 1:250, 1:500) for 1h at 37°C. "
+     plasma (1:50, 1:250, 1:500) for 1h at 37°C. "
 
    * Reference 24 is [Schmidt, et al. (2020)](https://rupress.org/jem/article/217/11/e20201181/151961/Measuring-SARS-CoV-2-neutralizing-antibody), which states:
      "To construct a replication competent rVSV/SARS-CoV-2 chimeric virus clone, a codonoptimized cDNA sequence encoding the SARS-CoV-2 spike protein (SinoBiological) but lacking the C-terminal 18 codons was inserted, using Gibson cloning, into a recombinant VSV background that contains GFP immediately upstream of the L (polymerase) following a strategy we previously described for the exchange of VSV-G with HIV-1 Env proteins (Liberatore et al., 2019)"
 
    * None of the 2E1 or 1D7 mutations described are to the sequence of the RBD, so I (Allie Greaney) have copied here the SinoBiological sequence from [here](https://www.sinobiological.com/cdna-clone/2019-ncov-cov-spike-vg40589-ut), called "SARS-CoV-2 (2019-nCoV) Spike ORF mammalian expression plasmid (Codon Optimized)"
+
+- [./pse_config_6m0j.yaml](pse_config_6m0j.yaml): a configuration file to write PyMol commands using the results of `output_pdbs.ipynb` to create a PSE session for certain selections. 

@@ -142,6 +142,10 @@ sarbecovirus_alignment: data/RBDs_aligned.fasta
 # escape selection results
 escape_selection_results: data/escape_selection_results.yaml
 
+# configs and directories for custom analyses can go here:
+pse_config_6m0j: ../data/pse_config_6m0j.yaml
+pse_dir: ../results/pymol_commands
+
 # output directories / files
 summary_dir: results/summary
 codon_variant_table: results/prior_DMS_data/codon_variant_table.csv
