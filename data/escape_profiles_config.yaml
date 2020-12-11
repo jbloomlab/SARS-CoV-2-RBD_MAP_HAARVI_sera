@@ -68,6 +68,10 @@ human_sera:  # name of plot
   # analyze naturally occurring mutations at strong sites of escape
   analyze_natural_mutations: true
   natural_mutations_mincounts: 5  # plot sites with >= this many mutation counts
+  escape_profile_ymax:
+    quantile: 0.5
+    frac: 0.05
+    min_ymax: 1
 
 human_sera_early_lineplot:  # name of plot
   conditions:  # antibodies / sera to show and names to use for them
@@ -91,6 +95,10 @@ human_sera_early_lineplot:  # name of plot
   make_supp_data: false
   analyze_natural_mutations: false
   natural_mutations_mincounts: 5
+  escape_profile_ymax:
+    quantile: 0.5
+    frac: 0.05
+    min_ymax: 1
 
 human_sera_early:  # name of plot
   conditions:  # antibodies / sera to show and names to use for them
@@ -114,6 +122,10 @@ human_sera_early:  # name of plot
   make_supp_data: false
   analyze_natural_mutations: false
   natural_mutations_mincounts: 5
+  escape_profile_ymax:
+    quantile: 0.5
+    frac: 0.05
+    min_ymax: 1
 
 human_sera_late:  # name of plot
   conditions:  # antibodies / sera to show and names to use for them
@@ -138,6 +150,10 @@ human_sera_late:  # name of plot
   make_supp_data: false
   analyze_natural_mutations: false
   natural_mutations_mincounts: 5
+  escape_profile_ymax:
+    quantile: 0.5
+    frac: 0.05
+    min_ymax: 1
 
 7C_validations:
   conditions:
