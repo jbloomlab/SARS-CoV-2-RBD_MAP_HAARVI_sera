@@ -1,10 +1,8 @@
 name: SARS-CoV-2-RBD_MAP
 channels:
-  - bioconda
-  - r
   - conda-forge
+  - bioconda
   - defaults
-  - schrodinger
 dependencies:
   - _libgcc_mutex=0.1=conda_forge
   - _openmp_mutex=4.5=1_gnu
@@ -287,13 +285,13 @@ dependencies:
     - cycler==0.10.0
     - descartes==1.1.0
     - dms-variants==0.8.5
-    - dmslogo==0.5.0
+    - dmslogo==0.5.1
     - kiwisolver==1.2.0
     - logomaker==0.8
     - matplotlib==3.3.2
     - mizani==0.7.1
     - natsort==7.0.1
-    - neutcurve==0.4.2
+    - neutcurve==0.5.2
     - palettable==3.3.0
     - patsy==0.5.1
     - pdb-prot-align==0.5.0
@@ -305,6 +303,7 @@ dependencies:
     - regex==2020.7.14
     - seaborn==0.11.0
     - statsmodels==0.12.0
+    - svgutils==0.3.1
     - xlrd==1.2.0
 prefix: /fh/fast/bloom_j/software/miniconda3/envs/SARS-CoV-2-RBD_MAP
 
