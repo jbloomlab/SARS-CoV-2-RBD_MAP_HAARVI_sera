@@ -434,7 +434,7 @@ def draw_profile(tup):
             share_ylim_across_rows=False,
             draw_line_kwargs=({'height_col': site_metric,
                                'ylabel': 'escape fraction',
-                               'widthscale': 1.3,
+                               'widthscale': 0.8,
                                'show_color': show_color}
                               if draw_line_plot else None
                               ),
