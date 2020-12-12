@@ -44,7 +44,7 @@ print(f"Using `dmslogo` version {dmslogo.__version__}")
 print(f"Using `dms_variants` version {dms_variants.__version__}")
 ```
 
-    Using `dmslogo` version 0.5.0
+    Using `dmslogo` version 0.5.1
     Using `dms_variants` version 0.8.5
 
 
@@ -458,7 +458,7 @@ def draw_profile(tup):
     return pdffile, pngfile
 ```
 
-Now make a list of the input tuples we pass the `draw_profiles` functiion above for everything we want to draw:
+Now make a list of the input tuples we pass the `draw_profiles` function above for everything we want to draw:
 
 
 ```python
@@ -566,15 +566,24 @@ for name, specs in escape_profiles_config.items():
         dmslogo_facet_plot_kwargs = {}
         
     # get y-axis limits, see here: https://jbloomlab.github.io/dmslogo/set_ylims.html
-    if 'escape_profile_ymax' in specs:  # specific y-max set for this condition
+    if 'escape_profile_ymax' in specs:  # specific y-max set for this plot
         escape_profile_ymax_quantile = specs['escape_profile_ymax']['quantile']
         escape_profile_ymax_frac = specs['escape_profile_ymax']['frac']
+        if 'min_ymax' in specs['escape_profile_ymax']:
+            escape_profile_min_ymax = specs['escape_profile_ymax']['min_ymax']
+        else:
+            escape_profile_min_ymax = None
     else:  # use default in config
         escape_profile_ymax_quantile = config['escape_profile_ymax']['quantile']
         escape_profile_ymax_frac = config['escape_profile_ymax']['frac']
+        if 'min_ymax' in config['escape_profile_ymax']:
+            escape_profile_min_ymax = config['escape_profile_ymax']['min_ymax']
+        else:
+            escape_profile_min_ymax = None
     ylim_setter = dmslogo.utils.AxLimSetter(max_from_quantile=(escape_profile_ymax_quantile,
                                                                escape_profile_ymax_frac),
-                                            datalim_pad=0.06)
+                                            datalim_pad=0.06,
+                                            min_upperlim=escape_profile_min_ymax)
     ylims = {}
     for condition, condition_df in df.groupby('condition'):
         ylims[condition] = ylim_setter.get_lims(condition_df
