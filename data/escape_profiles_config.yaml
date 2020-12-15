@@ -176,6 +176,8 @@ human_sera_early_fig2:  # name of plot
     quantile: 0.5
     frac: 0.05
     min_ymax: 1
+  dmslogo_facet_plot_kwargs:
+    height_per_ax: 2.0
 
 human_sera_early:  # name of plot
   conditions:  # antibodies / sera to show and names to use for them
