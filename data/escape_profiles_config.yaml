@@ -150,6 +150,70 @@ human_sera_fig4:  # name of plot
     frac: 0.05
     min_ymax: 1
 
+human_sera_fig4A_1C:  # name of plot
+  conditions:  # antibodies / sera to show and names to use for them
+    1C_d26_200: 1C d26
+    1C_d113_200: 1C d113
+  plot_auto_identified_sites: default
+  # add the sites that are auto-identified for 1C, 24C, 25, and 7C
+  add_sites: [365, 369, 396, 443, 444, 445, 446, 447, 448, 449, 450, 456, 473, 484, 499]
+  exclude_sites: [361]
+  site_color_scheme: subdomain
+  escape_profile_ymax:
+    quantile: 0.5
+    frac: 0.05
+    min_ymax: 1
+  dmslogo_facet_plot_kwargs:
+    height_per_ax: 2.0
+
+human_sera_fig4B_24C:  # name of plot
+  conditions:
+    24C_d32_200: 24C d32
+    24C_d104_200: 24C d104
+  plot_auto_identified_sites: default
+  # add the sites that are auto-identified for 1C, 24C, 25, and 7C
+  add_sites: [365, 369, 396, 443, 444, 445, 446, 447, 448, 449, 450, 456, 473, 484, 499]
+  exclude_sites: [361]
+  site_color_scheme: subdomain
+  escape_profile_ymax:
+    quantile: 0.5
+    frac: 0.05
+    min_ymax: 1
+  dmslogo_facet_plot_kwargs:
+    height_per_ax: 2.0
+
+human_sera_fig4C_25:  # name of plot
+  conditions:
+    25_d18_500: 25 d18
+    25_d94_200: 25 d94
+  plot_auto_identified_sites: default
+  # add the sites that are auto-identified for 1C, 24C, 25, and 7C
+  add_sites: [365, 369, 396, 443, 444, 445, 446, 447, 448, 449, 450, 456, 473, 484, 499]
+  exclude_sites: [361]
+  site_color_scheme: subdomain
+  escape_profile_ymax:
+    quantile: 0.5
+    frac: 0.05
+    min_ymax: 1
+  dmslogo_facet_plot_kwargs:
+    height_per_ax: 2.0
+
+human_sera_fig4D_7C:  # name of plot
+  conditions:
+    7C_d29_500: 7C d29
+    7C_d103_200: 7C d103
+  plot_auto_identified_sites: default
+  # add the sites that are auto-identified for 1C, 24C, 25, and 7C
+  add_sites: [365, 369, 396, 443, 444, 445, 446, 447, 448, 449, 450, 456, 473, 484, 499]
+  exclude_sites: [361]
+  site_color_scheme: subdomain
+  escape_profile_ymax:
+    quantile: 0.5
+    frac: 0.05
+    min_ymax: 1
+  dmslogo_facet_plot_kwargs:
+    height_per_ax: 2.0
+
 human_sera_early_fig2:  # name of plot
   conditions:  # antibodies / sera to show and names to use for them
     23_d21_1250: 23_d21
