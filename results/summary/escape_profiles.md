@@ -419,33 +419,41 @@ def draw_profile(tup):
         - mut_metric: mutation-level metric
         - color: column with logo plot color
         - dmslogo_facet_plot_kwargs: other kwargs
+        - dmslogo_draw_logo_kwargs: any kwargs for draw_logo
+        - dmslogo_draw_line_kwargs: any kwargs for draw_line
         - pdffile: name of created PDF
         - pngfile: name of created PNG
         - svgfile: name of created SVG
         
     Returns 2-tuple `(pdffile, pngfile)`
     """
-    df, site_metric, show_color, draw_line_plot, mut_metric, color, dmslogo_facet_plot_kwargs, pdffile, pngfile, svgfile = tup
+    (df, site_metric, show_color, draw_line_plot, mut_metric, color, dmslogo_facet_plot_kwargs,
+     dmslogo_draw_logo_kwargs, dmslogo_draw_line_kwargs, pdffile, pngfile, svgfile) = tup
     fig, ax = dmslogo.facet_plot(
             data=df,
             x_col='site',
             show_col='to_show',
             gridrow_col='condition',
             share_ylim_across_rows=False,
-            draw_line_kwargs=({'height_col': site_metric,
-                               'ylabel': 'escape fraction',
-                               'widthscale': 0.64,
-                               'show_color': show_color}
+            draw_line_kwargs=(dict({'height_col': site_metric,
+                                    'ylabel': 'escape fraction',
+                                    'widthscale': 1.3,
+                                    'show_color': show_color
+                                    },
+                                   **dmslogo_draw_line_kwargs)
                               if draw_line_plot else None
                               ),
-            draw_logo_kwargs={'letter_height_col': mut_metric,
-                              'letter_col': 'mutation',
-                              'ylabel': 'escape fraction',
-                              'color_col': color,
-                              'xtick_col': 'wt_site',
-                              'xlabel': 'site',
-                              'shade_color_col': 'shade_color' if 'shade_color' in df.columns else None,
-                              'shade_alpha_col': 'shade_alpha' if 'shade_alpha' in df.columns else None},
+            draw_logo_kwargs=dict({'letter_height_col': mut_metric,
+                                   'letter_col': 'mutation',
+                                   'ylabel': 'escape fraction',
+                                   'color_col': color,
+                                   'xtick_col': 'wt_site',
+                                   'xlabel': 'site',
+                                   'shade_color_col': 'shade_color' if 'shade_color' in df.columns else None,
+                                   'shade_alpha_col': 'shade_alpha' if 'shade_alpha' in df.columns else None
+                                   },
+                                  **dmslogo_draw_logo_kwargs,
+                                  ),
             share_xlabel=True,
             share_ylabel=True,
             **dmslogo_facet_plot_kwargs,
@@ -606,7 +614,10 @@ for name, specs in escape_profiles_config.items():
                 df, site_metric, CBPALETTE[-1],
                 'draw_line_plot' not in specs or specs['draw_line_plot'],
                 mut_metric, color, 
-                dmslogo_facet_plot_kwargs, pdffile, pngfile, svgfile
+                dmslogo_facet_plot_kwargs,
+                specs['dmslogo_draw_logo_kwargs'] if 'dmslogo_draw_logo_kwargs' in specs else {},
+                specs['dmslogo_draw_line_kwargs'] if 'dmslogo_draw_line_kwargs' in specs else {},
+                pdffile, pngfile, svgfile
                 ))
 ```
 
