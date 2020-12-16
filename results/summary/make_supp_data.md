@@ -178,7 +178,7 @@ for metric_type, (set_name, condition_set) in itertools.product(['mutation', 'si
     fig = p.draw()
     display(fig)
     plotfile = os.path.join(config['supp_data_dir'],
-                            f"{set_name}-{metric_type}-corr.pdf")
+                            f"{set_name}-{metric_type}-corr.png")
     print(f"Saving plot to {plotfile}")
     p.save(plotfile, verbose=False)
     plt.close(fig)
@@ -194,7 +194,7 @@ for metric_type, (set_name, condition_set) in itertools.product(['mutation', 'si
     
 
 
-    Saving plot to results/supp_data/human_sera-mutation-corr.pdf
+    Saving plot to results/supp_data/human_sera-mutation-corr.png
     
     Plotting correlations of site escape for human_sera
 
@@ -205,7 +205,7 @@ for metric_type, (set_name, condition_set) in itertools.product(['mutation', 'si
     
 
 
-    Saving plot to results/supp_data/human_sera-site-corr.pdf
+    Saving plot to results/supp_data/human_sera-site-corr.png
 
 
 ## Raw data files

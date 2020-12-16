@@ -214,6 +214,26 @@ for name, specs in escape_profiles_config.items():
     
 
 
+    
+    Analyzing homolog escape for human_sera_sensitive, saving plot to results/homologs/human_sera_sensitive_homolog_escape.pdf
+
+
+
+    
+![png](homolog_escape_files/homolog_escape_14_19.png)
+    
+
+
+    
+    Analyzing homolog escape for human_sera_sensitive_max_mut, saving plot to results/homologs/human_sera_sensitive_max_mut_homolog_escape.pdf
+
+
+
+    
+![png](homolog_escape_files/homolog_escape_14_21.png)
+    
+
+
 
 ```python
 

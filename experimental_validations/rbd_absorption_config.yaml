@@ -57,42 +57,41 @@ display_names: # here give only the alternate name specified in the CSV file
   REGN10987_25ug/mL: "rREGN10987 (25ug/mL)"
   REGN10987_5ug/mL: "rREGN10987 (5ug/mL)"
   4A8_50ug/mL: "r4A8 (50ug/mL)"
-  12C_d152: 12C_d152
-  12C_d61: 12C_d61
-  13_d121: 13_d121
-  13_d15: 13_d15
-  1C_d113: 1C_d113
-  1C_d26: 1C_d26
-  22C_d104: 22C_d104
-  22C_d28: 22C_d28
-  23C_d102: 23C_d102
-  23C_d26: 23C_d26
+  24C_d32: 24C_d32
+  24C_d104: 24C_d104
   23_d120: 23_d120
   23_d21: 23_d21
   23_d45 (re-depleted): 23_d45
-  24C_d104: 24C_d104
-  24C_d32: 24C_d32
-  24C_d32r: 24C_d32r
-  25C_d115: 25C_d115
-  25C_d48: 25C_d48
   25_d18: 25_d18
   25_d94: 25_d94
-  6C_d33: 6C_d33
-  6C_d76: 6C_d76
+  22C_d104: 22C_d104
+  22C_d28: 22C_d28
+  13_d121: 13_d121
+  13_d15: 13_d15
   7C_d103: 7C_d103
   7C_d29: 7C_d29
-  3C_d27: 3C_d27
-  3C_d105: 3C_d105
-  11C_d26: 11C_d26
-  11C_d97: 11C_d97
-  13C_d32: 13C_d32
-  13C_d110: 13C_d110
-  17C_d32: 17C_d32
-  17C_d109: 17C_d109
-  72C_d48: 72C_d48
-  72C_d79: 72C_d79
+  1C_d113: 1C_d113
+  1C_d26: 1C_d26
   117C_d35: 117C_d35
   117C_d99: 117C_d99
+  23C_d102: 23C_d102
+  23C_d26: 23C_d26
+  17C_d109: 17C_d109
+  17C_d32: 17C_d32
+  25C_d115: 25C_d115
+  25C_d48: 25C_d48
+  3C_d105: 3C_d105
+  3C_d27: 3C_d27
+  72C_d79: 72C_d79
+  72C_d48: 72C_d48
+  11C_d26: 11C_d26
+  11C_d97: 11C_d97
+  6C_d76: 6C_d76
+  6C_d33: 6C_d33
+  12C_d152: 12C_d152
+  12C_d61: 12C_d61
+  13C_d32: 13C_d32
+  13C_d110: 13C_d110
   2017-2018 serum pool: pre-pandemic
 
 # groups, in order, using alternate names.
@@ -106,67 +105,66 @@ depletion_groups: # here give only the alternate name specified above!
     - "rREGN10987 (5ug/mL)"
     - "r4A8 (50ug/mL)"
   - serum_samples: # these should be in order (currently the order is the same as the logo plots)
-    - 12C_d152
-    - 12C_d61
-    - 13_d121
-    - 13_d15
-    - 1C_d113
-    - 1C_d26
-    - 22C_d104
-    - 22C_d28
-    - 23C_d102
-    - 23C_d26
+    - 24C_d32
+    - 24C_d104
     - 23_d120
     - 23_d21
     - 23_d45
-    - 24C_d104
-    - 24C_d32
-    - 24C_d32r
-    - 25C_d115
-    - 25C_d48
     - 25_d18
     - 25_d94
-    - 6C_d33
-    - 6C_d76
+    - 22C_d104
+    - 22C_d28
+    - 13_d121
+    - 13_d15
     - 7C_d103
     - 7C_d29
-    - 3C_d27
-    - 3C_d105
-    - 11C_d26
-    - 11C_d97
-    - 13C_d32
-    - 13C_d110
-    - 17C_d32
-    - 17C_d109
-    - 72C_d48
-    - 72C_d79
+    - 1C_d113
+    - 1C_d26
     - 117C_d35
     - 117C_d99
+    - 23C_d102
+    - 23C_d26
+    - 17C_d109
+    - 17C_d32
+    - 25C_d115
+    - 25C_d48
+    - 3C_d105
+    - 3C_d27
+    - 72C_d79
+    - 72C_d48
+    - 11C_d26
+    - 11C_d97
+    - 6C_d76
+    - 6C_d33
+    - 12C_d152
+    - 12C_d61
+    - 13C_d32
+    - 13C_d110
     - pre-pandemic
 
 elisa_background_sample: pre-pandemic
 
 mapped_samples: # these should be in order (currently the order is the same as the logo plots)
-    - 12C_d152
-    - 12C_d61
-    - 13_d121
-    - 13_d15
-    - 1C_d113
-    - 1C_d26
-    - 22C_d104
-    - 22C_d28
-    - 23C_d102
-    - 23C_d26
+    - 24C_d32
+    - 24C_d104
     - 23_d120
     - 23_d21
     - 23_d45
-    - 24C_d104
-    - 24C_d32
-    - 25C_d115
-    - 25C_d48
     - 25_d18
     - 25_d94
-    - 6C_d33
-    - 6C_d76
+    - 22C_d104
+    - 22C_d28
+    - 13_d121
+    - 13_d15
     - 7C_d103
     - 7C_d29
+    - 1C_d113
+    - 1C_d26
+    - 23C_d102
+    - 23C_d26
+    - 25C_d115
+    - 25C_d48
+    - 6C_d76
+    - 6C_d33
+    - 12C_d152
+    - 12C_d61
