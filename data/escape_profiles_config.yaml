@@ -72,6 +72,8 @@ human_sera:  # name of plot
     quantile: 0.5
     frac: 0.05
     min_ymax: 1
+  dmslogo_facet_plot_kwargs:
+    height_per_ax: 2.0
 
 human_sera_figS3:  # name of plot
   conditions:  # antibodies / sera to show and names to use for them
@@ -118,6 +120,8 @@ human_sera_figS3:  # name of plot
     quantile: 0.5
     frac: 0.05
     min_ymax: 1
+  dmslogo_facet_plot_kwargs:
+    height_per_ax: 2.0
 
 human_sera_fig4:  # name of plot
   conditions:  # antibodies / sera to show and names to use for them
@@ -202,6 +206,22 @@ human_sera_fig4D_7C:  # name of plot
   conditions:
     7C_d29_500: 7C d29
     7C_d103_200: 7C d103
+  plot_auto_identified_sites: default
+  # add the sites that are auto-identified for 1C, 24C, 25, and 7C
+  add_sites: [365, 369, 396, 443, 444, 445, 446, 447, 448, 449, 450, 456, 473, 484, 499]
+  exclude_sites: [361]
+  site_color_scheme: subdomain
+  escape_profile_ymax:
+    quantile: 0.5
+    frac: 0.05
+    min_ymax: 1
+  dmslogo_facet_plot_kwargs:
+    height_per_ax: 2.0
+
+human_sera_fig4E_25C:  # name of plot
+  conditions:  # antibodies / sera to show and names to use for them
+    25C_d48_200: 25C_d48
+    25C_d115_80: 25C_d115
   plot_auto_identified_sites: default
   # add the sites that are auto-identified for 1C, 24C, 25, and 7C
   add_sites: [365, 369, 396, 443, 444, 445, 446, 447, 448, 449, 450, 456, 473, 484, 499]
