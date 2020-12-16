@@ -136,7 +136,7 @@ homologs_to_keep:
 
 # Input files for analyses from the data subdirectory
 RBD_sites: data/RBD_sites.csv
-gisaid_spikes: data/spikeprot1112.fasta.xz
+gisaid_spikes: data/spikeprot1215.fasta.tar.xz
 sarbecovirus_alignment: data/RBDs_aligned.fasta
 
 # escape selection results

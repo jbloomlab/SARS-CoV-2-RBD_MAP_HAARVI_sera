@@ -135,7 +135,7 @@ for name, specs in escape_profiles_config.items():
 
 
     
-    Analyzing homolog escape for human_sera_early_lineplot, saving plot to results/homologs/human_sera_early_lineplot_homolog_escape.pdf
+    Analyzing homolog escape for human_sera_figS3, saving plot to results/homologs/human_sera_figS3_homolog_escape.pdf
 
 
 
@@ -145,7 +145,7 @@ for name, specs in escape_profiles_config.items():
 
 
     
-    Analyzing homolog escape for human_sera_early, saving plot to results/homologs/human_sera_early_homolog_escape.pdf
+    Analyzing homolog escape for human_sera_fig4, saving plot to results/homologs/human_sera_fig4_homolog_escape.pdf
 
 
 
@@ -155,7 +155,7 @@ for name, specs in escape_profiles_config.items():
 
 
     
-    Analyzing homolog escape for human_sera_late, saving plot to results/homologs/human_sera_late_homolog_escape.pdf
+    Analyzing homolog escape for human_sera_fig4A_1C, saving plot to results/homologs/human_sera_fig4A_1C_homolog_escape.pdf
 
 
 
@@ -165,7 +165,7 @@ for name, specs in escape_profiles_config.items():
 
 
     
-    Analyzing homolog escape for 7C_validations, saving plot to results/homologs/7C_validations_homolog_escape.pdf
+    Analyzing homolog escape for human_sera_fig4B_24C, saving plot to results/homologs/human_sera_fig4B_24C_homolog_escape.pdf
 
 
 
@@ -175,7 +175,7 @@ for name, specs in escape_profiles_config.items():
 
 
     
-    Analyzing homolog escape for 1C_validations, saving plot to results/homologs/1C_validations_homolog_escape.pdf
+    Analyzing homolog escape for human_sera_fig4C_25, saving plot to results/homologs/human_sera_fig4C_25_homolog_escape.pdf
 
 
 
@@ -185,7 +185,7 @@ for name, specs in escape_profiles_config.items():
 
 
     
-    Analyzing homolog escape for 23C_validations, saving plot to results/homologs/23C_validations_homolog_escape.pdf
+    Analyzing homolog escape for human_sera_fig4D_7C, saving plot to results/homologs/human_sera_fig4D_7C_homolog_escape.pdf
 
 
 
@@ -195,7 +195,7 @@ for name, specs in escape_profiles_config.items():
 
 
     
-    Analyzing homolog escape for 24C_validations, saving plot to results/homologs/24C_validations_homolog_escape.pdf
+    Analyzing homolog escape for human_sera_fig4E_25C, saving plot to results/homologs/human_sera_fig4E_25C_homolog_escape.pdf
 
 
 
@@ -205,7 +205,7 @@ for name, specs in escape_profiles_config.items():
 
 
     
-    Analyzing homolog escape for 25_validations, saving plot to results/homologs/25_validations_homolog_escape.pdf
+    Analyzing homolog escape for human_sera_early_fig2, saving plot to results/homologs/human_sera_early_fig2_homolog_escape.pdf
 
 
 
@@ -215,7 +215,7 @@ for name, specs in escape_profiles_config.items():
 
 
     
-    Analyzing homolog escape for human_sera_sensitive, saving plot to results/homologs/human_sera_sensitive_homolog_escape.pdf
+    Analyzing homolog escape for human_sera_early, saving plot to results/homologs/human_sera_early_homolog_escape.pdf
 
 
 
@@ -225,12 +225,52 @@ for name, specs in escape_profiles_config.items():
 
 
     
-    Analyzing homolog escape for human_sera_sensitive_max_mut, saving plot to results/homologs/human_sera_sensitive_max_mut_homolog_escape.pdf
+    Analyzing homolog escape for 7C_validations, saving plot to results/homologs/7C_validations_homolog_escape.pdf
 
 
 
     
 ![png](homolog_escape_files/homolog_escape_14_21.png)
+    
+
+
+    
+    Analyzing homolog escape for 1C_validations, saving plot to results/homologs/1C_validations_homolog_escape.pdf
+
+
+
+    
+![png](homolog_escape_files/homolog_escape_14_23.png)
+    
+
+
+    
+    Analyzing homolog escape for 23C_validations, saving plot to results/homologs/23C_validations_homolog_escape.pdf
+
+
+
+    
+![png](homolog_escape_files/homolog_escape_14_25.png)
+    
+
+
+    
+    Analyzing homolog escape for 24C_validations, saving plot to results/homologs/24C_validations_homolog_escape.pdf
+
+
+
+    
+![png](homolog_escape_files/homolog_escape_14_27.png)
+    
+
+
+    
+    Analyzing homolog escape for 25_validations, saving plot to results/homologs/25_validations_homolog_escape.pdf
+
+
+
+    
+![png](homolog_escape_files/homolog_escape_14_29.png)
     
 
 
