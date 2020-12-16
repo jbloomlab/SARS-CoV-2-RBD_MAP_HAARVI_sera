@@ -44,7 +44,7 @@ print(f"Using `dmslogo` version {dmslogo.__version__}")
 print(f"Using `dms_variants` version {dms_variants.__version__}")
 ```
 
-    Using `dmslogo` version 0.5.0
+    Using `dmslogo` version 0.5.1
     Using `dms_variants` version 0.8.5
 
 
@@ -434,7 +434,7 @@ def draw_profile(tup):
             share_ylim_across_rows=False,
             draw_line_kwargs=({'height_col': site_metric,
                                'ylabel': 'escape fraction',
-                               'widthscale': 1.3,
+                               'widthscale': 0.64,
                                'show_color': show_color}
                               if draw_line_plot else None
                               ),
@@ -458,7 +458,7 @@ def draw_profile(tup):
     return pdffile, pngfile
 ```
 
-Now make a list of the input tuples we pass the `draw_profiles` functiion above for everything we want to draw:
+Now make a list of the input tuples we pass the `draw_profiles` function above for everything we want to draw:
 
 
 ```python
@@ -566,15 +566,24 @@ for name, specs in escape_profiles_config.items():
         dmslogo_facet_plot_kwargs = {}
         
     # get y-axis limits, see here: https://jbloomlab.github.io/dmslogo/set_ylims.html
-    if 'escape_profile_ymax' in specs:  # specific y-max set for this condition
+    if 'escape_profile_ymax' in specs:  # specific y-max set for this plot
         escape_profile_ymax_quantile = specs['escape_profile_ymax']['quantile']
         escape_profile_ymax_frac = specs['escape_profile_ymax']['frac']
+        if 'min_ymax' in specs['escape_profile_ymax']:
+            escape_profile_min_ymax = specs['escape_profile_ymax']['min_ymax']
+        else:
+            escape_profile_min_ymax = None
     else:  # use default in config
         escape_profile_ymax_quantile = config['escape_profile_ymax']['quantile']
         escape_profile_ymax_frac = config['escape_profile_ymax']['frac']
+        if 'min_ymax' in config['escape_profile_ymax']:
+            escape_profile_min_ymax = config['escape_profile_ymax']['min_ymax']
+        else:
+            escape_profile_min_ymax = None
     ylim_setter = dmslogo.utils.AxLimSetter(max_from_quantile=(escape_profile_ymax_quantile,
                                                                escape_profile_ymax_frac),
-                                            datalim_pad=0.06)
+                                            datalim_pad=0.06,
+                                            min_upperlim=escape_profile_min_ymax)
     ylims = {}
     for condition, condition_df in df.groupby('condition'):
         ylims[condition] = ylim_setter.get_lims(condition_df
@@ -619,7 +628,7 @@ with multiprocessing.Pool(ncpus) as pool:
         
 ```
 
-    Drawing 13 profiles using 8 CPUs...
+    Drawing 21 profiles using 8 CPUs...
 
 
     /fh/fast/bloom_j/software/miniconda3/envs/SARS-CoV-2-RBD_MAP/lib/python3.7/site-packages/dmslogo/facet.py:196: UserWarning: Tight layout not applied. The left and right margins cannot be made large enough to accommodate all axes decorations. 
@@ -664,8 +673,8 @@ with multiprocessing.Pool(ncpus) as pool:
 
     
     Plotted profile 4 to:
-     results/escape_profiles/human_sera_early_lineplot_stackedlogo.pdf
-     results/escape_profiles/human_sera_early_lineplot_stackedlogo.png.
+     results/escape_profiles/human_sera_figS3_stackedlogo.pdf
+     results/escape_profiles/human_sera_figS3_stackedlogo.png.
 
 
 
@@ -676,8 +685,8 @@ with multiprocessing.Pool(ncpus) as pool:
 
     
     Plotted profile 5 to:
-     results/escape_profiles/human_sera_early_stackedlogo.pdf
-     results/escape_profiles/human_sera_early_stackedlogo.png.
+     results/escape_profiles/human_sera_figS3_color_by_bind_stackedlogo.pdf
+     results/escape_profiles/human_sera_figS3_color_by_bind_stackedlogo.png.
 
 
 
@@ -688,8 +697,8 @@ with multiprocessing.Pool(ncpus) as pool:
 
     
     Plotted profile 6 to:
-     results/escape_profiles/human_sera_late_stackedlogo.pdf
-     results/escape_profiles/human_sera_late_stackedlogo.png.
+     results/escape_profiles/human_sera_figS3_color_by_expr_stackedlogo.pdf
+     results/escape_profiles/human_sera_figS3_color_by_expr_stackedlogo.png.
 
 
 
@@ -700,8 +709,8 @@ with multiprocessing.Pool(ncpus) as pool:
 
     
     Plotted profile 7 to:
-     results/escape_profiles/7C_validations_stackedlogo.pdf
-     results/escape_profiles/7C_validations_stackedlogo.png.
+     results/escape_profiles/human_sera_fig4_stackedlogo.pdf
+     results/escape_profiles/human_sera_fig4_stackedlogo.png.
 
 
 
@@ -712,8 +721,8 @@ with multiprocessing.Pool(ncpus) as pool:
 
     
     Plotted profile 8 to:
-     results/escape_profiles/1C_validations_stackedlogo.pdf
-     results/escape_profiles/1C_validations_stackedlogo.png.
+     results/escape_profiles/human_sera_fig4_color_by_bind_stackedlogo.pdf
+     results/escape_profiles/human_sera_fig4_color_by_bind_stackedlogo.png.
 
 
 
@@ -724,8 +733,8 @@ with multiprocessing.Pool(ncpus) as pool:
 
     
     Plotted profile 9 to:
-     results/escape_profiles/23C_validations_stackedlogo.pdf
-     results/escape_profiles/23C_validations_stackedlogo.png.
+     results/escape_profiles/human_sera_fig4_color_by_expr_stackedlogo.pdf
+     results/escape_profiles/human_sera_fig4_color_by_expr_stackedlogo.png.
 
 
 
@@ -736,8 +745,8 @@ with multiprocessing.Pool(ncpus) as pool:
 
     
     Plotted profile 10 to:
-     results/escape_profiles/24C_validations_stackedlogo.pdf
-     results/escape_profiles/24C_validations_stackedlogo.png.
+     results/escape_profiles/human_sera_fig4A_1C_stackedlogo.pdf
+     results/escape_profiles/human_sera_fig4A_1C_stackedlogo.png.
 
 
 
@@ -748,8 +757,8 @@ with multiprocessing.Pool(ncpus) as pool:
 
     
     Plotted profile 11 to:
-     results/escape_profiles/25_validations_stackedlogo.pdf
-     results/escape_profiles/25_validations_stackedlogo.png.
+     results/escape_profiles/human_sera_fig4B_24C_stackedlogo.pdf
+     results/escape_profiles/human_sera_fig4B_24C_stackedlogo.png.
 
 
 
@@ -760,8 +769,8 @@ with multiprocessing.Pool(ncpus) as pool:
 
     
     Plotted profile 12 to:
-     results/escape_profiles/human_sera_sensitive_stackedlogo.pdf
-     results/escape_profiles/human_sera_sensitive_stackedlogo.png.
+     results/escape_profiles/human_sera_fig4C_25_stackedlogo.pdf
+     results/escape_profiles/human_sera_fig4C_25_stackedlogo.png.
 
 
 
@@ -772,13 +781,109 @@ with multiprocessing.Pool(ncpus) as pool:
 
     
     Plotted profile 13 to:
-     results/escape_profiles/human_sera_sensitive_max_mut_stackedlogo.pdf
-     results/escape_profiles/human_sera_sensitive_max_mut_stackedlogo.png.
+     results/escape_profiles/human_sera_fig4D_7C_stackedlogo.pdf
+     results/escape_profiles/human_sera_fig4D_7C_stackedlogo.png.
 
 
 
     
 ![png](escape_profiles_files/escape_profiles_26_27.png)
+    
+
+
+    
+    Plotted profile 14 to:
+     results/escape_profiles/human_sera_fig4E_25C_stackedlogo.pdf
+     results/escape_profiles/human_sera_fig4E_25C_stackedlogo.png.
+
+
+
+    
+![png](escape_profiles_files/escape_profiles_26_29.png)
+    
+
+
+    
+    Plotted profile 15 to:
+     results/escape_profiles/human_sera_early_fig2_stackedlogo.pdf
+     results/escape_profiles/human_sera_early_fig2_stackedlogo.png.
+
+
+
+    
+![png](escape_profiles_files/escape_profiles_26_31.png)
+    
+
+
+    
+    Plotted profile 16 to:
+     results/escape_profiles/human_sera_early_stackedlogo.pdf
+     results/escape_profiles/human_sera_early_stackedlogo.png.
+
+
+
+    
+![png](escape_profiles_files/escape_profiles_26_33.png)
+    
+
+
+    
+    Plotted profile 17 to:
+     results/escape_profiles/7C_validations_stackedlogo.pdf
+     results/escape_profiles/7C_validations_stackedlogo.png.
+
+
+
+    
+![png](escape_profiles_files/escape_profiles_26_35.png)
+    
+
+
+    
+    Plotted profile 18 to:
+     results/escape_profiles/1C_validations_stackedlogo.pdf
+     results/escape_profiles/1C_validations_stackedlogo.png.
+
+
+
+    
+![png](escape_profiles_files/escape_profiles_26_37.png)
+    
+
+
+    
+    Plotted profile 19 to:
+     results/escape_profiles/23C_validations_stackedlogo.pdf
+     results/escape_profiles/23C_validations_stackedlogo.png.
+
+
+
+    
+![png](escape_profiles_files/escape_profiles_26_39.png)
+    
+
+
+    
+    Plotted profile 20 to:
+     results/escape_profiles/24C_validations_stackedlogo.pdf
+     results/escape_profiles/24C_validations_stackedlogo.png.
+
+
+
+    
+![png](escape_profiles_files/escape_profiles_26_41.png)
+    
+
+
+    
+    Plotted profile 21 to:
+     results/escape_profiles/25_validations_stackedlogo.pdf
+     results/escape_profiles/25_validations_stackedlogo.png.
+
+
+
+    
+![png](escape_profiles_files/escape_profiles_26_43.png)
     
 
 
