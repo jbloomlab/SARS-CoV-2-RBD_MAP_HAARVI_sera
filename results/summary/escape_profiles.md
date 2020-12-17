@@ -592,15 +592,35 @@ for name, specs in escape_profiles_config.items():
                                                                escape_profile_ymax_frac),
                                             datalim_pad=0.06,
                                             min_upperlim=escape_profile_min_ymax)
+    ylim_setter_nopad = dmslogo.utils.AxLimSetter(max_from_quantile=(escape_profile_ymax_quantile,
+                                                                     escape_profile_ymax_frac),
+                                                  datalim_pad=0,
+                                                  min_upperlim=escape_profile_min_ymax)
     ylims = {}
+    ylims_nopad = {}  # unpadded are written to file giving min / max of logos
     for condition, condition_df in df.groupby('condition'):
         ylims[condition] = ylim_setter.get_lims(condition_df
                                                 [['site', site_metric]]
                                                 .drop_duplicates()
                                                 [site_metric]
                                                 )
+        ylims_nopad[condition] = ylim_setter_nopad.get_lims(condition_df
+                                                            [['site', site_metric]]
+                                                            .drop_duplicates()
+                                                            [site_metric]
+                                                            )
     if 'set_ylims' not in dmslogo_facet_plot_kwargs:  # do not overwrite manual y-limits
         dmslogo_facet_plot_kwargs['set_ylims'] = ylims
+    else:
+        ylims_nopad = dmslogo_facet_plot_kwags['set_ylims']
+        
+    # write the ylimits
+    ylims_csv = os.path.join(config['escape_profiles_dir'], f"{name}_stackedlogo_ylims.csv")
+    (
+     pd.DataFrame.from_dict(ylims_nopad, orient='index', columns=['minimum', 'maximum'])
+     .rename_axis('condition')
+     .to_csv(ylims_csv, float_format='%.3f')
+     )
         
     # draw plot for each color scheme
     colors_plotfiles = [(color_col, os.path.join(config['escape_profiles_dir'], f"{name}_stackedlogo.pdf"))]
