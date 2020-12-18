@@ -310,73 +310,209 @@ human_sera_early:  # name of plot
     frac: 0.05
     min_ymax: 1
 
-
-7C_validations:
+13_validations:
   conditions:
-    7C_d29_500: 7C_d29
-    7C_d103_200: 7C_d103
+    13_d15_200: 13 d15
+    13_d121_1250: 13 d121
   plot_auto_identified_sites: false
-  add_sites: [456]
+  add_sites: [384,446,456,484,485,494]
   exclude_sites: []
   site_color_scheme: gray
   mutation_colors:
-    A456: red
-    V456: red
-  draw_line_plot: True
+    L384: '#D55E00'
+    P484: '#D55E00'
+  escape_profile_ymax:
+    quantile: 0.5
+    frac: 0.05
+    min_ymax: 1
+  draw_line_plot: false
 
 1C_validations:
   conditions:
-    1C_d26_200: 1C_d26
-    1C_d113_200: 1C_d113
+    1C_d26_200: 1C d26
+    1C_d113_200: 1C d113
   plot_auto_identified_sites: false
-  add_sites: [456,484]
+  add_sites: [384,446,456,484,485,494]
   exclude_sites: []
   site_color_scheme: gray
   mutation_colors:
-    K456: red
-    P484: red
-    Q484: red
-  draw_line_plot: True
+    K456: '#D55E00'
+    P484: '#D55E00'
+    Q484: '#D55E00'
+  escape_profile_ymax:
+    quantile: 0.5
+    frac: 0.05
+    min_ymax: 1
+  draw_line_plot: false
+
+22C_validations:
+  conditions:
+    22C_d28_200: 22C d28
+    22C_d104_200: 22C d104
+  plot_auto_identified_sites: false
+  add_sites: [384,446,456,484,485,494]
+  exclude_sites: []
+  site_color_scheme: gray
+  mutation_colors:
+    P494: '#D55E00'
+    P484: '#D55E00'
+  escape_profile_ymax:
+    quantile: 0.5
+    frac: 0.05
+    min_ymax: 1
+  draw_line_plot: false
+
+23_validations:
+  conditions:
+    23_d21_1250: 23 d21
+    23_d120_500: 23 d120
+  plot_auto_identified_sites: false
+  add_sites: [384,446,456,484,485,494]
+  exclude_sites: []
+  site_color_scheme: gray
+  mutation_colors:
+    L384: '#D55E00'
+    P484: '#D55E00'
+  escape_profile_ymax:
+    quantile: 0.5
+    frac: 0.05
+    min_ymax: 1
+  draw_line_plot: false
 
 23C_validations:
   conditions:
-    23C_d26_80: 23C_d26
-    23C_d102_80: 23C_d102
+    23C_d26_80: 23C d26
+    23C_d102_80: 23C d102
   plot_auto_identified_sites: false
-  add_sites: [484,446,485]
+  add_sites: [384,446,456,484,485,494]
   exclude_sites: []
   site_color_scheme: gray
   mutation_colors:
-    V446: red
-    R485: red
-    Q484: red
-  draw_line_plot: True
+    V446: '#D55E00'
+    R485: '#D55E00'
+    Q484: '#D55E00'
+    P494: '#D55E00'
+  escape_profile_ymax:
+    quantile: 0.5
+    frac: 0.05
+    min_ymax: 1
+  draw_line_plot: false
 
 24C_validations:
   conditions:
-    24C_d32_200: 24C_d32
-    24C_d104_200: 24C_d104
+    24C_d32_200: 24C d32
+    24C_d104_200: 24C d104
   plot_auto_identified_sites: false
-  add_sites: [456,484]
+  add_sites: [384,446,456,484,485,494]
   exclude_sites: []
   site_color_scheme: gray
   mutation_colors:
-    A456: red
-    K456: red
-    P484: red
-    Q484: red
-  draw_line_plot: True
+    A456: '#D55E00'
+    K456: '#D55E00'
+    P484: '#D55E00'
+    Q484: '#D55E00'
+  escape_profile_ymax:
+    quantile: 0.5
+    frac: 0.05
+    min_ymax: 1
+  draw_line_plot: false
 
 25_validations:
   conditions:
-    25_d18_500: 25_d18
-    25_d94_200: 25_d94
+    25_d18_500: 25 d18
+    25_d94_200: 25 d94
   plot_auto_identified_sites: false
-  add_sites: [446,456,484]
+  add_sites: [384,446,456,484,485,494]
   exclude_sites: []
   site_color_scheme: gray
   mutation_colors:
-    V456: red
-    P484: red
-    V446: red
-  draw_line_plot: True
+    V456: '#D55E00'
+    P484: '#D55E00'
+    V446: '#D55E00'
+  escape_profile_ymax:
+    quantile: 0.5
+    frac: 0.05
+    min_ymax: 1
+  draw_line_plot: false
+
+7C_validations:
+  conditions:
+    7C_d29_500: 7C d29
+    7C_d103_200: 7C d103
+  plot_auto_identified_sites: false
+  add_sites: [384,446,456,484,485,494]
+  exclude_sites: []
+  site_color_scheme: gray
+  mutation_colors:
+    A456: '#D55E00'
+    V456: '#D55E00'
+    P484: '#D55E00'
+  escape_profile_ymax:
+    quantile: 0.5
+    frac: 0.05
+    min_ymax: 1
+  draw_line_plot: false
+
+2165_validation:
+  conditions:
+    COV2-2165_400: COV2-2165
+  plot_auto_identified_sites: false
+  add_sites: [420,456]
+  exclude_sites: []
+  site_color_scheme: gray
+  mutation_colors:
+    A456: '#D55E00'
+    K456: '#D55E00'
+  escape_profile_ymax:
+    quantile: 0.5
+    frac: 0.05
+    min_ymax: 1
+  draw_line_plot: false
+
+CB6_validation:
+  conditions:
+    CB6_400: CB6
+  plot_auto_identified_sites: false
+  add_sites: [417,456]
+  exclude_sites: []
+  site_color_scheme: gray
+  mutation_colors:
+    A456: '#D55E00'
+    K456: '#D55E00'
+  escape_profile_ymax:
+    quantile: 0.5
+    frac: 0.05
+    min_ymax: 1
+  draw_line_plot: false
+
+2082_validation:
+  conditions:
+    COV2-2082_400: COV2-2082
+  plot_auto_identified_sites: false
+  add_sites: [378,456]
+  exclude_sites: []
+  site_color_scheme: gray
+  mutation_colors:
+    A456: '#D55E00'
+    K456: '#D55E00'
+  escape_profile_ymax:
+    quantile: 0.5
+    frac: 0.05
+    min_ymax: 1
+  draw_line_plot: false
+
+2832_validation:
+  conditions:
+    COV2-2832_400: COV2-2832
+  plot_auto_identified_sites: false
+  add_sites: [486,456]
+  exclude_sites: []
+  site_color_scheme: gray
+  mutation_colors:
+    A456: '#D55E00'
+    K456: '#D55E00'
+  escape_profile_ymax:
+    quantile: 0.5
+    frac: 0.05
+    min_ymax: 1
+  draw_line_plot: false
