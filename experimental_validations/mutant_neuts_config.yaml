@@ -10,6 +10,7 @@ neut_input_files: # make sure it is in this format:
   data/201106_F456K_E484P.csv: 201106
   data/201116_mutneuts.csv: 201116
   data/201119_mutneuts.csv: 201119
+  data/201211_mutneuts_torepeat.csv: 201211
 
 # enter all the samples and stuff to ignore here - none for now
 neut_samples_ignore: False
