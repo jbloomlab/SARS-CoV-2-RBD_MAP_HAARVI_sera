@@ -25,54 +25,6 @@
 #   default_label_color -> like `default_circle_color` but for text labels.
 #   label_colors -> like `circl_colors` but for text labels.
 
-human_sera:  # name of plot
-  conditions:  # antibodies / sera to show and names to use for them
-    23_d21_1250: 23_d21
-    23_d45_1250: 23_d45
-    23_d120_500: 23_d120
-    1C_d26_200: 1C_d26
-    1C_d113_200: 1C_d113
-    24C_d32_200: 24C_d32
-    24C_d104_200: 24C_d104
-    6C_d33_500: 6C_d33
-    6C_d76_500: 6C_d76
-    22C_d28_200: 22C_d28
-    22C_d104_200: 22C_d104
-    25C_d48_200: 25C_d48
-    25C_d115_80: 25C_d115
-    25_d18_500: 25_d18
-    25_d94_200: 25_d94
-    12C_d61_160: 12C_d61
-    12C_d152_80: 12C_d152
-    23C_d26_80: 23C_d26
-    23C_d102_80: 23C_d102
-    13_d15_200: 13_d15
-    13_d121_1250: 13_d121
-    7C_d29_500: 7C_d29
-    7C_d103_200: 7C_d103
-  color_scheme: subdomain
-  plot_size: 6
-  random_state: 3
-  pie_alpha: 0.5
-
-human_sera_early:  # name of plot
-  conditions:  # antibodies / sera to show and names to use for them
-    23_d21_1250: 23_d21
-    1C_d26_200: 1C_d26
-    24C_d32_200: 24C_d32
-    6C_d33_500: 6C_d33
-    22C_d28_200: 22C_d28
-    25C_d48_200: 25C_d48
-    25_d18_500: 25_d18
-    12C_d61_160: 12C_d61
-    23C_d26_80: 23C_d26
-    13_d15_200: 13_d15
-    7C_d29_500: 7C_d29
-  color_scheme: subdomain
-  plot_size: 6
-  random_state: 3
-  pie_alpha: 0.5
-
 all_sera_antibodies:
   conditions:
     CR3022_400: rCR3022
@@ -88,133 +40,133 @@ all_sera_antibodies:
     CB6_400: CB6
     REGN10933_400: REGN10933
     REGN10987_400: REGN10987
-    23_d21_1250: 23_d21
-    23_d45_1250: 23_d45
-    23_d120_500: 23_d120
-    1C_d26_200: 1C_d26
-    1C_d113_200: 1C_d113
-    24C_d32_200: 24C_d32
-    24C_d104_200: 24C_d104
-    6C_d33_500: 6C_d33
-    6C_d76_500: 6C_d76
-    22C_d28_200: 22C_d28
-    22C_d104_200: 22C_d104
-    25C_d48_200: 25C_d48
-    25C_d115_80: 25C_d115
-    25_d18_500: 25_d18
-    25_d94_200: 25_d94
-    12C_d61_160: 12C_d61
-    12C_d152_80: 12C_d152
-    23C_d26_80: 23C_d26
-    23C_d102_80: 23C_d102
-    13_d15_200: 13_d15
-    13_d121_1250: 13_d121
-    7C_d29_500: 7C_d29
-    7C_d103_200: 7C_d103
+    23_d21_1250: A (day21)
+    23_d45_1250: A (day45)
+    23_d120_500: A (day120)
+    1C_d26_200: B (day26)
+    1C_d113_200: B (day113)
+    24C_d32_200: C (day32)
+    24C_d104_200: C (day104)
+    6C_d33_500: D (day33)
+    6C_d76_500: D (day76)
+    22C_d28_200: E (day28)
+    22C_d104_200: E (day104)
+    25C_d48_200: F (day48)
+    25C_d115_80: F (day115)
+    25_d18_500: G (day18)
+    25_d94_200: G (day94)
+    12C_d61_160: H (day61)
+    12C_d152_80: H (day152)
+    23C_d26_80: I (day26)
+    23C_d102_80: I (day102)
+    13_d15_200: J (day15)
+    13_d121_1250: J (day121)
+    7C_d29_500: K (day29)
+    7C_d103_200: K (day103)
   color_scheme: subdomain
   plot_size: 6
   random_state: 3
   pie_alpha: 0.5
   default_circle_color: gray
   circle_colors:
-    23_d21: red
-    23_d45: blue
-    23_d120: blue
-    1C_d26: red
-    1C_d113: blue
-    24C_d32: red
-    24C_d104: blue
-    6C_d33: red
-    6C_d76: blue
-    22C_d28: red
-    22C_d104: blue
-    25C_d48: red
-    25C_d115: blue
-    25_d18: red
-    25_d94: blue
-    12C_d61: red
-    12C_d152: blue
-    23C_d26: red
-    23C_d102: blue
-    13_d15: red
-    13_d121: blue
-    7C_d29: red
-    7C_d103: blue
+    A (day21): '#882255'
+    A (day45): '#882255'
+    A (day120): '#882255'
+    B (day26): '#882255'
+    B (day113): '#882255'
+    C (day32): '#882255'
+    C (day104): '#882255'
+    D (day33): '#882255'
+    D (day76): '#882255'
+    E (day28): '#882255'
+    E (day104): '#882255'
+    F (day48): '#882255'
+    F (day115): '#882255'
+    G (day18): '#882255'
+    G (day94): '#882255'
+    H (day61): '#882255'
+    H (day152): '#882255'
+    I (day26): '#882255'
+    I (day102): '#882255'
+    J (day15): '#882255'
+    J (day121): '#882255'
+    K (day29): '#882255'
+    K (day103): '#882255'
   default_label_color: gray
   label_colors:
-    23_d21: red
-    23_d45: blue
-    23_d120: blue
-    1C_d26: red
-    1C_d113: blue
-    24C_d32: red
-    24C_d104: blue
-    6C_d33: red
-    6C_d76: blue
-    22C_d28: red
-    22C_d104: blue
-    25C_d48: red
-    25C_d115: blue
-    25_d18: red
-    25_d94: blue
-    12C_d61: red
-    12C_d152: blue
-    23C_d26: red
-    23C_d102: blue
-    13_d15: red
-    13_d121: blue
-    7C_d29: red
-    7C_d103: blue
+    A (day21): '#882255'
+    A (day45): '#882255'
+    A (day120): '#882255'
+    B (day26): '#882255'
+    B (day113): '#882255'
+    C (day32): '#882255'
+    C (day104): '#882255'
+    D (day33): '#882255'
+    D (day76): '#882255'
+    E (day28): '#882255'
+    E (day104): '#882255'
+    F (day48): '#882255'
+    F (day115): '#882255'
+    G (day18): '#882255'
+    G (day94): '#882255'
+    H (day61): '#882255'
+    H (day152): '#882255'
+    I (day26): '#882255'
+    I (day102): '#882255'
+    J (day15): '#882255'
+    J (day121): '#882255'
+    K (day29): '#882255'
+    K (day103): '#882255'
 
 human_sera_Fig4F:  # name of plot
   conditions:  # antibodies / sera to show and names to use for them
-    23_d21_1250: 23_d21
-    23_d45_1250: 23_d45
-    23_d120_500: 23_d120
-    1C_d26_200: 1C_d26
-    1C_d113_200: 1C_d113
-    24C_d32_200: 24C_d32
-    24C_d104_200: 24C_d104
-    6C_d33_500: 6C_d33
-    6C_d76_500: 6C_d76
-    22C_d28_200: 22C_d28
-    22C_d104_200: 22C_d104
-    25C_d48_200: 25C_d48
-    25C_d115_80: 25C_d115
-    25_d18_500: 25_d18
-    25_d94_200: 25_d94
-    12C_d61_160: 12C_d61
-    12C_d152_80: 12C_d152
-    23C_d26_80: 23C_d26
-    23C_d102_80: 23C_d102
-    13_d15_200: 13_d15
-    13_d121_1250: 13_d121
-    7C_d29_500: 7C_d29
-    7C_d103_200: 7C_d103
+    23_d21_1250: A (day21)
+    23_d45_1250: A (day45)
+    23_d120_500: A (day120)
+    1C_d26_200: B (day26)
+    1C_d113_200: B (day113)
+    24C_d32_200: C (day32)
+    24C_d104_200: C (day104)
+    6C_d33_500: D (day33)
+    6C_d76_500: D (day76)
+    22C_d28_200: E (day28)
+    22C_d104_200: E (day104)
+    25C_d48_200: F (day48)
+    25C_d115_80: F (day115)
+    25_d18_500: G (day18)
+    25_d94_200: G (day94)
+    12C_d61_160: H (day61)
+    12C_d152_80: H (day152)
+    23C_d26_80: I (day26)
+    23C_d102_80: I (day102)
+    13_d15_200: J (day15)
+    13_d121_1250: J (day121)
+    7C_d29_500: K (day29)
+    7C_d103_200: K (day103)
   color_scheme: subdomain
   plot_size: 6
   random_state: 3
   pie_alpha: 0.5
   circle_colors:
-    1C_d26: red
-    1C_d113: red
-    24C_d32: red
-    24C_d104: red
-    25C_d48: red
-    25C_d115: red
-    25_d18: red
-    25_d94: red
-    7C_d29: red
-    7C_d103: red
+    B (day26): '#CC6677'
+    B (day113): '#CC6677'
+    C (day32): '#882255'
+    C (day104): '#882255'
+    F (day48): '#44AA99'
+    F (day115): '#44AA99'
+    G (day18): '#999933'
+    G (day94): '#999933'
+    K (day29): '#AA4499'
+    K (day103): '#AA4499'
   default_label_color: gray
   label_colors:
-    1C_d26: red
-    1C_d113: red
-    24C_d32: red
-    24C_d104: red
-    25C_d48: red
-    25C_d115: red
-    25_d18: red
-    25_d94: red
-    7C_d29: red
-    7C_d103: red
+    B (day26): '#CC6677'
+    B (day113): '#CC6677'
+    C (day32): '#882255'
+    C (day104): '#882255'
+    F (day48): '#44AA99'
+    F (day115): '#44AA99'
+    G (day18): '#999933'
+    G (day94): '#999933'
+    K (day29): '#AA4499'
+    K (day103): '#AA4499'
