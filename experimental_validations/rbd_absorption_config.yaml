@@ -1,11 +1,6 @@
 # Specify configuration of RBD depletion validation plots
 
-# There are a lot of ways we could order the serum samples -- it is so complicated!
-# 1. as in dms-view (this is super handy when we are constantly referring back to dms-view) and should probably be used while the data are still in the preliminary stages of analysis for this reason!
-# 2. as the logo plots are ordered in the main repo (probably the final way we want to do this)
-# 3. as ordered in Crawford et al 2020
-# 4. according to greatest neut potency derived from RBD-targeting antibodies
-
+resultsdir: results/rbd_absorptions
 published_metadata: data/Crawford_SuppFile2.csv # this is Supplementary File 2 from Crawford et al. (2020)
 sample_information: data/depletion_samples.csv # this is the mapping file with information specific to our study
 
@@ -18,6 +13,7 @@ neut_input_files: # make sure it is in this format:
   data/201030_depletion_neuts.csv: 201030
   data/201106_depletion_neuts.csv: 201106
   data/201111_depletion_neuts.csv: 201111
+  data/pre-pandemic_fracinfect.csv: 201020
 
 # the neutralization limit of detection is equal to the starting dilution
 NT50_LOD: 20
@@ -43,6 +39,8 @@ elisa_samples_ignore:
   - 13_d15 (2x more beads used)
   - EZ-7A
   - 23_d45 # this was the one done with only one round of depletion, which was incomplete. The 2nd round of depletion was better; see below.
+  - REGN10987_25ug/mL # decided to only show the 50ug/mL in final figure
+  - REGN10987_5ug/mL # decided to only show the 50ug/mL in final figure
 
 # some samples were run on multiple days but with the incorrect dilutions on some days to get comparable AUCs.
 # Therefore we must drop those now
@@ -50,121 +48,9 @@ elisa_samples_ignore:
 elisa_ignore_dates:
   2017-2018 serum pool: 201020
   1C_d26: 201021
-
-# specify alternate names
-display_names: # here give only the alternate name specified in the CSV file
-  REGN10987_50ug/mL: "rREGN10987 (50ug/mL)"
-  REGN10987_25ug/mL: "rREGN10987 (25ug/mL)"
-  REGN10987_5ug/mL: "rREGN10987 (5ug/mL)"
-  4A8_50ug/mL: "r4A8 (50ug/mL)"
-  24C_d32: 24C_d32
-  24C_d104: 24C_d104
-  23_d120: 23_d120
-  23_d21: 23_d21
+  
+# change names for some specific entries in ELISA files, before applying the "display names"
+elisa_newnames:
   23_d45 (re-depleted): 23_d45
-  25_d18: 25_d18
-  25_d94: 25_d94
-  22C_d104: 22C_d104
-  22C_d28: 22C_d28
-  13_d121: 13_d121
-  13_d15: 13_d15
-  7C_d103: 7C_d103
-  7C_d29: 7C_d29
-  1C_d113: 1C_d113
-  1C_d26: 1C_d26
-  117C_d35: 117C_d35
-  117C_d99: 117C_d99
-  23C_d102: 23C_d102
-  23C_d26: 23C_d26
-  17C_d109: 17C_d109
-  17C_d32: 17C_d32
-  25C_d115: 25C_d115
-  25C_d48: 25C_d48
-  3C_d105: 3C_d105
-  3C_d27: 3C_d27
-  72C_d79: 72C_d79
-  72C_d48: 72C_d48
-  11C_d26: 11C_d26
-  11C_d97: 11C_d97
-  6C_d76: 6C_d76
-  6C_d33: 6C_d33
-  12C_d152: 12C_d152
-  12C_d61: 12C_d61
-  13C_d32: 13C_d32
-  13C_d110: 13C_d110
-  2017-2018 serum pool: pre-pandemic
-
-# groups, in order, using alternate names.
-# I tried to make this a dictionary of lists, but it was not being read in properly,
-# so I have made it a list of lists, which I think isn't as good
-# (you can see there is some weird clunky stuff in the pipeline now)
-depletion_groups: # here give only the alternate name specified above!
-  - antibody_controls:
-    - "rREGN10987 (50ug/mL)"
-    - "rREGN10987 (25ug/mL)"
-    - "rREGN10987 (5ug/mL)"
-    - "r4A8 (50ug/mL)"
-  - serum_samples: # these should be in order (currently the order is the same as the logo plots)
-    - 24C_d32
-    - 24C_d104
-    - 23_d120
-    - 23_d21
-    - 23_d45
-    - 25_d18
-    - 25_d94
-    - 22C_d104
-    - 22C_d28
-    - 13_d121
-    - 13_d15
-    - 7C_d103
-    - 7C_d29
-    - 1C_d113
-    - 1C_d26
-    - 117C_d35
-    - 117C_d99
-    - 23C_d102
-    - 23C_d26
-    - 17C_d109
-    - 17C_d32
-    - 25C_d115
-    - 25C_d48
-    - 3C_d105
-    - 3C_d27
-    - 72C_d79
-    - 72C_d48
-    - 11C_d26
-    - 11C_d97
-    - 6C_d76
-    - 6C_d33
-    - 12C_d152
-    - 12C_d61
-    - 13C_d32
-    - 13C_d110
-    - pre-pandemic
 
 elisa_background_sample: pre-pandemic
-
-mapped_samples: # these should be in order (currently the order is the same as the logo plots)
-    - 24C_d32
-    - 24C_d104
-    - 23_d120
-    - 23_d21
-    - 23_d45
-    - 25_d18
-    - 25_d94
-    - 22C_d104
-    - 22C_d28
-    - 13_d121
-    - 13_d15
-    - 7C_d103
-    - 7C_d29
-    - 1C_d113
-    - 1C_d26
-    - 23C_d102
-    - 23C_d26
-    - 25C_d115
-    - 25C_d48
-    - 6C_d76
-    - 6C_d33
-    - 12C_d152
-    - 12C_d61

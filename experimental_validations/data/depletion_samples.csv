@@ -1,41 +1,41 @@
-﻿sample,Participant ID,Days Post-Symptom Onset,sample_name,display_name,display_PID,display_dPSO,depletion_elisas,depletion_neuts,sample_group,mapped
-EDD7CFC8,23,21,23_d21,23_d21,23,early,TRUE,TRUE,serum,TRUE
-331416C9,23,45,23_d45,23_d45,23,mid,TRUE,TRUE,serum,TRUE
-96D33AAD,23,120,23_d120,23_d120,23,late,TRUE,TRUE,serum,TRUE
-2AD43D3B,24C,32,24C_d32,24C_d32,24C,early,TRUE,TRUE,serum,TRUE
-1823354D,24C,104,24C_d104,24C_d104,24C,late,TRUE,TRUE,serum,TRUE
-4B0E5065,25,18,25_d18,25_d18,25,early,TRUE,TRUE,serum,TRUE
-D1337074,25,94,25_d94,25_d94,25,late,TRUE,TRUE,serum,TRUE
-65C28B8D,6C,33,6C_d33,6C_d33,6C,early,TRUE,TRUE,serum,TRUE
-B82F21E3,6C,76,6C_d76,6C_d76,6C,late,TRUE,TRUE,serum,TRUE
-9EC82418,12C,61,12C_d61,12C_d61,12C,early,TRUE,TRUE,serum,TRUE
-79BD0F7A,12C,152,12C_d152,12C_d152,12C,late,TRUE,TRUE,serum,TRUE
-191A5833,13,15,13_d15,13_d15,13,early,TRUE,TRUE,serum,TRUE
-B5EBCB0D,13,121,13_d121,13_d121,13,late,TRUE,TRUE,serum,TRUE
-EBAD84C3,1C,26,1C_d26,1C_d26,1C,early,TRUE,TRUE,serum,TRUE
-948FA9B9,1C,113,1C_d113,1C_d113,1C,late,TRUE,TRUE,serum,TRUE
-281BD693,22C,28,22C_d28,22C_d28,22C,early,TRUE,TRUE,serum,TRUE
-9E669CC3,22C,104,22C_d104,22C_d104,22C,late,TRUE,TRUE,serum,TRUE
-B0CB441F,7C,29,7C_d29,7C_d29,7C,early,TRUE,TRUE,serum,TRUE
-0401D9B0,7C,103,7C_d103,7C_d103,7C,late,TRUE,TRUE,serum,TRUE
-F89B0140,25C,48,25C_d48,25C_d48,25C,early,TRUE,TRUE,serum,TRUE
-C53B17AF,25C,115,25C_d115,25C_d115,25C,late,TRUE,TRUE,serum,TRUE
-BDB764DB,23C,26,23C_d26,23C_d26,23C,early,TRUE,TRUE,serum,TRUE
-D715920D,23C,102,23C_d102,23C_d102,23C,late,TRUE,TRUE,serum,TRUE
-D5263562,117C,35,117C_d35,117C_d35,117C,early,TRUE,TRUE,serum,FALSE
-EEFFDE8A,117C,99,117C_d99,117C_d99,117C,late,TRUE,TRUE,serum,FALSE
-C3D4FC41,11C,26,11C_d26,11C_d26,11C,early,TRUE,TRUE,serum,FALSE
-E3361F88,11C,97,11C_d97,11C_d97,11C,late,TRUE,TRUE,serum,FALSE
-50BDD720,13C,110,13C_d110,13C_d110,13C,late,TRUE,TRUE,serum,FALSE
-611F3917,13C,32,13C_d32,13C_d32,13C,early,TRUE,TRUE,serum,FALSE
-49CC2287,17C,109,17C_d109,17C_d109,17C,late,TRUE,TRUE,serum,FALSE
-45DC80EB,17C,32,17C_d32,17C_d32,17C,early,TRUE,TRUE,serum,FALSE
-C82692BD,3C,105,3C_d105,3C_d105,3C,late,TRUE,TRUE,serum,FALSE
-803BE443,3C,27,3C_d27,3C_d27,3C,early,TRUE,TRUE,serum,FALSE
-B7BA6AC9,72C,48,72C_d48,72C_d48,72C,early,TRUE,TRUE,serum,FALSE
-C53AEB74,72C,79,72C_d79,72C_d79,72C,late,TRUE,TRUE,serum,FALSE
-NA,NA,NA,2017-2018 serum pool,pre-pandemic,NA,NA,TRUE,FALSE,serum,FALSE
-NA,NA,NA,REGN10987_50ug/mL,rREGN10987 (50ug/mL),NA,NA,TRUE,TRUE,antibody_control,FALSE
-NA,NA,NA,REGN10987_25ug/mL,rREGN10987 (25ug/mL),NA,NA,FALSE,TRUE,antibody_control,FALSE
-NA,NA,NA,REGN10987_5ug/mL,rREGN10987 (5ug/mL),NA,NA,TRUE,TRUE,antibody_control,FALSE
-NA,NA,NA,4A8_50ug/mL,r4A8 (50ug/mL),NA,NA,TRUE,TRUE,antibody_control,FALSE
+sample,Participant ID,Days Post-Symptom Onset,sample_name,display_PID,display_name,depletion_elisas,depletion_neuts,sample_group,mapped,experiment
+EDD7CFC8,23,21,23_d21,subject A,subject A (day 21),TRUE,TRUE,serum,TRUE,expt_34
+331416C9,23,45,23_d45,subject A,subject A (day 45),TRUE,TRUE,serum,TRUE,expt_39
+96D33AAD,23,120,23_d120,subject A,subject A (day 120),TRUE,TRUE,serum,TRUE,expt_50
+2AD43D3B,24C,32,24C_d32,subject C,subject C (day 32),TRUE,TRUE,serum,TRUE,expt_35
+1823354D,24C,104,24C_d104,subject C,subject C (day 104),TRUE,TRUE,serum,TRUE,expt_44
+4B0E5065,25,18,25_d18,subject G,subject G (day 18),TRUE,TRUE,serum,TRUE,expt_32
+D1337074,25,94,25_d94,subject G,subject G (day 94),TRUE,TRUE,serum,TRUE,expt_33
+65C28B8D,6C,33,6C_d33,subject D,subject D (day 33),TRUE,TRUE,serum,TRUE,expt_30
+B82F21E3,6C,76,6C_d76,subject D,subject D (day 76),TRUE,TRUE,serum,TRUE,expt_42
+9EC82418,12C,61,12C_d61,subject H,subject H (day 61),TRUE,TRUE,serum,TRUE,expt_37
+79BD0F7A,12C,152,12C_d152,subject H,subject H (day 152),TRUE,TRUE,serum,TRUE,expt_40
+191A5833,13,15,13_d15,subject J,subject J (day 15),TRUE,TRUE,serum,TRUE,expt_31
+B5EBCB0D,13,121,13_d121,subject J,subject J (day 121),TRUE,TRUE,serum,TRUE,expt_52
+EBAD84C3,1C,26,1C_d26,subject B,subject B (day 26),TRUE,TRUE,serum,TRUE,expt_41
+948FA9B9,1C,113,1C_d113,subject B,subject B (day 113),TRUE,TRUE,serum,TRUE,expt_51
+281BD693,22C,28,22C_d28,subject E,subject E (day 28),TRUE,TRUE,serum,TRUE,expt_38
+9E669CC3,22C,104,22C_d104,subject E,subject E (day 104),TRUE,TRUE,serum,TRUE,expt_45
+B0CB441F,7C,29,7C_d29,subject K,subject K (day 29),TRUE,TRUE,serum,TRUE,expt_36
+0401D9B0,7C,103,7C_d103,subject K,subject K (day 103),TRUE,TRUE,serum,TRUE,expt_43
+F89B0140,25C,48,25C_d48,subject F,subject F (day 48),TRUE,TRUE,serum,TRUE,expt_48
+C53B17AF,25C,115,25C_d115,subject F,subject F (day 115),TRUE,TRUE,serum,TRUE,expt_49
+BDB764DB,23C,26,23C_d26,subject I,subject I (day 26),TRUE,TRUE,serum,TRUE,expt_46
+D715920D,23C,102,23C_d102,subject I,subject I (day 102),TRUE,TRUE,serum,TRUE,expt_47
+D5263562,117C,35,117C_d35,subject L,subject L (day 35),TRUE,TRUE,serum,FALSE,NA
+EEFFDE8A,117C,99,117C_d99,subject L,subject L (day 99),TRUE,TRUE,serum,FALSE,NA
+C3D4FC41,11C,26,11C_d26,subject M,subject M (day 26),TRUE,TRUE,serum,FALSE,NA
+E3361F88,11C,97,11C_d97,subject M,subject M (day 97),TRUE,TRUE,serum,FALSE,NA
+50BDD720,13C,110,13C_d110,subject N,subject N (day 110),TRUE,TRUE,serum,FALSE,NA
+611F3917,13C,32,13C_d32,subject N,subject N (day 32),TRUE,TRUE,serum,FALSE,NA
+49CC2287,17C,109,17C_d109,subject P,subject P (day 109),TRUE,TRUE,serum,FALSE,NA
+45DC80EB,17C,32,17C_d32,subject P,subject P (day 32),TRUE,TRUE,serum,FALSE,NA
+C82692BD,3C,105,3C_d105,subject Q,subject Q (day 105),TRUE,TRUE,serum,FALSE,NA
+803BE443,3C,27,3C_d27,subject Q,subject Q (day 27),TRUE,TRUE,serum,FALSE,NA
+B7BA6AC9,72C,48,72C_d48,subject R,subject R (day 48),TRUE,TRUE,serum,FALSE,NA
+C53AEB74,72C,79,72C_d79,subject R,subject R (day 79),TRUE,TRUE,serum,FALSE,NA
+NA,NA,NA,2017-2018 serum pool,NA,pre-pandemic,TRUE,FALSE,serum,FALSE,NA
+NA,NA,NA,REGN10987_50ug/mL,NA,rREGN10987 (50ug/mL),TRUE,TRUE,antibody_control,FALSE,NA
+NA,NA,NA,REGN10987_25ug/mL,NA,rREGN10987 (25ug/mL),FALSE,TRUE,antibody_control,FALSE,NA
+NA,NA,NA,REGN10987_5ug/mL,NA,rREGN10987 (5ug/mL),TRUE,TRUE,antibody_control,FALSE,NA
+NA,NA,NA,4A8_50ug/mL,NA,r4A8 (50ug/mL),TRUE,TRUE,antibody_control,FALSE,NA
