@@ -68,8 +68,8 @@ print('Making supplementary data for the following condition sets:\n  ' + '\n  '
 ```
 
     Making supplementary data for the following condition sets:
+      human_sera_oldnames
       human_sera
-      human_sera_figS3
 
 
 Read the escape fractions
@@ -186,7 +186,7 @@ for metric_type, (set_name, condition_set) in itertools.product(['mutation', 'si
 ```
 
     
-    Plotting correlations of mutation escape for human_sera
+    Plotting correlations of mutation escape for human_sera_oldnames
 
 
 
@@ -195,9 +195,9 @@ for metric_type, (set_name, condition_set) in itertools.product(['mutation', 'si
     
 
 
-    Saving plot to results/supp_data/human_sera-mutation-corr.png
+    Saving plot to results/supp_data/human_sera_oldnames-mutation-corr.png
     
-    Plotting correlations of mutation escape for human_sera_figS3
+    Plotting correlations of mutation escape for human_sera
 
 
 
@@ -206,9 +206,9 @@ for metric_type, (set_name, condition_set) in itertools.product(['mutation', 'si
     
 
 
-    Saving plot to results/supp_data/human_sera_figS3-mutation-corr.png
+    Saving plot to results/supp_data/human_sera-mutation-corr.png
     
-    Plotting correlations of site escape for human_sera
+    Plotting correlations of site escape for human_sera_oldnames
 
 
 
@@ -217,9 +217,9 @@ for metric_type, (set_name, condition_set) in itertools.product(['mutation', 'si
     
 
 
-    Saving plot to results/supp_data/human_sera-site-corr.png
+    Saving plot to results/supp_data/human_sera_oldnames-site-corr.png
     
-    Plotting correlations of site escape for human_sera_figS3
+    Plotting correlations of site escape for human_sera
 
 
 
@@ -228,7 +228,7 @@ for metric_type, (set_name, condition_set) in itertools.product(['mutation', 'si
     
 
 
-    Saving plot to results/supp_data/human_sera_figS3-site-corr.png
+    Saving plot to results/supp_data/human_sera-site-corr.png
 
 
 ## Raw data files
@@ -269,11 +269,11 @@ for set_name, condition_set in condition_sets.items():
 ```
 
     
+    Raw data for human_sera_oldnames:
+    Writing to results/supp_data/human_sera_oldnames_raw_data.csv
+    
     Raw data for human_sera:
     Writing to results/supp_data/human_sera_raw_data.csv
-    
-    Raw data for human_sera_figS3:
-    Writing to results/supp_data/human_sera_figS3_raw_data.csv
 
 
 ## Data for `dms-view`:
@@ -456,8 +456,8 @@ for set_name, condition_set in condition_sets.items():
         df.to_csv(csv_file, index=False, float_format='%.4g')
 ```
 
+    Writing `dms-view` input file for human_sera_oldnames mapped to PDB 6m0j to results/supp_data/human_sera_oldnames_6m0j_dms-view_data.csv
     Writing `dms-view` input file for human_sera mapped to PDB 6m0j to results/supp_data/human_sera_6m0j_dms-view_data.csv
-    Writing `dms-view` input file for human_sera_figS3 mapped to PDB 6m0j to results/supp_data/human_sera_figS3_6m0j_dms-view_data.csv
 
 
 
