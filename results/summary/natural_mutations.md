@@ -569,6 +569,117 @@ for name, specs in escape_profiles_config.items():
 ```
 
     
+    Analyzing natural mutations for human_sera_oldnames
+    Writing counts of mutations at sites of strong escape to results/GISAID_mutations/human_sera_oldnames_mutation_counts.csv. First few lines:
+
+
+
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>condition</th>
+      <th>threshold</th>
+      <th>site</th>
+      <th>wildtype</th>
+      <th>count</th>
+      <th>counts_by_mutation</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>23C_d26</td>
+      <td>default</td>
+      <td>484</td>
+      <td>E</td>
+      <td>195</td>
+      <td>E484K (141), E484Q (38), E484A (8), E484D (3), E484G (2), E484R (2), E484V (1)</td>
+    </tr>
+    <tr>
+      <td>25C_d48</td>
+      <td>default</td>
+      <td>484</td>
+      <td>E</td>
+      <td>195</td>
+      <td>E484K (141), E484Q (38), E484A (8), E484D (3), E484G (2), E484R (2), E484V (1)</td>
+    </tr>
+    <tr>
+      <td>23C_d102</td>
+      <td>default</td>
+      <td>484</td>
+      <td>E</td>
+      <td>195</td>
+      <td>E484K (141), E484Q (38), E484A (8), E484D (3), E484R (2), E484G (2), E484V (1)</td>
+    </tr>
+    <tr>
+      <td>22C_d104</td>
+      <td>default</td>
+      <td>484</td>
+      <td>E</td>
+      <td>195</td>
+      <td>E484K (141), E484Q (38), E484A (8), E484D (3), E484G (2), E484R (2), E484V (1)</td>
+    </tr>
+    <tr>
+      <td>1C_d26</td>
+      <td>default</td>
+      <td>484</td>
+      <td>E</td>
+      <td>195</td>
+      <td>E484K (141), E484Q (38), E484A (8), E484D (3), E484R (2), E484G (2), E484V (1)</td>
+    </tr>
+    <tr>
+      <td>22C_d28</td>
+      <td>default</td>
+      <td>484</td>
+      <td>E</td>
+      <td>195</td>
+      <td>E484K (141), E484Q (38), E484A (8), E484D (3), E484G (2), E484R (2), E484V (1)</td>
+    </tr>
+    <tr>
+      <td>1C_d113</td>
+      <td>default</td>
+      <td>484</td>
+      <td>E</td>
+      <td>195</td>
+      <td>E484K (141), E484Q (38), E484A (8), E484D (3), E484R (2), E484G (2), E484V (1)</td>
+    </tr>
+    <tr>
+      <td>24C_d104</td>
+      <td>default</td>
+      <td>484</td>
+      <td>E</td>
+      <td>195</td>
+      <td>E484K (141), E484Q (38), E484A (8), E484D (3), E484G (2), E484R (2), E484V (1)</td>
+    </tr>
+    <tr>
+      <td>6C_d33</td>
+      <td>default</td>
+      <td>484</td>
+      <td>E</td>
+      <td>195</td>
+      <td>E484K (141), E484Q (38), E484A (8), E484D (3), E484G (2), E484R (2), E484V (1)</td>
+    </tr>
+    <tr>
+      <td>24C_d32</td>
+      <td>default</td>
+      <td>484</td>
+      <td>E</td>
+      <td>195</td>
+      <td>E484K (141), E484Q (38), E484A (8), E484D (3), E484G (2), E484R (2), E484V (1)</td>
+    </tr>
+  </tbody>
+</table>
+
+
+    Plotting which antibodies / sera are escaped by mutations at all sites of escape with at least 5 mutation counts and saving to results/GISAID_mutations/human_sera_oldnames_mutation_counts.pdf.
+
+
+
+    
+![png](natural_mutations_files/natural_mutations_22_3.png)
+    
+
+
+    
     Analyzing natural mutations for human_sera
     Writing counts of mutations at sites of strong escape to results/GISAID_mutations/human_sera_mutation_counts.csv. First few lines:
 
@@ -675,7 +786,7 @@ for name, specs in escape_profiles_config.items():
 
 
     
-![png](natural_mutations_files/natural_mutations_22_3.png)
+![png](natural_mutations_files/natural_mutations_22_7.png)
     
 
 

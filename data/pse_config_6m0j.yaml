@@ -72,4 +72,4 @@ early_late_sera:
   - 23C_d102_80
   - 25C_d115_80
 
-ylim_file: ../results/escape_profiles/human_sera_stackedlogo_ylims.csv
+ylim_file: ../results/escape_profiles/human_sera_oldnames_stackedlogo_ylims.csv

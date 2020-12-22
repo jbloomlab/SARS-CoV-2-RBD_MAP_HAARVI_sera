@@ -26,6 +26,55 @@
 #                  (using the short names defined as values in `conditions`),
 #                  and then the values are maps of site to the list [color, alpha]
 
+human_sera_oldnames:  # name of plot
+  conditions:  # antibodies / sera to show and names to use for them
+    23_d21_1250: 23_d21
+    23_d45_1250: 23_d45
+    23_d120_500: 23_d120
+    1C_d26_200: 1C_d26
+    1C_d113_200: 1C_d113
+    24C_d32_200: 24C_d32
+    24C_d104_200: 24C_d104
+    6C_d33_500: 6C_d33
+    6C_d76_500: 6C_d76
+    22C_d28_200: 22C_d28
+    22C_d104_200: 22C_d104
+    25C_d48_200: 25C_d48
+    25C_d115_80: 25C_d115
+    25_d18_500: 25_d18
+    25_d94_200: 25_d94
+    12C_d61_160: 12C_d61
+    12C_d152_80: 12C_d152
+    23C_d26_80: 23C_d26
+    23C_d102_80: 23C_d102
+    13_d15_200: 13_d15
+    13_d121_1250: 13_d121
+    7C_d29_500: 7C_d29
+    7C_d103_200: 7C_d103
+  # plot automatically identified sites?
+  plot_auto_identified_sites: default
+  # add these sites if they aren't automatically identified
+  add_sites: []
+  # exclude these sites even if not automatically identified
+  exclude_sites: []
+  # name of site-level color scheme in `site_color_schemes.csv` **or**
+  # color for all sites
+  site_color_scheme: subdomain
+  # make escape profiles colored by DMS bind / expr measurements?
+  color_by_dms: True
+  # make supplemental data files for this antibody set
+  make_supp_data: true
+  # analyze naturally occurring mutations at strong sites of escape
+  analyze_natural_mutations: true
+  natural_mutations_mincounts: 5  # plot sites with >= this many mutation counts
+  escape_profile_ymax:
+    quantile: 0.5
+    frac: 0.05
+    min_ymax: 1
+  dmslogo_facet_plot_kwargs:
+    height_per_ax: 2.0
+  dmslogo_draw_line_kwargs:
+    widthscale: 0.64
 
 human_sera:  # name of plot
   conditions:  # antibodies / sera to show and names to use for them
