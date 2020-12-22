@@ -69,7 +69,6 @@ print('Making supplementary data for the following condition sets:\n  ' + '\n  '
 
     Making supplementary data for the following condition sets:
       human_sera
-      human_sera_figS3
 
 
 Read the escape fractions
@@ -197,7 +196,7 @@ for metric_type, (set_name, condition_set) in itertools.product(['mutation', 'si
 
     Saving plot to results/supp_data/human_sera-mutation-corr.png
     
-    Plotting correlations of mutation escape for human_sera_figS3
+    Plotting correlations of site escape for human_sera
 
 
 
@@ -206,29 +205,7 @@ for metric_type, (set_name, condition_set) in itertools.product(['mutation', 'si
     
 
 
-    Saving plot to results/supp_data/human_sera_figS3-mutation-corr.png
-    
-    Plotting correlations of site escape for human_sera
-
-
-
-    
-![png](make_supp_data_files/make_supp_data_16_5.png)
-    
-
-
     Saving plot to results/supp_data/human_sera-site-corr.png
-    
-    Plotting correlations of site escape for human_sera_figS3
-
-
-
-    
-![png](make_supp_data_files/make_supp_data_16_7.png)
-    
-
-
-    Saving plot to results/supp_data/human_sera_figS3-site-corr.png
 
 
 ## Raw data files
@@ -271,9 +248,6 @@ for set_name, condition_set in condition_sets.items():
     
     Raw data for human_sera:
     Writing to results/supp_data/human_sera_raw_data.csv
-    
-    Raw data for human_sera_figS3:
-    Writing to results/supp_data/human_sera_figS3_raw_data.csv
 
 
 ## Data for `dms-view`:
@@ -457,7 +431,6 @@ for set_name, condition_set in condition_sets.items():
 ```
 
     Writing `dms-view` input file for human_sera mapped to PDB 6m0j to results/supp_data/human_sera_6m0j_dms-view_data.csv
-    Writing `dms-view` input file for human_sera_figS3 mapped to PDB 6m0j to results/supp_data/human_sera_figS3_6m0j_dms-view_data.csv
 
 
 
