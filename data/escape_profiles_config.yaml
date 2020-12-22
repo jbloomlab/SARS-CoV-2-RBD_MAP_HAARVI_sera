@@ -109,7 +109,7 @@ human_sera:  # name of plot
   exclude_sites: []
   # name of site-level color scheme in `site_color_schemes.csv` **or**
   # color for all sites
-  site_color_scheme: subdomain
+  site_color_scheme: serum_epitopes
   # make escape profiles colored by DMS bind / expr measurements?
   color_by_dms: False
   # make supplemental data files for this antibody set
@@ -159,7 +159,7 @@ human_sera_figS3:  # name of plot
   exclude_sites: [361]
   # name of site-level color scheme in `site_color_schemes.csv` **or**
   # color for all sites
-  site_color_scheme: subdomain
+  site_color_scheme: serum_epitopes
   # make escape profiles colored by DMS bind / expr measurements?
   color_by_dms: True
   # make supplemental data files for this antibody set
@@ -184,7 +184,7 @@ human_sera_fig4A_1C:  # name of plot
   # add the sites that are auto-identified for 1C, 24C, 25, and 7C
   add_sites: [443, 444, 445, 446, 447, 448, 449, 450, 452, 456, 472, 473, 484, 490, 499]
   exclude_sites: [361]
-  site_color_scheme: subdomain
+  site_color_scheme: serum_epitopes
   escape_profile_ymax:
     quantile: 0.5
     frac: 0.05
@@ -202,7 +202,7 @@ human_sera_fig4B_24C:  # name of plot
   # add the sites that are auto-identified for 1C, 24C, 25, and 7C
   add_sites: [443, 444, 445, 446, 447, 448, 449, 450, 452, 456, 472, 473, 484, 490, 499]
   exclude_sites: [361]
-  site_color_scheme: subdomain
+  site_color_scheme: serum_epitopes
   escape_profile_ymax:
     quantile: 0.5
     frac: 0.05
@@ -220,7 +220,7 @@ human_sera_fig4C_25:  # name of plot
   # add the sites that are auto-identified for 1C, 24C, 25, and 7C
   add_sites: [365, 369, 396, 443, 444, 445, 446, 447, 448, 449, 450, 456, 484, 499]
   exclude_sites: [361]
-  site_color_scheme: subdomain
+  site_color_scheme: serum_epitopes
   escape_profile_ymax:
     quantile: 0.5
     frac: 0.05
@@ -238,7 +238,7 @@ human_sera_fig4D_7C:  # name of plot
   # add the sites that are auto-identified for 1C, 24C, 25, and 7C
   add_sites: [365, 369, 396, 443, 444, 445, 446, 447, 448, 449, 450, 456, 484, 499]
   exclude_sites: [361]
-  site_color_scheme: subdomain
+  site_color_scheme: serum_epitopes
   escape_profile_ymax:
     quantile: 0.5
     frac: 0.05
@@ -256,7 +256,7 @@ human_sera_fig4E_25C:  # name of plot
   # add the sites that are auto-identified for 1C, 24C, 25, and 7C
   add_sites: [443, 444, 445, 446, 447, 448, 449, 450, 452, 456, 472, 473, 484, 490, 499]
   exclude_sites: [361]
-  site_color_scheme: subdomain
+  site_color_scheme: serum_epitopes
   escape_profile_ymax:
     quantile: 0.5
     frac: 0.05
@@ -283,7 +283,7 @@ human_sera_early_fig2:  # name of plot
   add_sites: []
   exclude_sites: [361]
   draw_line_plot: true
-  site_color_scheme: subdomain
+  site_color_scheme: serum_epitopes
   color_by_dms: false
   make_supp_data: false
   analyze_natural_mutations: false
