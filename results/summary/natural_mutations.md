@@ -9,6 +9,8 @@ Import Python modules:
 import math
 import os
 
+import dms_variants.utils
+
 from IPython.display import display, HTML
 
 import matplotlib.pyplot as plt
@@ -461,33 +463,7 @@ display(HTML(sitecounts_strong_sites.head(n=20).to_html(index=False)))
 </table>
 
 
-Now plot mutation counts (any mutation) at each site of escape for each antibody / sera:
-
-
-```python
-nconditions = sitecounts_strong_sites['condition'].nunique() * sitecounts_strong_sites['threshold'].nunique()
-ncol = 8
-nrow = math.ceil(nconditions / ncol)
-
-p = (ggplot(sitecounts_strong_sites) +
-     aes(config['site_metric'], 'count') +
-     geom_point(alpha=0.5) +
-     facet_wrap('~ condition + threshold', ncol=ncol) +
-     theme(figure_size=(2 * ncol, 2 * nrow)) +
-     xlab('site-level escape') +
-     ylab('sequences with mutation at site')
-     )
-
-_ = p.draw()
-```
-
-
-    
-![png](natural_mutations_files/natural_mutations_20_0.png)
-    
-
-
-## Perform analyses on subsets
+## Plot sites of escape with natural variation
 We perform analyses on all subsets in the escape profiles config for which this is specified:
 
 
@@ -567,117 +543,6 @@ for name, specs in escape_profiles_config.items():
     display(fig)
     plt.close(fig)
 ```
-
-    
-    Analyzing natural mutations for human_sera_oldnames
-    Writing counts of mutations at sites of strong escape to results/GISAID_mutations/human_sera_oldnames_mutation_counts.csv. First few lines:
-
-
-
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th>condition</th>
-      <th>threshold</th>
-      <th>site</th>
-      <th>wildtype</th>
-      <th>count</th>
-      <th>counts_by_mutation</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>23C_d26</td>
-      <td>default</td>
-      <td>484</td>
-      <td>E</td>
-      <td>195</td>
-      <td>E484K (141), E484Q (38), E484A (8), E484D (3), E484G (2), E484R (2), E484V (1)</td>
-    </tr>
-    <tr>
-      <td>25C_d48</td>
-      <td>default</td>
-      <td>484</td>
-      <td>E</td>
-      <td>195</td>
-      <td>E484K (141), E484Q (38), E484A (8), E484D (3), E484G (2), E484R (2), E484V (1)</td>
-    </tr>
-    <tr>
-      <td>23C_d102</td>
-      <td>default</td>
-      <td>484</td>
-      <td>E</td>
-      <td>195</td>
-      <td>E484K (141), E484Q (38), E484A (8), E484D (3), E484R (2), E484G (2), E484V (1)</td>
-    </tr>
-    <tr>
-      <td>22C_d104</td>
-      <td>default</td>
-      <td>484</td>
-      <td>E</td>
-      <td>195</td>
-      <td>E484K (141), E484Q (38), E484A (8), E484D (3), E484G (2), E484R (2), E484V (1)</td>
-    </tr>
-    <tr>
-      <td>1C_d26</td>
-      <td>default</td>
-      <td>484</td>
-      <td>E</td>
-      <td>195</td>
-      <td>E484K (141), E484Q (38), E484A (8), E484D (3), E484R (2), E484G (2), E484V (1)</td>
-    </tr>
-    <tr>
-      <td>22C_d28</td>
-      <td>default</td>
-      <td>484</td>
-      <td>E</td>
-      <td>195</td>
-      <td>E484K (141), E484Q (38), E484A (8), E484D (3), E484G (2), E484R (2), E484V (1)</td>
-    </tr>
-    <tr>
-      <td>1C_d113</td>
-      <td>default</td>
-      <td>484</td>
-      <td>E</td>
-      <td>195</td>
-      <td>E484K (141), E484Q (38), E484A (8), E484D (3), E484R (2), E484G (2), E484V (1)</td>
-    </tr>
-    <tr>
-      <td>24C_d104</td>
-      <td>default</td>
-      <td>484</td>
-      <td>E</td>
-      <td>195</td>
-      <td>E484K (141), E484Q (38), E484A (8), E484D (3), E484G (2), E484R (2), E484V (1)</td>
-    </tr>
-    <tr>
-      <td>6C_d33</td>
-      <td>default</td>
-      <td>484</td>
-      <td>E</td>
-      <td>195</td>
-      <td>E484K (141), E484Q (38), E484A (8), E484D (3), E484G (2), E484R (2), E484V (1)</td>
-    </tr>
-    <tr>
-      <td>24C_d32</td>
-      <td>default</td>
-      <td>484</td>
-      <td>E</td>
-      <td>195</td>
-      <td>E484K (141), E484Q (38), E484A (8), E484D (3), E484G (2), E484R (2), E484V (1)</td>
-    </tr>
-  </tbody>
-</table>
-
-
-    Plotting which antibodies / sera are escaped by mutations at all sites of escape with at least 5 mutation counts and saving to results/GISAID_mutations/human_sera_oldnames_mutation_counts.pdf.
-
-
-
-    
-![png](natural_mutations_files/natural_mutations_22_3.png)
-    
-
 
     
     Analyzing natural mutations for human_sera
@@ -786,7 +651,250 @@ for name, specs in escape_profiles_config.items():
 
 
     
-![png](natural_mutations_files/natural_mutations_22_7.png)
+![png](natural_mutations_files/natural_mutations_20_3.png)
+    
+
+
+## Plot correlation between escape and natural frequency
+First aggregate frequency of mutations and escape fractions:
+
+
+```python
+escape_and_freq = (
+    escape_fracs
+    .rename(columns={config['mut_metric']: 'mut_escape',
+                     config['site_metric']: 'tot_site_escape'})
+    .assign(max_site_escape=lambda x: x.groupby(['condition', 'site'])['mut_escape'].transform('max'),
+            mean_site_escape=lambda x: x.groupby(['condition', 'site'])['mut_escape'].transform('mean'))
+    .merge(mut_counts[['site', 'wildtype', 'mutant', 'frequency']]
+                     .rename(columns={'frequency': 'mut_freq'}),
+           on=['site', 'wildtype', 'mutant'],
+           how='left', validate='many_to_one')
+    .assign(mut_freq=lambda x: x['mut_freq'].fillna(0),
+            site_freq=lambda x: x.groupby(['condition', 'site'])['mut_freq'].transform('sum'),
+            mutation=lambda x: x['wildtype'] + x['site'].astype(str) + x['mutant'],
+            )
+    )
+
+display(HTML(escape_and_freq.head().to_html()))
+```
+
+
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>condition</th>
+      <th>site</th>
+      <th>wildtype</th>
+      <th>mutant</th>
+      <th>mut_escape</th>
+      <th>tot_site_escape</th>
+      <th>max_site_escape</th>
+      <th>mean_site_escape</th>
+      <th>mut_freq</th>
+      <th>site_freq</th>
+      <th>mutation</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>12C_d152_80</td>
+      <td>331</td>
+      <td>N</td>
+      <td>A</td>
+      <td>0.002020</td>
+      <td>0.04926</td>
+      <td>0.007632</td>
+      <td>0.003079</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>N331A</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>12C_d152_80</td>
+      <td>331</td>
+      <td>N</td>
+      <td>D</td>
+      <td>0.005616</td>
+      <td>0.04926</td>
+      <td>0.007632</td>
+      <td>0.003079</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>N331D</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>12C_d152_80</td>
+      <td>331</td>
+      <td>N</td>
+      <td>E</td>
+      <td>0.002535</td>
+      <td>0.04926</td>
+      <td>0.007632</td>
+      <td>0.003079</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>N331E</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>12C_d152_80</td>
+      <td>331</td>
+      <td>N</td>
+      <td>F</td>
+      <td>0.003032</td>
+      <td>0.04926</td>
+      <td>0.007632</td>
+      <td>0.003079</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>N331F</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>12C_d152_80</td>
+      <td>331</td>
+      <td>N</td>
+      <td>G</td>
+      <td>0.003113</td>
+      <td>0.04926</td>
+      <td>0.007632</td>
+      <td>0.003079</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>N331G</td>
+    </tr>
+  </tbody>
+</table>
+
+
+Now make plots.
+Note that you can configure below exactly what variables you want to plot (mutation frequency, mutation escape, site escape, etc):
+
+
+```python
+# all the parameters below have the indicated defaults, but can be set in `escape_profiles_config`
+# via analyze_natural_mutations_specs
+analysis_specs = {
+    'maxcol': 5,  # maximum columns in plot
+    'minfreq': 1e-5,  # collapse any natural frequencies < this
+    'freq': 'site_freq',  # type of frequency to plot: mut_freq or site_freq
+    'escape': 'mean_site_escape',  # type of escape to plot: mean_site_escape, mut_escape, max_site_escape, tot_site_escape
+    'xlabel': 'frequency of mutations at site',
+    'ylabel': 'mean escape at site',
+    'label_minfreq': 5e-5,  # label points with frequency >= this and...
+    'label_minescape': 0.1,  # label points with escape >= this
+    'also_label': [],  # also label any points (sites or mutations) listed here
+    'label_font_size': 6,  # font size for labeling poins
+    }
+label_minfreq = 5e-5  # label points with frequency >= this
+label_minescape = 0.05  # label points with escape >= this
+
+for name, specs in escape_profiles_config.items():
+    if 'analyze_natural_mutations' not in specs or not specs['analyze_natural_mutations']:
+        continue
+    print(f"\nAnalyzing natural mutations for {name}")
+    
+    if 'analyze_natural_mutations_specs' in specs:
+        for key, val in specs['analyze_natural_mutations_specs'].items():
+            analysis_specs[key] = val
+    
+    conditions = specs['conditions']
+    
+    if 'site' in analysis_specs['freq'] and 'site' in analysis_specs['escape']:
+        ptlabel = 'site'
+    else:
+        ptlabel = 'mutation'
+    
+    df = (escape_and_freq
+          .query('condition in @conditions')
+          .assign(condition=lambda x: x['condition'].map(conditions))
+          .assign(**{analysis_specs['freq']: lambda x: x[analysis_specs['freq']].clip(lower=analysis_specs['minfreq'])})
+          [['condition', analysis_specs['escape'], analysis_specs['freq'], ptlabel]]
+          .drop_duplicates()
+          )
+
+    assert len(conditions) == df['condition'].nunique()
+    
+    for avg_conditions in (False, True):
+        
+        if avg_conditions:
+            plot_df = df.groupby(ptlabel, as_index=False).aggregate({analysis_specs['freq']: 'mean',
+                                                                     analysis_specs['escape']: 'mean'})
+            nrow = ncol = 1
+            plotfile = os.path.join(config['gisaid_mutations_dir'],
+                                    f"{name}_escape_vs_freq_average.pdf")
+            print(f"Plotting average across conditions and saving to {plotfile}")
+        else:
+            nrow = math.ceil(len(conditions) / analysis_specs['maxcol'])
+            ncol = min(len(conditions), analysis_specs['maxcol'])
+            plot_df = df
+            plotfile = os.path.join(config['gisaid_mutations_dir'],
+                                    f"{name}_escape_vs_freq_by-condition.pdf")
+            print(f"Plotting each condition and saving to {plotfile}")
+            
+        label_df = (plot_df
+                    .assign(label=lambda x: x[ptlabel].isin(analysis_specs['also_label']))
+                    .query(f"label or ({analysis_specs['freq']} >= {analysis_specs['label_minfreq']})")
+                    .query(f"label or ({analysis_specs['escape']} >= {analysis_specs['label_minescape']})")
+                    )
+        
+        maxfreq = plot_df[analysis_specs['freq']].max()
+        assert analysis_specs['minfreq'] == 10**(int(math.log10(analysis_specs['minfreq'])))
+        logxbreaks = list(range(int(math.log10(analysis_specs['minfreq'])), round(math.log10(maxfreq)) + 1, 1))
+        xbreaks = [10**logx for logx in logxbreaks]
+        xlabels = [f"$10^{{{logx}}}$" for logx in logxbreaks]
+        xlabels[0] = f"$<{xlabels[0][1:]}"
+        
+        p = (ggplot(plot_df) +
+             aes(analysis_specs['freq'], analysis_specs['escape']) +
+             geom_point(alpha=0.5) +
+             geom_text(data=label_df,
+                       mapping=aes(label=ptlabel),
+                       size=analysis_specs['label_font_size'],
+                       adjust_text={'expand_points': (1.05, 1.2),
+                                    'expand_text': (1.05, 1.2)},
+                       ) +
+             theme_classic() +
+             theme(figure_size=(2.5 * ncol, 2.5 * nrow),
+                   panel_spacing=0.3,
+                   ) +
+             scale_x_log10(name=analysis_specs['xlabel'],
+                           breaks=xbreaks,
+                           labels=xlabels,
+                           expand=(0.07, 0)) +
+             ylab(analysis_specs['ylabel'])
+             )
+        if not avg_conditions:
+            p = p + facet_wrap('~ condition', ncol=ncol)
+        p.save(plotfile, verbose=False)
+        fig = p.draw()
+        display(fig)
+        plt.close(fig)
+        
+```
+
+    
+    Analyzing natural mutations for human_sera
+    Plotting each condition and saving to results/GISAID_mutations/human_sera_escape_vs_freq_by-condition.pdf
+
+
+
+    
+![png](natural_mutations_files/natural_mutations_24_1.png)
+    
+
+
+    Plotting average across conditions and saving to results/GISAID_mutations/human_sera_escape_vs_freq_average.pdf
+
+
+
+    
+![png](natural_mutations_files/natural_mutations_24_3.png)
     
 
 
