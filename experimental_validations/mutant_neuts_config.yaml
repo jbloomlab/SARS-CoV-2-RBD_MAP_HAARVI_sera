@@ -6,11 +6,12 @@ published_metadata: data/Crawford_SuppFile2.csv # this is Supplementary File 2 f
 rbd_depletion_foldchange: results/rbd_depletion_foldchange_ic50.csv
 
 neut_input_files: # make sure it is in this format:
-  data/201019_mutneuts.csv: 201019
+  # data/201019_mutneuts.csv: 201019
   data/201106_F456K_E484P.csv: 201106
   data/201116_mutneuts.csv: 201116
   data/201119_mutneuts.csv: 201119
-  data/201211_mutneuts_torepeat.csv: 201211
+  # data/201211_mutneuts_torepeat.csv: 201211
+  data/201221_mutneuts.csv: 201221
 
 # enter all the samples and stuff to ignore here - none for now
 neut_samples_ignore: False
