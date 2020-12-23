@@ -181,7 +181,7 @@ fig = p.draw()
 display(fig)
 plt.close(fig)
 
-min_length, max_length = 1270, 1276
+min_length, max_length = 1260, 1276
 print(f"\nOnly keeping spikes with lengths between {min_length} and {max_length}")
 spikes_df = (
     spikes_df
@@ -226,7 +226,7 @@ spikes_df = spikes_df.query('valid_length')
 
 
     
-    Only keeping spikes with lengths between 1270 and 1276
+    Only keeping spikes with lengths between 1260 and 1276
     Here are number of sequences with valid and invalid lengths:
 
 
@@ -245,11 +245,11 @@ spikes_df = spikes_df.query('valid_length')
   <tbody>
     <tr>
       <th>False</th>
-      <td>580</td>
+      <td>510</td>
     </tr>
     <tr>
       <th>True</th>
-      <td>259267</td>
+      <td>259337</td>
     </tr>
   </tbody>
 </table>
@@ -302,11 +302,11 @@ display(HTML(
   <tbody>
     <tr>
       <th>False</th>
-      <td>249000</td>
+      <td>249058</td>
     </tr>
     <tr>
       <th>True</th>
-      <td>10267</td>
+      <td>10279</td>
     </tr>
   </tbody>
 </table>
@@ -469,7 +469,7 @@ assert rbd_df['all_valid_aas'].all()
 print(f"Retained {len(rbd_df)} RBDs.")
 ```
 
-    Retained 241171 RBDs.
+    Retained 241226 RBDs.
 
 
 Now get and plot the number of amino-acid mutations per RBD relative to the reference sequence, plotting on both a linear and log scale.
@@ -478,7 +478,7 @@ We then filter all RBDs that have more than some maximum number of mutations, ba
 
 
 ```python
-max_muts = 6
+max_muts = 8
 
 refseq_str = str(refseq.seq)
 rbd_df = (
@@ -522,7 +522,7 @@ print(f"Writing alignment to {rbd_alignment_file}")
 _ = Bio.SeqIO.write(rbd_df['seqrecord'].tolist(), rbd_alignment_file, 'fasta')
 ```
 
-    Overall, there are 241158 aligned RBDs that passed filters.
+    Overall, there are 241216 aligned RBDs that passed filters.
     Writing alignment to results/GISAID_mutations/RBD_alignment.fasta
 
 
@@ -573,9 +573,9 @@ display(HTML(muts_df.head(n=15).to_html(index=False)))
       <td>477</td>
       <td>S</td>
       <td>N</td>
-      <td>13800</td>
+      <td>13801</td>
       <td>60</td>
-      <td>0.057224</td>
+      <td>0.057214</td>
     </tr>
     <tr>
       <td>109</td>
@@ -584,25 +584,25 @@ display(HTML(muts_df.head(n=15).to_html(index=False)))
       <td>K</td>
       <td>3301</td>
       <td>23</td>
-      <td>0.013688</td>
+      <td>0.013685</td>
     </tr>
     <tr>
       <td>171</td>
       <td>501</td>
       <td>N</td>
       <td>Y</td>
-      <td>1409</td>
+      <td>1410</td>
       <td>6</td>
-      <td>0.005843</td>
+      <td>0.005845</td>
     </tr>
     <tr>
       <td>123</td>
       <td>453</td>
       <td>Y</td>
       <td>F</td>
-      <td>736</td>
+      <td>744</td>
       <td>7</td>
-      <td>0.003052</td>
+      <td>0.003084</td>
     </tr>
     <tr>
       <td>190</td>
@@ -611,7 +611,7 @@ display(HTML(muts_df.head(n=15).to_html(index=False)))
       <td>S</td>
       <td>408</td>
       <td>21</td>
-      <td>0.001692</td>
+      <td>0.001691</td>
     </tr>
     <tr>
       <td>148</td>
@@ -636,9 +636,9 @@ display(HTML(muts_df.head(n=15).to_html(index=False)))
       <td>484</td>
       <td>E</td>
       <td>K</td>
-      <td>141</td>
+      <td>142</td>
       <td>11</td>
-      <td>0.000585</td>
+      <td>0.000589</td>
     </tr>
     <tr>
       <td>147</td>
@@ -647,7 +647,16 @@ display(HTML(muts_df.head(n=15).to_html(index=False)))
       <td>I</td>
       <td>140</td>
       <td>8</td>
-      <td>0.000581</td>
+      <td>0.000580</td>
+    </tr>
+    <tr>
+      <td>192</td>
+      <td>522</td>
+      <td>A</td>
+      <td>V</td>
+      <td>139</td>
+      <td>21</td>
+      <td>0.000576</td>
     </tr>
     <tr>
       <td>192</td>
@@ -659,31 +668,22 @@ display(HTML(muts_df.head(n=15).to_html(index=False)))
       <td>0.000572</td>
     </tr>
     <tr>
-      <td>192</td>
-      <td>522</td>
-      <td>A</td>
-      <td>V</td>
-      <td>137</td>
-      <td>20</td>
-      <td>0.000568</td>
-    </tr>
-    <tr>
       <td>164</td>
       <td>494</td>
       <td>S</td>
       <td>P</td>
-      <td>125</td>
+      <td>126</td>
       <td>15</td>
-      <td>0.000518</td>
+      <td>0.000522</td>
     </tr>
     <tr>
       <td>37</td>
       <td>367</td>
       <td>V</td>
       <td>F</td>
-      <td>118</td>
-      <td>23</td>
-      <td>0.000489</td>
+      <td>119</td>
+      <td>24</td>
+      <td>0.000493</td>
     </tr>
     <tr>
       <td>149</td>
