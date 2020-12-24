@@ -281,21 +281,39 @@ display(HTML(sitecounts_strong_sites.head(n=20).to_html(index=False)))
   <tbody>
     <tr>
       <td>25_d18_500</td>
-      <td>sensitive_max_mut</td>
-      <td>439</td>
-      <td>N</td>
-      <td>0.6198</td>
-      <td>3301</td>
-      <td>N439K (3301)</td>
-    </tr>
-    <tr>
-      <td>25_d18_500</td>
       <td>sensitive</td>
       <td>439</td>
       <td>N</td>
       <td>0.6198</td>
-      <td>3301</td>
-      <td>N439K (3301)</td>
+      <td>3918</td>
+      <td>N439K (3918)</td>
+    </tr>
+    <tr>
+      <td>25_d18_500</td>
+      <td>sensitive_max_mut</td>
+      <td>439</td>
+      <td>N</td>
+      <td>0.6198</td>
+      <td>3918</td>
+      <td>N439K (3918)</td>
+    </tr>
+    <tr>
+      <td>REGN10987_400</td>
+      <td>sensitive</td>
+      <td>439</td>
+      <td>N</td>
+      <td>2.1660</td>
+      <td>3918</td>
+      <td>N439K (3918)</td>
+    </tr>
+    <tr>
+      <td>REGN10987_400</td>
+      <td>sensitive_max_mut</td>
+      <td>439</td>
+      <td>N</td>
+      <td>2.1660</td>
+      <td>3918</td>
+      <td>N439K (3918)</td>
     </tr>
     <tr>
       <td>REGN10987_400</td>
@@ -303,26 +321,8 @@ display(HTML(sitecounts_strong_sites.head(n=20).to_html(index=False)))
       <td>439</td>
       <td>N</td>
       <td>2.1660</td>
-      <td>3301</td>
-      <td>N439K (3301)</td>
-    </tr>
-    <tr>
-      <td>REGN10987_400</td>
-      <td>sensitive_max_mut</td>
-      <td>439</td>
-      <td>N</td>
-      <td>2.1660</td>
-      <td>3301</td>
-      <td>N439K (3301)</td>
-    </tr>
-    <tr>
-      <td>REGN10987_400</td>
-      <td>sensitive</td>
-      <td>439</td>
-      <td>N</td>
-      <td>2.1660</td>
-      <td>3301</td>
-      <td>N439K (3301)</td>
+      <td>3918</td>
+      <td>N439K (3918)</td>
     </tr>
     <tr>
       <td>25_d18_500</td>
@@ -330,26 +330,8 @@ display(HTML(sitecounts_strong_sites.head(n=20).to_html(index=False)))
       <td>501</td>
       <td>N</td>
       <td>0.6856</td>
-      <td>1447</td>
-      <td>N501Y (1410), N501T (32), N501S (5)</td>
-    </tr>
-    <tr>
-      <td>CB6_400</td>
-      <td>sensitive</td>
-      <td>501</td>
-      <td>N</td>
-      <td>1.5790</td>
-      <td>1447</td>
-      <td>N501Y (1410), N501T (32), N501S (5)</td>
-    </tr>
-    <tr>
-      <td>COV2-2499_400</td>
-      <td>sensitive</td>
-      <td>501</td>
-      <td>N</td>
-      <td>0.4765</td>
-      <td>1447</td>
-      <td>N501Y (1410), N501T (32), N501S (5)</td>
+      <td>3710</td>
+      <td>N501Y (3665), N501T (40), N501S (5)</td>
     </tr>
     <tr>
       <td>COV2-2499_400</td>
@@ -357,8 +339,44 @@ display(HTML(sitecounts_strong_sites.head(n=20).to_html(index=False)))
       <td>501</td>
       <td>N</td>
       <td>0.4765</td>
-      <td>1447</td>
-      <td>N501Y (1410), N501T (32), N501S (5)</td>
+      <td>3710</td>
+      <td>N501Y (3665), N501T (40), N501S (5)</td>
+    </tr>
+    <tr>
+      <td>CB6_400</td>
+      <td>sensitive</td>
+      <td>501</td>
+      <td>N</td>
+      <td>1.5790</td>
+      <td>3710</td>
+      <td>N501Y (3665), N501T (40), N501S (5)</td>
+    </tr>
+    <tr>
+      <td>25C_d115_80</td>
+      <td>sensitive</td>
+      <td>501</td>
+      <td>N</td>
+      <td>0.9038</td>
+      <td>3710</td>
+      <td>N501Y (3665), N501T (40), N501S (5)</td>
+    </tr>
+    <tr>
+      <td>22C_d28_200</td>
+      <td>sensitive</td>
+      <td>501</td>
+      <td>N</td>
+      <td>1.2370</td>
+      <td>3710</td>
+      <td>N501Y (3665), N501T (40), N501S (5)</td>
+    </tr>
+    <tr>
+      <td>COV2-2499_400</td>
+      <td>sensitive</td>
+      <td>501</td>
+      <td>N</td>
+      <td>0.4765</td>
+      <td>3710</td>
+      <td>N501Y (3665), N501T (40), N501S (5)</td>
     </tr>
     <tr>
       <td>25_d18_500</td>
@@ -366,26 +384,17 @@ display(HTML(sitecounts_strong_sites.head(n=20).to_html(index=False)))
       <td>501</td>
       <td>N</td>
       <td>0.6856</td>
-      <td>1447</td>
-      <td>N501Y (1410), N501T (32), N501S (5)</td>
+      <td>3710</td>
+      <td>N501Y (3665), N501T (40), N501S (5)</td>
     </tr>
     <tr>
       <td>25C_d115_80</td>
-      <td>sensitive</td>
+      <td>sensitive_max_mut</td>
       <td>501</td>
       <td>N</td>
       <td>0.9038</td>
-      <td>1447</td>
-      <td>N501Y (1410), N501T (32), N501S (5)</td>
-    </tr>
-    <tr>
-      <td>22C_d28_200</td>
-      <td>sensitive</td>
-      <td>501</td>
-      <td>N</td>
-      <td>1.2370</td>
-      <td>1447</td>
-      <td>N501Y (1410), N501T (32), N501S (5)</td>
+      <td>3710</td>
+      <td>N501Y (3665), N501T (40), N501S (5)</td>
     </tr>
     <tr>
       <td>22C_d28_200</td>
@@ -393,8 +402,8 @@ display(HTML(sitecounts_strong_sites.head(n=20).to_html(index=False)))
       <td>501</td>
       <td>N</td>
       <td>1.2370</td>
-      <td>1447</td>
-      <td>N501Y (1410), N501T (32), N501S (5)</td>
+      <td>3710</td>
+      <td>N501Y (3665), N501T (40), N501S (5)</td>
     </tr>
     <tr>
       <td>CB6_400</td>
@@ -402,53 +411,35 @@ display(HTML(sitecounts_strong_sites.head(n=20).to_html(index=False)))
       <td>501</td>
       <td>N</td>
       <td>1.5790</td>
-      <td>1447</td>
-      <td>N501Y (1410), N501T (32), N501S (5)</td>
-    </tr>
-    <tr>
-      <td>25C_d115_80</td>
-      <td>sensitive_max_mut</td>
-      <td>501</td>
-      <td>N</td>
-      <td>0.9038</td>
-      <td>1447</td>
-      <td>N501Y (1410), N501T (32), N501S (5)</td>
+      <td>3710</td>
+      <td>N501Y (3665), N501T (40), N501S (5)</td>
     </tr>
     <tr>
       <td>23C_d102_80</td>
-      <td>sensitive</td>
+      <td>sensitive_max_mut</td>
       <td>453</td>
       <td>Y</td>
       <td>0.5154</td>
-      <td>744</td>
-      <td>Y453F (744)</td>
+      <td>948</td>
+      <td>Y453F (948)</td>
+    </tr>
+    <tr>
+      <td>23C_d26_80</td>
+      <td>sensitive_max_mut</td>
+      <td>453</td>
+      <td>Y</td>
+      <td>0.4554</td>
+      <td>948</td>
+      <td>Y453F (948)</td>
     </tr>
     <tr>
       <td>REGN10933_400</td>
-      <td>sensitive</td>
+      <td>sensitive_max_mut</td>
       <td>453</td>
       <td>Y</td>
       <td>4.1080</td>
-      <td>744</td>
-      <td>Y453F (744)</td>
-    </tr>
-    <tr>
-      <td>23C_d102_80</td>
-      <td>sensitive_max_mut</td>
-      <td>453</td>
-      <td>Y</td>
-      <td>0.5154</td>
-      <td>744</td>
-      <td>Y453F (744)</td>
-    </tr>
-    <tr>
-      <td>23C_d26_80</td>
-      <td>sensitive_max_mut</td>
-      <td>453</td>
-      <td>Y</td>
-      <td>0.4554</td>
-      <td>744</td>
-      <td>Y453F (744)</td>
+      <td>948</td>
+      <td>Y453F (948)</td>
     </tr>
     <tr>
       <td>23C_d26_80</td>
@@ -456,8 +447,17 @@ display(HTML(sitecounts_strong_sites.head(n=20).to_html(index=False)))
       <td>453</td>
       <td>Y</td>
       <td>0.4554</td>
-      <td>744</td>
-      <td>Y453F (744)</td>
+      <td>948</td>
+      <td>Y453F (948)</td>
+    </tr>
+    <tr>
+      <td>23C_d102_80</td>
+      <td>sensitive</td>
+      <td>453</td>
+      <td>Y</td>
+      <td>0.5154</td>
+      <td>948</td>
+      <td>Y453F (948)</td>
     </tr>
   </tbody>
 </table>
@@ -563,84 +563,84 @@ for name, specs in escape_profiles_config.items():
   </thead>
   <tbody>
     <tr>
-      <td>subject I (day 26)</td>
-      <td>default</td>
-      <td>484</td>
-      <td>E</td>
-      <td>196</td>
-      <td>E484K (142), E484Q (38), E484A (8), E484D (3), E484G (2), E484R (2), E484V (1)</td>
-    </tr>
-    <tr>
-      <td>subject F (day 48)</td>
-      <td>default</td>
-      <td>484</td>
-      <td>E</td>
-      <td>196</td>
-      <td>E484K (142), E484Q (38), E484A (8), E484D (3), E484G (2), E484R (2), E484V (1)</td>
-    </tr>
-    <tr>
-      <td>subject I (day 102)</td>
-      <td>default</td>
-      <td>484</td>
-      <td>E</td>
-      <td>196</td>
-      <td>E484K (142), E484Q (38), E484A (8), E484D (3), E484R (2), E484G (2), E484V (1)</td>
-    </tr>
-    <tr>
-      <td>subject E (day 104)</td>
-      <td>default</td>
-      <td>484</td>
-      <td>E</td>
-      <td>196</td>
-      <td>E484K (142), E484Q (38), E484A (8), E484D (3), E484G (2), E484R (2), E484V (1)</td>
-    </tr>
-    <tr>
       <td>subject B (day 26)</td>
       <td>default</td>
       <td>484</td>
       <td>E</td>
-      <td>196</td>
-      <td>E484K (142), E484Q (38), E484A (8), E484D (3), E484G (2), E484R (2), E484V (1)</td>
-    </tr>
-    <tr>
-      <td>subject E (day 28)</td>
-      <td>default</td>
-      <td>484</td>
-      <td>E</td>
-      <td>196</td>
-      <td>E484K (142), E484Q (38), E484A (8), E484D (3), E484R (2), E484G (2), E484V (1)</td>
-    </tr>
-    <tr>
-      <td>subject B (day 113)</td>
-      <td>default</td>
-      <td>484</td>
-      <td>E</td>
-      <td>196</td>
-      <td>E484K (142), E484Q (38), E484A (8), E484D (3), E484R (2), E484G (2), E484V (1)</td>
-    </tr>
-    <tr>
-      <td>subject C (day 104)</td>
-      <td>default</td>
-      <td>484</td>
-      <td>E</td>
-      <td>196</td>
-      <td>E484K (142), E484Q (38), E484A (8), E484D (3), E484R (2), E484G (2), E484V (1)</td>
+      <td>337</td>
+      <td>E484K (279), E484Q (42), E484A (8), E484D (3), E484R (2), E484G (2), E484V (1)</td>
     </tr>
     <tr>
       <td>subject D (day 33)</td>
       <td>default</td>
       <td>484</td>
       <td>E</td>
-      <td>196</td>
-      <td>E484K (142), E484Q (38), E484A (8), E484D (3), E484G (2), E484R (2), E484V (1)</td>
+      <td>337</td>
+      <td>E484K (279), E484Q (42), E484A (8), E484D (3), E484G (2), E484R (2), E484V (1)</td>
+    </tr>
+    <tr>
+      <td>subject B (day 113)</td>
+      <td>default</td>
+      <td>484</td>
+      <td>E</td>
+      <td>337</td>
+      <td>E484K (279), E484Q (42), E484A (8), E484D (3), E484G (2), E484R (2), E484V (1)</td>
+    </tr>
+    <tr>
+      <td>subject A (day 21)</td>
+      <td>default</td>
+      <td>484</td>
+      <td>E</td>
+      <td>337</td>
+      <td>E484K (279), E484Q (42), E484A (8), E484D (3), E484G (2), E484R (2), E484V (1)</td>
+    </tr>
+    <tr>
+      <td>subject I (day 26)</td>
+      <td>default</td>
+      <td>484</td>
+      <td>E</td>
+      <td>337</td>
+      <td>E484K (279), E484Q (42), E484A (8), E484D (3), E484G (2), E484R (2), E484V (1)</td>
+    </tr>
+    <tr>
+      <td>subject I (day 102)</td>
+      <td>default</td>
+      <td>484</td>
+      <td>E</td>
+      <td>337</td>
+      <td>E484K (279), E484Q (42), E484A (8), E484D (3), E484R (2), E484G (2), E484V (1)</td>
+    </tr>
+    <tr>
+      <td>subject E (day 28)</td>
+      <td>default</td>
+      <td>484</td>
+      <td>E</td>
+      <td>337</td>
+      <td>E484K (279), E484Q (42), E484A (8), E484D (3), E484G (2), E484R (2), E484V (1)</td>
+    </tr>
+    <tr>
+      <td>subject E (day 104)</td>
+      <td>default</td>
+      <td>484</td>
+      <td>E</td>
+      <td>337</td>
+      <td>E484K (279), E484Q (42), E484A (8), E484D (3), E484G (2), E484R (2), E484V (1)</td>
     </tr>
     <tr>
       <td>subject C (day 32)</td>
       <td>default</td>
       <td>484</td>
       <td>E</td>
-      <td>196</td>
-      <td>E484K (142), E484Q (38), E484A (8), E484D (3), E484R (2), E484G (2), E484V (1)</td>
+      <td>337</td>
+      <td>E484K (279), E484Q (42), E484A (8), E484D (3), E484G (2), E484R (2), E484V (1)</td>
+    </tr>
+    <tr>
+      <td>subject G (day 18)</td>
+      <td>default</td>
+      <td>484</td>
+      <td>E</td>
+      <td>337</td>
+      <td>E484K (279), E484Q (42), E484A (8), E484D (3), E484G (2), E484R (2), E484V (1)</td>
     </tr>
   </tbody>
 </table>
