@@ -67,7 +67,7 @@ human_sera_oldnames:  # name of plot
   # analyze naturally occurring mutations at strong sites of escape
   analyze_natural_mutations: false
   analyze_natural_mutations_specs:
-    also_label: [384,439,446,484,485,494]
+    also_label: [384,417,439,446,484,485,494,453,501]
     label_font_size: 7
     escape: tot_site_escape
     ylabel: total escape at site
@@ -121,11 +121,11 @@ human_sera:  # name of plot
   # make supplemental data files for this antibody set
   make_supp_data: true
   analyze_natural_mutations_specs:
-    also_label: [384,439,446,484,485,494,453,501]
+    also_label: [384,417,439,446,484,485,494,453,501]
     label_font_size: 7
-    # escape: tot_site_escape
-    # ylabel: total escape at site
-    # label_minescape: 2.0
+    escape: tot_site_escape
+    ylabel: total escape at site
+    label_minescape: 2.0
   # analyze naturally occurring mutations at strong sites of escape
   analyze_natural_mutations: true
   natural_mutations_mincounts: 5  # plot sites with >= this many mutation counts
