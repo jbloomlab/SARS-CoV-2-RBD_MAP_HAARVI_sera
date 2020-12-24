@@ -3,7 +3,10 @@
 published_metadata: data/Crawford_SuppFile2.csv # this is Supplementary File 2 from Crawford et al. (2020)
 
 # path to file containing rbd depletion fold change data
-rbd_depletion_foldchange: results/rbd_depletion_foldchange_ic50.csv
+rbd_depletion_foldchange: results/rbd_absorptions/rbd_depletion_foldchange_ic50.csv
+
+# path to file specifying ylim for site_total_escape for each serum
+ylim_file: ../results/escape_profiles/human_sera_figS3_stackedlogo_ylims.csv
 
 neut_input_files: # make sure it is in this format:
   # data/201019_mutneuts.csv: 201019
