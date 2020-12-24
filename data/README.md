@@ -24,7 +24,7 @@ This directory contains input data used for the analysis and configuration for s
 
    - The `subdomain` scheme colors sites orange if they directly contact ACE2 (within 4 angstroms in PDB 6m0j) in the SARS-CoV-2 structure (residues 417, 446, 449, 453, 455, 456, 475, 486, 487, 489, 493, 496, 498, 500, 501, 502, 505), blue if they are in the receptor binding motif (RBM, residue 437 to 508, inclusive), and green if they are in the core RBD domain (all other sites). These definitions match those used in [Starr et al (2020)](https://www.cell.com/cell/fulltext/S0092-8674(20)31003-5).
 
- -  [spikeprot1112.fasta.xz](spikeprot1112.fasta.xz): A compressed FASTA file with all spike sequences in GISAID. Downloaded on Nov-12-2020 as follows: logged into GISAID, went to the *EpiCoV* page, clicked on *Downloads*, clicked on *spikeprot1112*, which yielded the file `spikeprot1112.fasta.xz` which was then copied here.
+ -  [spikeprot1223.fasta.xz](spikeprot1223.fasta.xz): A compressed FASTA file with all spike sequences in GISAID. Downloaded on Dec-23-2020 as follows: logged into GISAID, went to the *EpiCoV* page, clicked on *Downloads*, clicked on *spikeprot1223*, which yielded the file `spikeprot1223.fasta.xz` which was then copied here.
 
  - [./RBD_sites.csv](RBD_sites.csv): Useful numeric and functional annotations of RBD sites for referencing in various analyses.
 
