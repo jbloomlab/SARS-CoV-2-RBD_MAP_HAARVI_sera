@@ -260,13 +260,13 @@ human_sera_fig4D_7C:  # name of plot
   dmslogo_draw_line_kwargs:
     widthscale: 0.64
 
-human_sera_fig4D_7C:  # name of plot
+human_sera_fig4E_25C:  # name of plot
   conditions:
-    7C_d29_500: subject K (day 29)
-    7C_d103_200: subject K (day 103)
+    25C_d48_200: subject F (day 48)
+    25C_d115_80: subject F (day 115)
   plot_auto_identified_sites: default
   # add the sites that are auto-identified for 1C, 24C, 25, and 7C
-  add_sites: [365, 369, 396, 443, 444, 445, 446, 447, 448, 449, 450, 456, 484, 499]
+  add_sites: [443, 444, 445, 446, 447, 448, 449, 450, 452, 456, 472, 473, 484, 490, 499]
   exclude_sites: [361]
   site_color_scheme: serum_epitopes_OGCrowe
   escape_profile_ymax:
@@ -284,7 +284,7 @@ human_sera_fig4X_6C:  # name of plot
     6C_d76_500: subject D (day 76)
   plot_auto_identified_sites: default
   # add the sites that are auto-identified for 1C, 24C, 25, and 7C
-  add_sites: [443, 444, 445, 446, 447, 448, 449, 450, 452, 456, 472, 473, 484, 490, 499]
+  add_sites: [365, 369, 396, 443, 444, 445, 446, 447, 448, 449, 450, 456, 484, 499]
   exclude_sites: [361]
   site_color_scheme: serum_epitopes_OGCrowe
   escape_profile_ymax:
@@ -570,13 +570,13 @@ human_sera_fig4D_7C_pink:  # name of plot
   dmslogo_draw_line_kwargs:
     widthscale: 0.64
 
-human_sera_fig4D_7C_pink:  # name of plot
+human_sera_fig4E_25C_pink:  # name of plot
   conditions:
-    7C_d29_500: subject K (day 29)
-    7C_d103_200: subject K (day 103)
+    25C_d48_200: subject F (day 48)
+    25C_d115_80: subject F (day 115)
   plot_auto_identified_sites: default
   # add the sites that are auto-identified for 1C, 24C, 25, and 7C
-  add_sites: [365, 369, 396, 443, 444, 445, 446, 447, 448, 449, 450, 456, 484, 499]
+  add_sites: [443, 444, 445, 446, 447, 448, 449, 450, 452, 456, 472, 473, 484, 490, 499]
   exclude_sites: [361]
   site_color_scheme: serum_epitopes_pinkpurple
   escape_profile_ymax:
@@ -594,7 +594,7 @@ human_sera_fig4X_6C_pink:  # name of plot
     6C_d76_500: subject D (day 76)
   plot_auto_identified_sites: default
   # add the sites that are auto-identified for 1C, 24C, 25, and 7C
-  add_sites: [443, 444, 445, 446, 447, 448, 449, 450, 452, 456, 472, 473, 484, 490, 499]
+  add_sites: [365, 369, 396, 443, 444, 445, 446, 447, 448, 449, 450, 456, 484, 499]
   exclude_sites: [361]
   site_color_scheme: serum_epitopes_pinkpurple
   escape_profile_ymax:
