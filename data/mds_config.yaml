@@ -63,7 +63,7 @@ all_sera_antibodies:
     13_d121_1250: J (day121)
     7C_d29_500: K (day29)
     7C_d103_200: K (day103)
-  color_scheme: serum_epitopes
+  color_scheme: serum_epitopes_OGCrowe
   plot_size: 6
   random_state: 3
   pie_alpha: 0.5
@@ -143,7 +143,7 @@ human_sera_Fig4F:  # name of plot
     13_d121_1250: J (day121)
     7C_d29_500: K (day29)
     7C_d103_200: K (day103)
-  color_scheme: serum_epitopes
+  color_scheme: serum_epitopes_OGCrowe
   plot_size: 6
   random_state: 3
   pie_alpha: 0.5
