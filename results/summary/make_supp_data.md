@@ -70,6 +70,7 @@ print('Making supplementary data for the following condition sets:\n  ' + '\n  '
     Making supplementary data for the following condition sets:
       human_sera_oldnames
       human_sera
+      human_sera_pink
 
 
 Read the escape fractions
@@ -208,12 +209,23 @@ for metric_type, (set_name, condition_set) in itertools.product(['mutation', 'si
 
     Saving plot to results/supp_data/human_sera-mutation-corr.png
     
-    Plotting correlations of site escape for human_sera_oldnames
+    Plotting correlations of mutation escape for human_sera_pink
 
 
 
     
 ![png](make_supp_data_files/make_supp_data_16_5.png)
+    
+
+
+    Saving plot to results/supp_data/human_sera_pink-mutation-corr.png
+    
+    Plotting correlations of site escape for human_sera_oldnames
+
+
+
+    
+![png](make_supp_data_files/make_supp_data_16_7.png)
     
 
 
@@ -224,11 +236,22 @@ for metric_type, (set_name, condition_set) in itertools.product(['mutation', 'si
 
 
     
-![png](make_supp_data_files/make_supp_data_16_7.png)
+![png](make_supp_data_files/make_supp_data_16_9.png)
     
 
 
     Saving plot to results/supp_data/human_sera-site-corr.png
+    
+    Plotting correlations of site escape for human_sera_pink
+
+
+
+    
+![png](make_supp_data_files/make_supp_data_16_11.png)
+    
+
+
+    Saving plot to results/supp_data/human_sera_pink-site-corr.png
 
 
 ## Raw data files
@@ -274,6 +297,9 @@ for set_name, condition_set in condition_sets.items():
     
     Raw data for human_sera:
     Writing to results/supp_data/human_sera_raw_data.csv
+    
+    Raw data for human_sera_pink:
+    Writing to results/supp_data/human_sera_pink_raw_data.csv
 
 
 ## Data for `dms-view`:
@@ -458,6 +484,7 @@ for set_name, condition_set in condition_sets.items():
 
     Writing `dms-view` input file for human_sera_oldnames mapped to PDB 6m0j to results/supp_data/human_sera_oldnames_6m0j_dms-view_data.csv
     Writing `dms-view` input file for human_sera mapped to PDB 6m0j to results/supp_data/human_sera_6m0j_dms-view_data.csv
+    Writing `dms-view` input file for human_sera_pink mapped to PDB 6m0j to results/supp_data/human_sera_pink_6m0j_dms-view_data.csv
 
 
 

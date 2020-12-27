@@ -305,7 +305,7 @@ for name, specs in mds_config.items():
     
     Making plot all_sera_antibodies, which has the following antibodies:
     ['CR3022_400', 'COV2-2677_400', 'COV2-2082_400', 'COV2-2094_400', 'COV2-2165_400', 'COV2-2832_400', 'COV2-2479_400', 'COV2-2050_400', 'COV2-2096_400', 'COV2-2499_400', 'CB6_400', 'REGN10933_400', 'REGN10987_400', '23_d21_1250', '23_d45_1250', '23_d120_500', '1C_d26_200', '1C_d113_200', '24C_d32_200', '24C_d104_200', '6C_d33_500', '6C_d76_500', '22C_d28_200', '22C_d104_200', '25C_d48_200', '25C_d115_80', '25_d18_500', '25_d94_200', '12C_d61_160', '12C_d152_80', '23C_d26_80', '23C_d102_80', '13_d15_200', '13_d121_1250', '7C_d29_500', '7C_d103_200']
-    Using the serum_epitopes site color scheme
+    Using the serum_epitopes_OGCrowe site color scheme
     Saving plot to results/multidimensional_scaling/all_sera_antibodies_mds.pdf
 
 
@@ -318,7 +318,7 @@ for name, specs in mds_config.items():
     
     Making plot human_sera_Fig4F, which has the following antibodies:
     ['23_d21_1250', '23_d45_1250', '23_d120_500', '1C_d26_200', '1C_d113_200', '24C_d32_200', '24C_d104_200', '6C_d33_500', '6C_d76_500', '22C_d28_200', '22C_d104_200', '25C_d48_200', '25C_d115_80', '25_d18_500', '25_d94_200', '12C_d61_160', '12C_d152_80', '23C_d26_80', '23C_d102_80', '13_d15_200', '13_d121_1250', '7C_d29_500', '7C_d103_200']
-    Using the serum_epitopes site color scheme
+    Using the serum_epitopes_OGCrowe site color scheme
     Saving plot to results/multidimensional_scaling/human_sera_Fig4F_mds.pdf
 
 
