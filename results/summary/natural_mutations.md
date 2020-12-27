@@ -655,6 +655,117 @@ for name, specs in escape_profiles_config.items():
     
 
 
+    
+    Analyzing natural mutations for human_sera_pink
+    Writing counts of mutations at sites of strong escape to results/GISAID_mutations/human_sera_pink_mutation_counts.csv. First few lines:
+
+
+
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>condition</th>
+      <th>threshold</th>
+      <th>site</th>
+      <th>wildtype</th>
+      <th>count</th>
+      <th>counts_by_mutation</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>subject B (day 26)</td>
+      <td>default</td>
+      <td>484</td>
+      <td>E</td>
+      <td>337</td>
+      <td>E484K (279), E484Q (42), E484A (8), E484D (3), E484R (2), E484G (2), E484V (1)</td>
+    </tr>
+    <tr>
+      <td>subject D (day 33)</td>
+      <td>default</td>
+      <td>484</td>
+      <td>E</td>
+      <td>337</td>
+      <td>E484K (279), E484Q (42), E484A (8), E484D (3), E484G (2), E484R (2), E484V (1)</td>
+    </tr>
+    <tr>
+      <td>subject B (day 113)</td>
+      <td>default</td>
+      <td>484</td>
+      <td>E</td>
+      <td>337</td>
+      <td>E484K (279), E484Q (42), E484A (8), E484D (3), E484G (2), E484R (2), E484V (1)</td>
+    </tr>
+    <tr>
+      <td>subject A (day 21)</td>
+      <td>default</td>
+      <td>484</td>
+      <td>E</td>
+      <td>337</td>
+      <td>E484K (279), E484Q (42), E484A (8), E484D (3), E484G (2), E484R (2), E484V (1)</td>
+    </tr>
+    <tr>
+      <td>subject I (day 26)</td>
+      <td>default</td>
+      <td>484</td>
+      <td>E</td>
+      <td>337</td>
+      <td>E484K (279), E484Q (42), E484A (8), E484D (3), E484G (2), E484R (2), E484V (1)</td>
+    </tr>
+    <tr>
+      <td>subject I (day 102)</td>
+      <td>default</td>
+      <td>484</td>
+      <td>E</td>
+      <td>337</td>
+      <td>E484K (279), E484Q (42), E484A (8), E484D (3), E484R (2), E484G (2), E484V (1)</td>
+    </tr>
+    <tr>
+      <td>subject E (day 28)</td>
+      <td>default</td>
+      <td>484</td>
+      <td>E</td>
+      <td>337</td>
+      <td>E484K (279), E484Q (42), E484A (8), E484D (3), E484G (2), E484R (2), E484V (1)</td>
+    </tr>
+    <tr>
+      <td>subject E (day 104)</td>
+      <td>default</td>
+      <td>484</td>
+      <td>E</td>
+      <td>337</td>
+      <td>E484K (279), E484Q (42), E484A (8), E484D (3), E484G (2), E484R (2), E484V (1)</td>
+    </tr>
+    <tr>
+      <td>subject C (day 32)</td>
+      <td>default</td>
+      <td>484</td>
+      <td>E</td>
+      <td>337</td>
+      <td>E484K (279), E484Q (42), E484A (8), E484D (3), E484G (2), E484R (2), E484V (1)</td>
+    </tr>
+    <tr>
+      <td>subject G (day 18)</td>
+      <td>default</td>
+      <td>484</td>
+      <td>E</td>
+      <td>337</td>
+      <td>E484K (279), E484Q (42), E484A (8), E484D (3), E484G (2), E484R (2), E484V (1)</td>
+    </tr>
+  </tbody>
+</table>
+
+
+    Plotting which antibodies / sera are escaped by mutations at all sites of escape with at least 5 mutation counts and saving to results/GISAID_mutations/human_sera_pink_mutation_counts.pdf.
+
+
+
+    
+![png](natural_mutations_files/natural_mutations_20_7.png)
+    
+
+
 ## Plot correlation between escape and natural frequency
 First aggregate frequency of mutations and escape fractions:
 
@@ -895,6 +1006,26 @@ for name, specs in escape_profiles_config.items():
 
     
 ![png](natural_mutations_files/natural_mutations_24_3.png)
+    
+
+
+    
+    Analyzing natural mutations for human_sera_pink
+    Plotting each condition and saving to results/GISAID_mutations/human_sera_pink_escape_vs_freq_by-condition.pdf
+
+
+
+    
+![png](natural_mutations_files/natural_mutations_24_5.png)
+    
+
+
+    Plotting average across conditions and saving to results/GISAID_mutations/human_sera_pink_escape_vs_freq_average.pdf
+
+
+
+    
+![png](natural_mutations_files/natural_mutations_24_7.png)
     
 
 

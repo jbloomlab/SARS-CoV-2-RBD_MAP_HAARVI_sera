@@ -392,7 +392,7 @@ CB6_validation:
   draw_line_plot: false
 
 # now repeat everything with pinkpurple colors instead of OGCrowe
-human_sera:  # name of plot
+human_sera_pink:  # name of plot
   conditions:  # antibodies / sera to show and names to use for them
     23_d21_1250: subject A (day 21)
     23_d45_1250: subject A (day 45)
@@ -448,7 +448,7 @@ human_sera:  # name of plot
   dmslogo_draw_line_kwargs:
     widthscale: 0.64
 
-human_sera_figS3:  # name of plot
+human_sera_figS3_pink:  # name of plot
   conditions:  # antibodies / sera to show and names to use for them
     23_d21_1250: subject A (day 21)
     1C_d26_200: subject B (day 26)
@@ -498,7 +498,7 @@ human_sera_figS3:  # name of plot
   dmslogo_draw_line_kwargs:
     widthscale: 0.64
 
-human_sera_fig4A_1C:  # name of plot
+human_sera_fig4A_1C_pink:  # name of plot
   conditions:  # antibodies / sera to show and names to use for them
     1C_d26_200: subject B (day 26)
     1C_d113_200: subject B (day 113)
@@ -516,7 +516,7 @@ human_sera_fig4A_1C:  # name of plot
   dmslogo_draw_line_kwargs:
     widthscale: 0.64
 
-human_sera_fig4B_24C:  # name of plot
+human_sera_fig4B_24C_pink:  # name of plot
   conditions:
     24C_d32_200: subject C (day 32)
     24C_d104_200: subject C (day 104)
@@ -534,7 +534,7 @@ human_sera_fig4B_24C:  # name of plot
   dmslogo_draw_line_kwargs:
     widthscale: 0.64
 
-human_sera_fig4C_25:  # name of plot
+human_sera_fig4C_25_pink:  # name of plot
   conditions:
     25_d18_500: subject G (day 18)
     25_d94_200: subject G (day 94)
@@ -552,7 +552,7 @@ human_sera_fig4C_25:  # name of plot
   dmslogo_draw_line_kwargs:
     widthscale: 0.64
 
-human_sera_fig4D_7C:  # name of plot
+human_sera_fig4D_7C_pink:  # name of plot
   conditions:
     7C_d29_500: subject K (day 29)
     7C_d103_200: subject K (day 103)
@@ -570,7 +570,7 @@ human_sera_fig4D_7C:  # name of plot
   dmslogo_draw_line_kwargs:
     widthscale: 0.64
 
-human_sera_fig4D_7C:  # name of plot
+human_sera_fig4D_7C_pink:  # name of plot
   conditions:
     7C_d29_500: subject K (day 29)
     7C_d103_200: subject K (day 103)
@@ -588,7 +588,7 @@ human_sera_fig4D_7C:  # name of plot
   dmslogo_draw_line_kwargs:
     widthscale: 0.64
 
-human_sera_fig4X_6C:  # name of plot
+human_sera_fig4X_6C_pink:  # name of plot
   conditions:  # antibodies / sera to show and names to use for them
     6C_d33_500: subject D (day 33)
     6C_d76_500: subject D (day 76)
@@ -606,7 +606,7 @@ human_sera_fig4X_6C:  # name of plot
   dmslogo_draw_line_kwargs:
     widthscale: 0.64
 
-human_sera_early_fig2:  # name of plot
+human_sera_early_fig2_pink:  # name of plot
   conditions:  # antibodies / sera to show and names to use for them
     23_d21_1250: subject A (day 21)
     1C_d26_200: subject B (day 26)
