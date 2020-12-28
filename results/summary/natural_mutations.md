@@ -6,6 +6,8 @@ Import Python modules:
 
 
 ```python
+import collections
+import copy
 import math
 import os
 
@@ -890,7 +892,7 @@ Note that you can configure below exactly what variables you want to plot (mutat
 ```python
 # all the parameters below have the indicated defaults, but can be set in `escape_profiles_config`
 # via analyze_natural_mutations_specs
-analysis_specs = {
+default_analysis_specs = {
     'maxcol': 5,  # maximum columns in plot
     'minfreq': 1e-5,  # collapse any natural frequencies < this
     'freq': 'site_freq',  # type of frequency to plot: mut_freq or site_freq
@@ -900,7 +902,9 @@ analysis_specs = {
     'label_minfreq': 5e-5,  # label points with frequency >= this and...
     'label_minescape': 0.1,  # label points with escape >= this
     'also_label': [],  # also label any points (sites or mutations) listed here
-    'label_font_size': 6,  # font size for labeling poins
+    'label_font_size': 6,  # font size for labeling points
+    'default_color': 'black',  # color for points not otherwise specificid
+    'set_point_color': {484: 'red'},  # set color for specific sites / mutations
     }
 label_minfreq = 5e-5  # label points with frequency >= this
 label_minescape = 0.05  # label points with escape >= this
@@ -910,6 +914,7 @@ for name, specs in escape_profiles_config.items():
         continue
     print(f"\nAnalyzing natural mutations for {name}")
     
+    analysis_specs = copy.deepcopy(default_analysis_specs)
     if 'analyze_natural_mutations_specs' in specs:
         for key, val in specs['analyze_natural_mutations_specs'].items():
             analysis_specs[key] = val
@@ -943,10 +948,19 @@ for name, specs in escape_profiles_config.items():
         else:
             nrow = math.ceil(len(conditions) / analysis_specs['maxcol'])
             ncol = min(len(conditions), analysis_specs['maxcol'])
-            plot_df = df
+            plot_df = df.copy()
             plotfile = os.path.join(config['gisaid_mutations_dir'],
                                     f"{name}_escape_vs_freq_by-condition.pdf")
             print(f"Plotting each condition and saving to {plotfile}")
+         
+        # color points
+        set_point_color = collections.defaultdict(lambda: analysis_specs['default_color'])
+        for point, color in analysis_specs['set_point_color'].items():
+            set_point_color[point] = color
+        plot_df['color'] = plot_df[ptlabel].map(set_point_color)    
+        # need to make color categorical to assign as aesthetic
+        colors = plot_df['color'].unique()
+        plot_df['color'] = pd.Categorical(plot_df['color'], colors, ordered=True)
             
         label_df = (plot_df
                     .assign(label=lambda x: x[ptlabel].isin(analysis_specs['also_label']))
@@ -962,7 +976,7 @@ for name, specs in escape_profiles_config.items():
         xlabels[0] = f"$<{xlabels[0][1:]}"
         
         p = (ggplot(plot_df) +
-             aes(analysis_specs['freq'], analysis_specs['escape']) +
+             aes(analysis_specs['freq'], analysis_specs['escape'], color='color') +
              geom_point(alpha=0.5) +
              geom_text(data=label_df,
                        mapping=aes(label=ptlabel),
@@ -973,12 +987,14 @@ for name, specs in escape_profiles_config.items():
              theme_classic() +
              theme(figure_size=(2.5 * ncol, 2.5 * nrow),
                    panel_spacing=0.3,
+                   legend_position='none',
                    ) +
              scale_x_log10(name=analysis_specs['xlabel'],
                            breaks=xbreaks,
                            labels=xlabels,
                            expand=(0.07, 0)) +
-             ylab(analysis_specs['ylabel'])
+             ylab(analysis_specs['ylabel']) +
+             scale_color_manual(values=colors)
              )
         if not avg_conditions:
             p = p + facet_wrap('~ condition', ncol=ncol)
