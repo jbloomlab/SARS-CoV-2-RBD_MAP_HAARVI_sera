@@ -54,7 +54,7 @@ human_sera_oldnames:  # name of plot
   # plot automatically identified sites?
   plot_auto_identified_sites: default
   # add these sites if they aren't automatically identified
-  add_sites: [417]
+  add_sites: [417,501]
   # exclude these sites even if not automatically identified
   exclude_sites: [361]
   # name of site-level color scheme in `site_color_schemes.csv` **or**
@@ -118,7 +118,7 @@ human_sera:  # name of plot
   # plot automatically identified sites?
   plot_auto_identified_sites: default
   # add these sites if they aren't automatically identified
-  add_sites: [417]
+  add_sites: [417,501]
   # exclude these sites even if not automatically identified
   exclude_sites: [361]
   # name of site-level color scheme in `site_color_schemes.csv` **or**
@@ -182,7 +182,7 @@ human_sera_figS3:  # name of plot
   # plot automatically identified sites?
   plot_auto_identified_sites: default
   # add these sites if they aren't automatically identified
-  add_sites: [417]
+  add_sites: [417,501]
   # exclude these sites even if not automatically identified
   exclude_sites: [361]
   # name of site-level color scheme in `site_color_schemes.csv` **or**
@@ -203,6 +203,8 @@ human_sera_figS3:  # name of plot
     height_per_ax: 2.0
   dmslogo_draw_line_kwargs:
     widthscale: 0.64
+  dmslogo_draw_logo_kwargs:
+    widthscale: 0.8
 
 human_sera_fig4A_1C:  # name of plot
   conditions:  # antibodies / sera to show and names to use for them
@@ -343,6 +345,39 @@ human_sera_early_fig2:  # name of plot
   dmslogo_draw_line_kwargs:
     widthscale: 0.64
 
+human_sera_early_fig2_417_501:  # name of plot
+  conditions:  # antibodies / sera to show and names to use for them
+    23_d21_1250: subject A (day 21)
+    1C_d26_200: subject B (day 26)
+    24C_d32_200: subject C (day 32)
+    6C_d33_500: subject D (day 33)
+    22C_d28_200: subject E (day 28)
+    25C_d48_200: subject F (day 48)
+    25_d18_500: subject G (day 18)
+    12C_d61_160: subject H (day 61)
+    23C_d26_80: subject I (day 26)
+    13_d15_200: subject J (day 15)
+    7C_d29_500: subject K (day 29)
+  plot_auto_identified_sites: default
+  add_sites: [417,501]
+  exclude_sites: [361]
+  draw_line_plot: true
+  site_color_scheme: serum_epitopes_OGCrowe
+  color_by_dms: false
+  make_supp_data: false
+  analyze_natural_mutations: false
+  natural_mutations_mincounts: 5
+  escape_profile_ymax:
+    quantile: 0.5
+    frac: 0.05
+    min_ymax: 1
+  dmslogo_facet_plot_kwargs:
+    height_per_ax: 2.0
+  dmslogo_draw_line_kwargs:
+    widthscale: 0.64
+  dmslogo_draw_logo_kwargs:
+    widthscale: 0.8
+
 2165_validation:
   conditions:
     COV2-2165_400: COV2-2165
@@ -436,7 +471,7 @@ human_sera_pink:  # name of plot
   # plot automatically identified sites?
   plot_auto_identified_sites: default
   # add these sites if they aren't automatically identified
-  add_sites: [417]
+  add_sites: [417,501]
   # exclude these sites even if not automatically identified
   exclude_sites: [361]
   # name of site-level color scheme in `site_color_schemes.csv` **or**
@@ -500,7 +535,7 @@ human_sera_figS3_pink:  # name of plot
   # plot automatically identified sites?
   plot_auto_identified_sites: default
   # add these sites if they aren't automatically identified
-  add_sites: [417]
+  add_sites: [417,501]
   # exclude these sites even if not automatically identified
   exclude_sites: [361]
   # name of site-level color scheme in `site_color_schemes.csv` **or**
@@ -521,6 +556,9 @@ human_sera_figS3_pink:  # name of plot
     height_per_ax: 2.0
   dmslogo_draw_line_kwargs:
     widthscale: 0.64
+  dmslogo_draw_logo_kwargs:
+    widthscale: 0.8
+
 
 human_sera_fig4A_1C_pink:  # name of plot
   conditions:  # antibodies / sera to show and names to use for them
@@ -660,3 +698,36 @@ human_sera_early_fig2_pink:  # name of plot
     height_per_ax: 2.0
   dmslogo_draw_line_kwargs:
     widthscale: 0.64
+
+human_sera_early_fig2_pink_417_501:  # name of plot
+  conditions:  # antibodies / sera to show and names to use for them
+    23_d21_1250: subject A (day 21)
+    1C_d26_200: subject B (day 26)
+    24C_d32_200: subject C (day 32)
+    6C_d33_500: subject D (day 33)
+    22C_d28_200: subject E (day 28)
+    25C_d48_200: subject F (day 48)
+    25_d18_500: subject G (day 18)
+    12C_d61_160: subject H (day 61)
+    23C_d26_80: subject I (day 26)
+    13_d15_200: subject J (day 15)
+    7C_d29_500: subject K (day 29)
+  plot_auto_identified_sites: default
+  add_sites: [417,501]
+  exclude_sites: [361]
+  draw_line_plot: true
+  site_color_scheme: serum_epitopes_pinkpurple
+  color_by_dms: false
+  make_supp_data: false
+  analyze_natural_mutations: false
+  natural_mutations_mincounts: 5
+  escape_profile_ymax:
+    quantile: 0.5
+    frac: 0.05
+    min_ymax: 1
+  dmslogo_facet_plot_kwargs:
+    height_per_ax: 2.0
+  dmslogo_draw_line_kwargs:
+    widthscale: 0.64
+  dmslogo_draw_logo_kwargs:
+    widthscale: 0.8

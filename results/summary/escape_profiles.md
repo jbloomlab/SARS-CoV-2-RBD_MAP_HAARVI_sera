@@ -659,7 +659,7 @@ with multiprocessing.Pool(ncpus) as pool:
         
 ```
 
-    Drawing 29 profiles using 8 CPUs...
+    Drawing 31 profiles using 8 CPUs...
     
     Plotted profile 1 to:
      results/escape_profiles/human_sera_oldnames_stackedlogo.pdf
@@ -830,8 +830,8 @@ with multiprocessing.Pool(ncpus) as pool:
 
     
     Plotted profile 15 to:
-     results/escape_profiles/2165_validation_stackedlogo.pdf
-     results/escape_profiles/2165_validation_stackedlogo.png.
+     results/escape_profiles/human_sera_early_fig2_417_501_stackedlogo.pdf
+     results/escape_profiles/human_sera_early_fig2_417_501_stackedlogo.png.
 
 
 
@@ -842,8 +842,8 @@ with multiprocessing.Pool(ncpus) as pool:
 
     
     Plotted profile 16 to:
-     results/escape_profiles/CB6_validation_stackedlogo.pdf
-     results/escape_profiles/CB6_validation_stackedlogo.png.
+     results/escape_profiles/2165_validation_stackedlogo.pdf
+     results/escape_profiles/2165_validation_stackedlogo.png.
 
 
 
@@ -854,8 +854,8 @@ with multiprocessing.Pool(ncpus) as pool:
 
     
     Plotted profile 17 to:
-     results/escape_profiles/2082_validation_stackedlogo.pdf
-     results/escape_profiles/2082_validation_stackedlogo.png.
+     results/escape_profiles/CB6_validation_stackedlogo.pdf
+     results/escape_profiles/CB6_validation_stackedlogo.png.
 
 
 
@@ -866,8 +866,8 @@ with multiprocessing.Pool(ncpus) as pool:
 
     
     Plotted profile 18 to:
-     results/escape_profiles/2832_validation_stackedlogo.pdf
-     results/escape_profiles/2832_validation_stackedlogo.png.
+     results/escape_profiles/2082_validation_stackedlogo.pdf
+     results/escape_profiles/2082_validation_stackedlogo.png.
 
 
 
@@ -878,8 +878,8 @@ with multiprocessing.Pool(ncpus) as pool:
 
     
     Plotted profile 19 to:
-     results/escape_profiles/human_sera_pink_stackedlogo.pdf
-     results/escape_profiles/human_sera_pink_stackedlogo.png.
+     results/escape_profiles/2832_validation_stackedlogo.pdf
+     results/escape_profiles/2832_validation_stackedlogo.png.
 
 
 
@@ -890,8 +890,8 @@ with multiprocessing.Pool(ncpus) as pool:
 
     
     Plotted profile 20 to:
-     results/escape_profiles/human_sera_figS3_pink_stackedlogo.pdf
-     results/escape_profiles/human_sera_figS3_pink_stackedlogo.png.
+     results/escape_profiles/human_sera_pink_stackedlogo.pdf
+     results/escape_profiles/human_sera_pink_stackedlogo.png.
 
 
 
@@ -902,8 +902,8 @@ with multiprocessing.Pool(ncpus) as pool:
 
     
     Plotted profile 21 to:
-     results/escape_profiles/human_sera_figS3_pink_color_by_bind_stackedlogo.pdf
-     results/escape_profiles/human_sera_figS3_pink_color_by_bind_stackedlogo.png.
+     results/escape_profiles/human_sera_figS3_pink_stackedlogo.pdf
+     results/escape_profiles/human_sera_figS3_pink_stackedlogo.png.
 
 
 
@@ -914,8 +914,8 @@ with multiprocessing.Pool(ncpus) as pool:
 
     
     Plotted profile 22 to:
-     results/escape_profiles/human_sera_figS3_pink_color_by_expr_stackedlogo.pdf
-     results/escape_profiles/human_sera_figS3_pink_color_by_expr_stackedlogo.png.
+     results/escape_profiles/human_sera_figS3_pink_color_by_bind_stackedlogo.pdf
+     results/escape_profiles/human_sera_figS3_pink_color_by_bind_stackedlogo.png.
 
 
 
@@ -926,8 +926,8 @@ with multiprocessing.Pool(ncpus) as pool:
 
     
     Plotted profile 23 to:
-     results/escape_profiles/human_sera_fig4A_1C_pink_stackedlogo.pdf
-     results/escape_profiles/human_sera_fig4A_1C_pink_stackedlogo.png.
+     results/escape_profiles/human_sera_figS3_pink_color_by_expr_stackedlogo.pdf
+     results/escape_profiles/human_sera_figS3_pink_color_by_expr_stackedlogo.png.
 
 
 
@@ -938,8 +938,8 @@ with multiprocessing.Pool(ncpus) as pool:
 
     
     Plotted profile 24 to:
-     results/escape_profiles/human_sera_fig4B_24C_pink_stackedlogo.pdf
-     results/escape_profiles/human_sera_fig4B_24C_pink_stackedlogo.png.
+     results/escape_profiles/human_sera_fig4A_1C_pink_stackedlogo.pdf
+     results/escape_profiles/human_sera_fig4A_1C_pink_stackedlogo.png.
 
 
 
@@ -950,8 +950,8 @@ with multiprocessing.Pool(ncpus) as pool:
 
     
     Plotted profile 25 to:
-     results/escape_profiles/human_sera_fig4C_25_pink_stackedlogo.pdf
-     results/escape_profiles/human_sera_fig4C_25_pink_stackedlogo.png.
+     results/escape_profiles/human_sera_fig4B_24C_pink_stackedlogo.pdf
+     results/escape_profiles/human_sera_fig4B_24C_pink_stackedlogo.png.
 
 
 
@@ -962,8 +962,8 @@ with multiprocessing.Pool(ncpus) as pool:
 
     
     Plotted profile 26 to:
-     results/escape_profiles/human_sera_fig4D_7C_pink_stackedlogo.pdf
-     results/escape_profiles/human_sera_fig4D_7C_pink_stackedlogo.png.
+     results/escape_profiles/human_sera_fig4C_25_pink_stackedlogo.pdf
+     results/escape_profiles/human_sera_fig4C_25_pink_stackedlogo.png.
 
 
 
@@ -974,8 +974,8 @@ with multiprocessing.Pool(ncpus) as pool:
 
     
     Plotted profile 27 to:
-     results/escape_profiles/human_sera_fig4E_25C_pink_stackedlogo.pdf
-     results/escape_profiles/human_sera_fig4E_25C_pink_stackedlogo.png.
+     results/escape_profiles/human_sera_fig4D_7C_pink_stackedlogo.pdf
+     results/escape_profiles/human_sera_fig4D_7C_pink_stackedlogo.png.
 
 
 
@@ -986,8 +986,8 @@ with multiprocessing.Pool(ncpus) as pool:
 
     
     Plotted profile 28 to:
-     results/escape_profiles/human_sera_fig4X_6C_pink_stackedlogo.pdf
-     results/escape_profiles/human_sera_fig4X_6C_pink_stackedlogo.png.
+     results/escape_profiles/human_sera_fig4E_25C_pink_stackedlogo.pdf
+     results/escape_profiles/human_sera_fig4E_25C_pink_stackedlogo.png.
 
 
 
@@ -998,13 +998,37 @@ with multiprocessing.Pool(ncpus) as pool:
 
     
     Plotted profile 29 to:
+     results/escape_profiles/human_sera_fig4X_6C_pink_stackedlogo.pdf
+     results/escape_profiles/human_sera_fig4X_6C_pink_stackedlogo.png.
+
+
+
+    
+![png](escape_profiles_files/escape_profiles_26_57.png)
+    
+
+
+    
+    Plotted profile 30 to:
      results/escape_profiles/human_sera_early_fig2_pink_stackedlogo.pdf
      results/escape_profiles/human_sera_early_fig2_pink_stackedlogo.png.
 
 
 
     
-![png](escape_profiles_files/escape_profiles_26_57.png)
+![png](escape_profiles_files/escape_profiles_26_59.png)
+    
+
+
+    
+    Plotted profile 31 to:
+     results/escape_profiles/human_sera_early_fig2_pink_417_501_stackedlogo.pdf
+     results/escape_profiles/human_sera_early_fig2_pink_417_501_stackedlogo.png.
+
+
+
+    
+![png](escape_profiles_files/escape_profiles_26_61.png)
     
 
 
