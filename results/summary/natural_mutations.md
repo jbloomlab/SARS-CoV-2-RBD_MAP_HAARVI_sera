@@ -657,117 +657,6 @@ for name, specs in escape_profiles_config.items():
     
 
 
-    
-    Analyzing natural mutations for human_sera_pink
-    Writing counts of mutations at sites of strong escape to results/GISAID_mutations/human_sera_pink_mutation_counts.csv. First few lines:
-
-
-
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th>condition</th>
-      <th>threshold</th>
-      <th>site</th>
-      <th>wildtype</th>
-      <th>count</th>
-      <th>counts_by_mutation</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>subject B (day 26)</td>
-      <td>default</td>
-      <td>484</td>
-      <td>E</td>
-      <td>337</td>
-      <td>E484K (279), E484Q (42), E484A (8), E484D (3), E484R (2), E484G (2), E484V (1)</td>
-    </tr>
-    <tr>
-      <td>subject D (day 33)</td>
-      <td>default</td>
-      <td>484</td>
-      <td>E</td>
-      <td>337</td>
-      <td>E484K (279), E484Q (42), E484A (8), E484D (3), E484G (2), E484R (2), E484V (1)</td>
-    </tr>
-    <tr>
-      <td>subject B (day 113)</td>
-      <td>default</td>
-      <td>484</td>
-      <td>E</td>
-      <td>337</td>
-      <td>E484K (279), E484Q (42), E484A (8), E484D (3), E484G (2), E484R (2), E484V (1)</td>
-    </tr>
-    <tr>
-      <td>subject A (day 21)</td>
-      <td>default</td>
-      <td>484</td>
-      <td>E</td>
-      <td>337</td>
-      <td>E484K (279), E484Q (42), E484A (8), E484D (3), E484G (2), E484R (2), E484V (1)</td>
-    </tr>
-    <tr>
-      <td>subject I (day 26)</td>
-      <td>default</td>
-      <td>484</td>
-      <td>E</td>
-      <td>337</td>
-      <td>E484K (279), E484Q (42), E484A (8), E484D (3), E484G (2), E484R (2), E484V (1)</td>
-    </tr>
-    <tr>
-      <td>subject I (day 102)</td>
-      <td>default</td>
-      <td>484</td>
-      <td>E</td>
-      <td>337</td>
-      <td>E484K (279), E484Q (42), E484A (8), E484D (3), E484R (2), E484G (2), E484V (1)</td>
-    </tr>
-    <tr>
-      <td>subject E (day 28)</td>
-      <td>default</td>
-      <td>484</td>
-      <td>E</td>
-      <td>337</td>
-      <td>E484K (279), E484Q (42), E484A (8), E484D (3), E484G (2), E484R (2), E484V (1)</td>
-    </tr>
-    <tr>
-      <td>subject E (day 104)</td>
-      <td>default</td>
-      <td>484</td>
-      <td>E</td>
-      <td>337</td>
-      <td>E484K (279), E484Q (42), E484A (8), E484D (3), E484G (2), E484R (2), E484V (1)</td>
-    </tr>
-    <tr>
-      <td>subject C (day 32)</td>
-      <td>default</td>
-      <td>484</td>
-      <td>E</td>
-      <td>337</td>
-      <td>E484K (279), E484Q (42), E484A (8), E484D (3), E484G (2), E484R (2), E484V (1)</td>
-    </tr>
-    <tr>
-      <td>subject G (day 18)</td>
-      <td>default</td>
-      <td>484</td>
-      <td>E</td>
-      <td>337</td>
-      <td>E484K (279), E484Q (42), E484A (8), E484D (3), E484G (2), E484R (2), E484V (1)</td>
-    </tr>
-  </tbody>
-</table>
-
-
-    Plotting which antibodies / sera are escaped by mutations at all sites of escape with at least 5 mutation counts and saving to results/GISAID_mutations/human_sera_pink_mutation_counts.pdf.
-
-
-
-    
-![png](natural_mutations_files/natural_mutations_20_7.png)
-    
-
-
 ## Plot correlation between escape and natural frequency
 First aggregate frequency of mutations and escape fractions:
 
@@ -903,8 +792,10 @@ default_analysis_specs = {
     'label_minescape': 0.1,  # label points with escape >= this
     'also_label': [],  # also label any points (sites or mutations) listed here
     'label_font_size': 6,  # font size for labeling points
-    'default_color': 'black',  # color for points not otherwise specificid
-    'set_point_color': {484: 'red'},  # set color for specific sites / mutations
+    'default_color': 'black',  # color for points not otherwise specified
+    'default_alpha': 0.5,  # default alpha if not specified
+    'set_point_color': {},  # set color; key by site / mutation, value is color
+    'set_point_alpha': {},  # set alpha; key by site / mutations, value is alpha
     }
 label_minfreq = 5e-5  # label points with frequency >= this
 label_minescape = 0.05  # label points with escape >= this
@@ -953,11 +844,15 @@ for name, specs in escape_profiles_config.items():
                                     f"{name}_escape_vs_freq_by-condition.pdf")
             print(f"Plotting each condition and saving to {plotfile}")
          
-        # color points
+        # color points and set alpha
         set_point_color = collections.defaultdict(lambda: analysis_specs['default_color'])
+        set_point_alpha = collections.defaultdict(lambda: analysis_specs['default_alpha'])
         for point, color in analysis_specs['set_point_color'].items():
             set_point_color[point] = color
-        plot_df['color'] = plot_df[ptlabel].map(set_point_color)    
+        for point, alpha in analysis_specs['set_point_alpha'].items():
+            set_point_alpha[point] = alpha
+        plot_df['color'] = plot_df[ptlabel].map(set_point_color)
+        plot_df['alpha'] = plot_df[ptlabel].map(set_point_alpha)
         # need to make color categorical to assign as aesthetic
         colors = plot_df['color'].unique()
         plot_df['color'] = pd.Categorical(plot_df['color'], colors, ordered=True)
@@ -976,8 +871,8 @@ for name, specs in escape_profiles_config.items():
         xlabels[0] = f"$<{xlabels[0][1:]}"
         
         p = (ggplot(plot_df) +
-             aes(analysis_specs['freq'], analysis_specs['escape'], color='color') +
-             geom_point(alpha=0.5) +
+             aes(analysis_specs['freq'], analysis_specs['escape'], color='color', alpha='alpha') +
+             geom_point() +
              geom_text(data=label_df,
                        mapping=aes(label=ptlabel),
                        size=analysis_specs['label_font_size'],
@@ -994,15 +889,15 @@ for name, specs in escape_profiles_config.items():
                            labels=xlabels,
                            expand=(0.07, 0)) +
              ylab(analysis_specs['ylabel']) +
-             scale_color_manual(values=colors)
+             scale_color_manual(values=colors) +
+             scale_alpha_continuous(limits=(0, 1), range=(0, 1))
              )
         if not avg_conditions:
             p = p + facet_wrap('~ condition', ncol=ncol)
         p.save(plotfile, verbose=False)
         fig = p.draw()
         display(fig)
-        plt.close(fig)
-        
+       # plt.close(fig)
 ```
 
     
@@ -1025,23 +920,15 @@ for name, specs in escape_profiles_config.items():
     
 
 
+
     
-    Analyzing natural mutations for human_sera_pink
-    Plotting each condition and saving to results/GISAID_mutations/human_sera_pink_escape_vs_freq_by-condition.pdf
+![png](natural_mutations_files/natural_mutations_24_4.png)
+    
 
 
 
     
 ![png](natural_mutations_files/natural_mutations_24_5.png)
-    
-
-
-    Plotting average across conditions and saving to results/GISAID_mutations/human_sera_pink_escape_vs_freq_average.pdf
-
-
-
-    
-![png](natural_mutations_files/natural_mutations_24_7.png)
     
 
 

@@ -132,19 +132,46 @@ human_sera:  # name of plot
   analyze_natural_mutations: true
   natural_mutations_mincounts: 5  # plot sites with >= this many mutation counts
   analyze_natural_mutations_specs:
-    also_label: [384,417,439,446,484,485,494,453,501, 477]
+    also_label: [417, 439, 444, 446, 452, 453, 455, 456, 472, 477, 484, 485, 486, 490, 494, 501]
     label_font_size: 7
-    default_color: black
-    label_font_size: 7
+    default_color: '#999999'
+    default_alpha: 0.6
+    set_point_alpha:
+      417: 1
+      439: 1
+      444: 1
+      446: 1
+      452: 1
+      453: 1
+      455: 1
+      456: 1
+      472: 1
+      477: 1
+      484: 1
+      485: 1
+      486: 1
+      490: 1
+      494: 1
+      501: 1
     set_point_color:
-      484: '#004488'
-      477: '#004488'
       417: '#004488'
-      501: '#66CCEE'
+      444: '#66CCEE'
       446: '#66CCEE'
+      452: '#66CCEE'
+      455: '#004488'
+      456: '#004488'
+      472: '#004488'
+      477: '#004488'
+      484: '#004488'
+      485: '#004488'
+      486: '#004488'
+      490: '#004488'
+      494: '#66CCEE'
+      501: '#66CCEE'
     escape: tot_site_escape
     ylabel: total escape at site
-    label_minescape: 2.0
+    label_minescape: 2
+    label_minfreq: 5e-5
   escape_profile_ymax:
     quantile: 0.5
     frac: 0.05
@@ -482,7 +509,7 @@ human_sera_pink:  # name of plot
   # make supplemental data files for this antibody set
   make_supp_data: true
   # analyze naturally occurring mutations at strong sites of escape
-  analyze_natural_mutations: true
+  analyze_natural_mutations: false
   natural_mutations_mincounts: 5  # plot sites with >= this many mutation counts
   analyze_natural_mutations_specs:
     also_label: [384,417,439,446,484,485,494,453,501, 477]
