@@ -134,8 +134,8 @@ human_sera:  # name of plot
   analyze_natural_mutations_specs:
     also_label: [417, 439, 444, 446, 452, 453, 455, 456, 472, 477, 484, 485, 486, 490, 494, 501]
     label_font_size: 7
-    default_color: black
-    default_alpha: 0.3
+    default_color: '#999999'
+    default_alpha: 0.6
     set_point_alpha:
       417: 1
       439: 1
