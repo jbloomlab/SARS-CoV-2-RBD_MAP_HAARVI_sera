@@ -1,6 +1,6 @@
 # Interactive structural visualizations of comprehensive mapping of mutations to the SARS-CoV-2 receptor-binding domain that affect recognition by polyclonal human sera
 
-Below are links to interactive visualizations of the effects of single mutations to the SARS-CoV-2 spike receptor-binding domain (RBD) on binding by polyclonal convalescent human sera. These visualizations are built using [dms-view](https://dms-view.github.io/docs/). These experiments are described in this pre-print (**add link**), and raw data are available [here](https://github.com/jbloomlab/SARS-CoV-2-RBD_MAP_HAARVI_sera/blob/main/results/supp_data/human_sera_raw_data.csv).
+Below are links to interactive visualizations of the effects of single mutations to the SARS-CoV-2 spike receptor-binding domain (RBD) on binding by polyclonal convalescent human sera. These visualizations are built using [dms-view](https://dms-view.github.io/docs/). These experiments are described in this [pre-print](https://doi.org/10.1101/2020.12.31.425021), and raw data are available [here](https://github.com/jbloomlab/SARS-CoV-2-RBD_MAP_HAARVI_sera/blob/main/results/supp_data/human_sera_raw_data.csv).
 
 Sites where mutations reduce binding by serum antibodies are shown for each serum, and are mapped to the ACE2-bound RBD structure ([PDB 6M0J](https://www.rcsb.org/structure/6M0J)). At least two time points per individual were mapped, and each time point is shown separately.
 
