@@ -1,0 +1,18 @@
+display_PID,Days Post-Symptom Onset,display_name,NT50_str,NT50_str,NT50_str,NT50_str,NT50_str
+,,,wildtype,E484K,E484Q,E484P,RBD antibodies depleted
+subject A,21.0,subject A (day 21),13402,n.d.,11539,n.d.,845
+subject A,120.0,subject A (day 120),1867,n.d.,3041,n.d.,<20
+subject B,26.0,subject B (day 26),1431,121,83,341,136
+subject B,113.0,subject B (day 113),442,n.d.,94,221,<20
+subject C,32.0,subject C (day 32),9439,<200,249,212,27
+subject C,104.0,subject C (day 104),1809,n.d.,219,136,<20
+subject E,28.0,subject E (day 28),961,n.d.,959,n.d.,231
+subject E,104.0,subject E (day 104),320,n.d.,579,n.d.,<20
+subject G,18.0,subject G (day 18),31617,25440,n.d.,4033,727
+subject G,94.0,subject G (day 94),428,n.d.,n.d.,578,<20
+subject I,26.0,subject I (day 26),267,<40,20,n.d.,21
+subject I,102.0,subject I (day 102),551,n.d.,30,n.d.,50
+subject J,15.0,subject J (day 15),1177,n.d.,n.d.,1259,166
+subject J,121.0,subject J (day 121),697,n.d.,n.d.,431,<20
+subject K,29.0,subject K (day 29),420,n.d.,n.d.,120,50
+subject K,103.0,subject K (day 103),279,n.d.,n.d.,112,<20
