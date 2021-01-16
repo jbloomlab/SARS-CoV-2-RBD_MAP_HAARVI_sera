@@ -16,9 +16,12 @@ neut_input_files: # make sure it is in this format:
   # data/201211_mutneuts_torepeat.csv: 201211
   data/201221_mutneuts.csv: 201221
   data/201224_mutneuts.csv: 201224
+  data/210115_mutneuts.csv: 210115
 
-# enter all the samples and stuff to ignore here - none for now
+# enter all the samples and stuff to ignore here
 neut_samples_ignore: False
+neut_ignore_dates:
+  24C_d32: 201224 # these were repeated on 210115
 
 # the neutralization limit of detection is equal to the starting dilution
 NT50_LOD: 20
