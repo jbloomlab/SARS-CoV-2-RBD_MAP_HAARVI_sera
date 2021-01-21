@@ -53,13 +53,6 @@ theme_set(theme_seaborn(style='white', context='talk', font='FreeSans', font_sca
 ```
 
 
-
-
-    <plotnine.themes.theme_seaborn.theme_seaborn at 0x7f2744d7dd50>
-
-
-
-
 ```python
 def svg_dim(svgfile, dim):
     """Get width or height `dim` of `svgfile` in points."""
@@ -972,12 +965,12 @@ display(foldchange.head())
       <th>fold_change</th>
       <th>log2_fold_change</th>
       <th>...</th>
-      <th>experiment</th>
-      <th>Sex</th>
-      <th>Age</th>
-      <th>Severity</th>
       <th>IC50_D614</th>
       <th>NT50_D614</th>
+      <th>RBD IgA</th>
+      <th>RBD IgG</th>
+      <th>RBD IgM</th>
+      <th>Spike IgG</th>
       <th>logNT50_D614</th>
       <th>logNT50_G614</th>
       <th>max_fc</th>
@@ -998,12 +991,12 @@ display(foldchange.head())
       <td>1.451173</td>
       <td>0.537220</td>
       <td>...</td>
-      <td>expt_41</td>
-      <td>Male</td>
-      <td>35.0</td>
-      <td>Symptomatic Hospitalized</td>
       <td>0.001594</td>
       <td>627.425740</td>
+      <td>9.017706</td>
+      <td>9.116395</td>
+      <td>1.568800</td>
+      <td>12.105719</td>
       <td>6.441625</td>
       <td>7.354642</td>
       <td>14.243019</td>
@@ -1022,12 +1015,12 @@ display(foldchange.head())
       <td>4.881914</td>
       <td>2.287447</td>
       <td>...</td>
-      <td>expt_41</td>
-      <td>Male</td>
-      <td>35.0</td>
-      <td>Symptomatic Hospitalized</td>
       <td>0.001594</td>
       <td>627.425740</td>
+      <td>9.017706</td>
+      <td>9.116395</td>
+      <td>1.568800</td>
+      <td>12.105719</td>
       <td>6.441625</td>
       <td>7.354642</td>
       <td>14.243019</td>
@@ -1046,12 +1039,12 @@ display(foldchange.head())
       <td>0.378838</td>
       <td>-1.400346</td>
       <td>...</td>
-      <td>expt_51</td>
-      <td>Male</td>
-      <td>35.0</td>
-      <td>Symptomatic Hospitalized</td>
       <td>0.008034</td>
       <td>124.464922</td>
+      <td>6.336336</td>
+      <td>7.169104</td>
+      <td>0.621060</td>
+      <td>10.741077</td>
       <td>4.824024</td>
       <td>5.651999</td>
       <td>14.243019</td>
@@ -1070,12 +1063,12 @@ display(foldchange.head())
       <td>1.978358</td>
       <td>0.984303</td>
       <td>...</td>
-      <td>expt_51</td>
-      <td>Male</td>
-      <td>35.0</td>
-      <td>Symptomatic Hospitalized</td>
       <td>0.008034</td>
       <td>124.464922</td>
+      <td>6.336336</td>
+      <td>7.169104</td>
+      <td>0.621060</td>
+      <td>10.741077</td>
       <td>4.824024</td>
       <td>5.651999</td>
       <td>14.243019</td>
@@ -1094,12 +1087,12 @@ display(foldchange.head())
       <td>0.711198</td>
       <td>-0.491677</td>
       <td>...</td>
-      <td>expt_35</td>
-      <td>Female</td>
-      <td>76.0</td>
-      <td>Symptomatic Non-Hospitalized</td>
       <td>0.000174</td>
       <td>5761.315215</td>
+      <td>1.880786</td>
+      <td>11.449408</td>
+      <td>5.090334</td>
+      <td>13.740618</td>
       <td>8.658921</td>
       <td>8.154701</td>
       <td>125.366727</td>
@@ -1107,7 +1100,7 @@ display(foldchange.head())
     </tr>
   </tbody>
 </table>
-<p>5 rows × 38 columns</p>
+<p>5 rows × 42 columns</p>
 </div>
 
 
@@ -1349,17 +1342,6 @@ display(SVG(merged_svg))
     
     Making plot for serum:
     Saving to ./results/mutant_neuts_results//serum_mutant_neuts.svg
-    
-    Making plot for antibody:
-    Saving to ./results/mutant_neuts_results//antibody_mutant_neuts.svg
-    
-    Combining plots into results/mutant_neuts_results/mutant_neuts.svg:
-
-
-
-    
-![svg](mutant_neuts_files/mutant_neuts_32_1.svg)
-    
 
 
 Make plots of just key sera of interest.
@@ -1418,9 +1400,9 @@ fits = neutcurve.CurveFits(df,
 fig, _ = fits.plotSera(xlabel='serum dilution',
                        ncol=2,
                        heightscale=0.95,
-                       widthscale=0.94,
+                       widthscale=1.25,
                        max_viruses_per_subplot=len(viruses_to_plot),
-                       sharex=False,
+                       sharex=True,
                        )
 display(fig)
 main_fig_neut_svg = os.path.join(resultsdir, 'main_fig_neut.svg')
@@ -1428,315 +1410,6 @@ print(f"Saving to {main_fig_neut_svg}")
 fig.savefig(main_fig_neut_svg, bbox_inches='tight')
 plt.close(fig)
 ```
-
-
-    
-![png](mutant_neuts_files/mutant_neuts_34_0.png)
-    
-
-
-
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>display_name</th>
-      <th>date</th>
-      <th>virus</th>
-      <th>replicate</th>
-      <th>nreplicates</th>
-      <th>ic50</th>
-      <th>ic50_bound</th>
-      <th>ic50_str</th>
-      <th>midpoint</th>
-      <th>slope</th>
-      <th>top</th>
-      <th>bottom</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>subject B (day 26)</td>
-      <td>201106</td>
-      <td>wildtype</td>
-      <td>average</td>
-      <td>2</td>
-      <td>0.000600</td>
-      <td>interpolated</td>
-      <td>0.0006</td>
-      <td>0.000600</td>
-      <td>1.076034</td>
-      <td>1</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>subject B (day 26)</td>
-      <td>201116</td>
-      <td>wildtype</td>
-      <td>average</td>
-      <td>2</td>
-      <td>0.000927</td>
-      <td>interpolated</td>
-      <td>0.000927</td>
-      <td>0.000927</td>
-      <td>1.161519</td>
-      <td>1</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>subject B (day 26)</td>
-      <td>201224</td>
-      <td>wildtype</td>
-      <td>average</td>
-      <td>2</td>
-      <td>0.000646</td>
-      <td>interpolated</td>
-      <td>0.000646</td>
-      <td>0.000646</td>
-      <td>0.797637</td>
-      <td>1</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>5</th>
-      <td>subject C (day 32)</td>
-      <td>201106</td>
-      <td>wildtype</td>
-      <td>average</td>
-      <td>2</td>
-      <td>0.000112</td>
-      <td>interpolated</td>
-      <td>0.000112</td>
-      <td>0.000112</td>
-      <td>1.212649</td>
-      <td>1</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>7</th>
-      <td>subject C (day 32)</td>
-      <td>201116</td>
-      <td>wildtype</td>
-      <td>average</td>
-      <td>2</td>
-      <td>0.000112</td>
-      <td>interpolated</td>
-      <td>0.000112</td>
-      <td>0.000112</td>
-      <td>1.182218</td>
-      <td>1</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>8</th>
-      <td>subject C (day 32)</td>
-      <td>201119</td>
-      <td>wildtype</td>
-      <td>average</td>
-      <td>2</td>
-      <td>0.000134</td>
-      <td>interpolated</td>
-      <td>0.000134</td>
-      <td>0.000134</td>
-      <td>1.293819</td>
-      <td>1</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>9</th>
-      <td>subject C (day 32)</td>
-      <td>210115</td>
-      <td>wildtype</td>
-      <td>average</td>
-      <td>2</td>
-      <td>0.000116</td>
-      <td>interpolated</td>
-      <td>0.000116</td>
-      <td>0.000116</td>
-      <td>1.164791</td>
-      <td>1</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>11</th>
-      <td>subject G (day 18)</td>
-      <td>201116</td>
-      <td>wildtype</td>
-      <td>average</td>
-      <td>2</td>
-      <td>0.000024</td>
-      <td>interpolated</td>
-      <td>2.43e-05</td>
-      <td>0.000024</td>
-      <td>0.794332</td>
-      <td>1</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>13</th>
-      <td>subject G (day 18)</td>
-      <td>201119</td>
-      <td>wildtype</td>
-      <td>average</td>
-      <td>2</td>
-      <td>0.000045</td>
-      <td>interpolated</td>
-      <td>4.52e-05</td>
-      <td>0.000045</td>
-      <td>0.862053</td>
-      <td>1</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>14</th>
-      <td>subject G (day 18)</td>
-      <td>201224</td>
-      <td>wildtype</td>
-      <td>average</td>
-      <td>2</td>
-      <td>0.000032</td>
-      <td>interpolated</td>
-      <td>3.17e-05</td>
-      <td>0.000032</td>
-      <td>0.696382</td>
-      <td>1</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>16</th>
-      <td>subject G (day 94)</td>
-      <td>201116</td>
-      <td>wildtype</td>
-      <td>average</td>
-      <td>2</td>
-      <td>0.001858</td>
-      <td>interpolated</td>
-      <td>0.00186</td>
-      <td>0.001858</td>
-      <td>1.034102</td>
-      <td>1</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>18</th>
-      <td>subject G (day 94)</td>
-      <td>201119</td>
-      <td>wildtype</td>
-      <td>average</td>
-      <td>2</td>
-      <td>0.003129</td>
-      <td>interpolated</td>
-      <td>0.00313</td>
-      <td>0.003129</td>
-      <td>1.111736</td>
-      <td>1</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>28</th>
-      <td>subject I (day 102)</td>
-      <td>201116</td>
-      <td>wildtype</td>
-      <td>average</td>
-      <td>2</td>
-      <td>0.001677</td>
-      <td>interpolated</td>
-      <td>0.00168</td>
-      <td>0.001677</td>
-      <td>1.186140</td>
-      <td>1</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>30</th>
-      <td>subject I (day 102)</td>
-      <td>201221</td>
-      <td>wildtype</td>
-      <td>average</td>
-      <td>2</td>
-      <td>0.001977</td>
-      <td>interpolated</td>
-      <td>0.00198</td>
-      <td>0.001977</td>
-      <td>1.245650</td>
-      <td>1</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>20</th>
-      <td>subject I (day 26)</td>
-      <td>201116</td>
-      <td>wildtype</td>
-      <td>average</td>
-      <td>2</td>
-      <td>0.002674</td>
-      <td>interpolated</td>
-      <td>0.00267</td>
-      <td>0.002674</td>
-      <td>0.686468</td>
-      <td>1</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>23</th>
-      <td>subject I (day 26)</td>
-      <td>201221</td>
-      <td>wildtype</td>
-      <td>average</td>
-      <td>2</td>
-      <td>0.005194</td>
-      <td>interpolated</td>
-      <td>0.00519</td>
-      <td>0.005194</td>
-      <td>0.655719</td>
-      <td>1</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>24</th>
-      <td>subject I (day 26)</td>
-      <td>201224</td>
-      <td>wildtype</td>
-      <td>average</td>
-      <td>2</td>
-      <td>0.004230</td>
-      <td>interpolated</td>
-      <td>0.00423</td>
-      <td>0.004230</td>
-      <td>0.586796</td>
-      <td>1</td>
-      <td>0</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-
-
-
-    
-![png](mutant_neuts_files/mutant_neuts_34_2.png)
-    
-
-
-    Saving to results/mutant_neuts_results/main_fig_neut.svg
-
 
 ## Make plots with escape fractions and fold-change IC50.
 
@@ -1985,12 +1658,6 @@ make_escape_and_ic50_plot(escape_metric='mut_escape_frac_epistasis_model',
 display(SVG(mut_fig_svg))
 ```
 
-
-    
-![svg](mutant_neuts_files/mutant_neuts_39_0.svg)
-    
-
-
 Make the site-level plot (total escape at site):
 
 
@@ -2005,12 +1672,6 @@ make_escape_and_ic50_plot(escape_metric='site_total_escape_frac_epistasis_model'
                           )
 display(SVG(sitetotal_fig_svg))
 ```
-
-
-    
-![svg](mutant_neuts_files/mutant_neuts_41_0.svg)
-    
-
 
 
 ```python
