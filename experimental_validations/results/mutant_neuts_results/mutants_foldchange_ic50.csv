@@ -54,5 +54,6 @@ subject A (day 120),23_d120,E484Q,201221,0.0003288,0.0005356,0.6138,3042,interpo
 subject A (day 120),23_d120,P384L,201221,0.0007981,0.0005356,1.49,1253,interpolated
 subject B (day 26),1C_d26,E484K,201224,0.008263,0.0006462,12.79,121,interpolated
 subject I (day 26),23C_d26,E484K,201224,0.025,0.00423,5.91,40,lower
-subject C (day 32),24C_d32,E484K,201224,0.005,8.064e-05,62,200,lower
 subject G (day 18),25_d18,E484K,201224,3.931e-05,3.172e-05,1.239,2.544e+04,interpolated
+subject C (day 32),24C_d32,E484K,210115,0.01337,0.0001162,115.1,74.79,interpolated
+subject C (day 104),24C_d104,E484K,210115,0.01537,0.000646,23.8,65.04,interpolated
