@@ -684,7 +684,7 @@ df.columns
 
 ```python
 nconditions = foldchange.query('sample_group=="serum"')['serum'].nunique()
-ncol = 3 if nconditions >= 3 else nconditions
+ncol = 6 if nconditions >= 6 else nconditions
 nrow = math.ceil(nconditions / ncol)
 
 p = (ggplot(df
@@ -1378,6 +1378,12 @@ for extension in ['png', 'pdf', 'svg']:
     p.save(f'./{resultsdir}/serum_elisa_depletion.{extension}')
 ```
 
+
+    
+![png](rbd_depletions_files/rbd_depletions_49_0.png)
+    
+
+
 ### Calculate area under curves (AUCs)
 
 Calculate area under curve (AUC) for each ELISA. Note that these are areas calculated using a trapezoidal rule between the min and max dilutions with the x-axis being the natural log dilution factor.
@@ -1392,6 +1398,19 @@ However, this is the case for the pre- and post-depletion samples for each seurm
 ```python
 titration_df.columns
 ```
+
+
+
+
+    Index(['serum', 'depleted', 'ligand', 'dilution_or_ugpermL', 'date',
+           'dilution_factor', 'OD450', 'antibody_ugpermL', 'replicate',
+           'log_dilution', 'dilution', 'ab_serum', 'sample', 'Participant ID',
+           'Days Post-Symptom Onset', 'sample_name', 'display_PID', 'display_name',
+           'depletion_elisas', 'depletion_neuts', 'sample_group', 'mapped',
+           'experiment'],
+          dtype='object')
+
+
 
 
 ```python
@@ -1413,12 +1432,176 @@ auc_df = (
 auc_df.tail().round(3)
 ```
 
+
+
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>display_name</th>
+      <th>depleted</th>
+      <th>ligand</th>
+      <th>dilution_or_ugpermL</th>
+      <th>date</th>
+      <th>replicate</th>
+      <th>AUC</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>139</th>
+      <td>subject R (day 48)</td>
+      <td>post</td>
+      <td>spike</td>
+      <td>dilution</td>
+      <td>201029.0</td>
+      <td>1.0</td>
+      <td>5.385</td>
+    </tr>
+    <tr>
+      <th>140</th>
+      <td>subject R (day 79)</td>
+      <td>pre</td>
+      <td>RBD</td>
+      <td>dilution</td>
+      <td>201108.0</td>
+      <td>1.0</td>
+      <td>1.166</td>
+    </tr>
+    <tr>
+      <th>141</th>
+      <td>subject R (day 79)</td>
+      <td>pre</td>
+      <td>spike</td>
+      <td>dilution</td>
+      <td>201108.0</td>
+      <td>1.0</td>
+      <td>4.408</td>
+    </tr>
+    <tr>
+      <th>142</th>
+      <td>subject R (day 79)</td>
+      <td>post</td>
+      <td>RBD</td>
+      <td>dilution</td>
+      <td>201108.0</td>
+      <td>1.0</td>
+      <td>0.020</td>
+    </tr>
+    <tr>
+      <th>143</th>
+      <td>subject R (day 79)</td>
+      <td>post</td>
+      <td>spike</td>
+      <td>dilution</td>
+      <td>201108.0</td>
+      <td>1.0</td>
+      <td>3.747</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
 ### Get mean AUC for "background sample": the pre-pandemic 2017-2018 serum pool
 
 
 ```python
 auc_df.query('display_name=="pre-pandemic"').head()
 ```
+
+
+
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>display_name</th>
+      <th>depleted</th>
+      <th>ligand</th>
+      <th>dilution_or_ugpermL</th>
+      <th>date</th>
+      <th>replicate</th>
+      <th>AUC</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>pre-pandemic</td>
+      <td>pre</td>
+      <td>RBD</td>
+      <td>dilution</td>
+      <td>201022.0</td>
+      <td>1.0</td>
+      <td>0.023291</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>pre-pandemic</td>
+      <td>pre</td>
+      <td>RBD</td>
+      <td>dilution</td>
+      <td>201022.0</td>
+      <td>2.0</td>
+      <td>0.060698</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>pre-pandemic</td>
+      <td>pre</td>
+      <td>spike</td>
+      <td>dilution</td>
+      <td>201022.0</td>
+      <td>1.0</td>
+      <td>0.343921</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>pre-pandemic</td>
+      <td>pre</td>
+      <td>spike</td>
+      <td>dilution</td>
+      <td>201022.0</td>
+      <td>2.0</td>
+      <td>0.384130</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
 
 
 ```python
@@ -1432,6 +1615,48 @@ background = (auc_df
 
 background
 ```
+
+
+
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>ligand</th>
+      <th>AUC</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>RBD</td>
+      <td>0.041994</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>spike</td>
+      <td>0.364025</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
 
 ### Look at AUC pre- vs. post-depletion for each individual (same data as above, but with connecting lines)
 
@@ -1468,6 +1693,12 @@ for extension in ['png', 'pdf', 'svg']:
     AUC_lines.save(f'./{resultsdir}/AUC_lines.{extension}')
 ```
 
+
+    
+![png](rbd_depletions_files/rbd_depletions_57_0.png)
+    
+
+
 ### Calculate fold-change AUC pre- vs. post-depletion.
 
 We can also sort these values based on fold-change of spike AUC, as we probably expect the most RBD-targeting samples to have the greatest reduction in spike ELISA signal. 
@@ -1488,6 +1719,87 @@ foldchange_auc = (
 #foldchange_auc.to_csv(f'{resultsdir}/rbd_depletion_foldchange_auc.csv', index=False)
 foldchange_auc.head()
 ```
+
+
+
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>depleted</th>
+      <th>display_name</th>
+      <th>ligand</th>
+      <th>post-depletion_auc</th>
+      <th>pre-depletion_auc</th>
+      <th>fold_change</th>
+      <th>reciprocal_fold_change</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>pre-pandemic</td>
+      <td>RBD</td>
+      <td>NaN</td>
+      <td>0.041994</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>pre-pandemic</td>
+      <td>spike</td>
+      <td>NaN</td>
+      <td>0.364025</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>subject A (day 120)</td>
+      <td>RBD</td>
+      <td>0.392809</td>
+      <td>7.570427</td>
+      <td>0.051887</td>
+      <td>19.272549</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>subject A (day 120)</td>
+      <td>spike</td>
+      <td>10.782934</td>
+      <td>12.759970</td>
+      <td>0.845060</td>
+      <td>1.183349</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>subject A (day 21)</td>
+      <td>RBD</td>
+      <td>0.223568</td>
+      <td>7.295884</td>
+      <td>0.030643</td>
+      <td>32.633907</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
 
 
 ```python
@@ -1517,6 +1829,99 @@ foldchange_wider_meta = (foldchange_wider
             )
 foldchange_wider_meta.head()
 ```
+
+
+
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>display_name</th>
+      <th>RBD</th>
+      <th>spike</th>
+      <th>sample</th>
+      <th>display_PID</th>
+      <th>Participant ID</th>
+      <th>Days Post-Symptom Onset</th>
+      <th>Age</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>subject A (day 120)</td>
+      <td>19.272549</td>
+      <td>1.183349</td>
+      <td>96D33AAD</td>
+      <td>subject A</td>
+      <td>23</td>
+      <td>120.0</td>
+      <td>56.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>subject A (day 21)</td>
+      <td>32.633907</td>
+      <td>1.111106</td>
+      <td>EDD7CFC8</td>
+      <td>subject A</td>
+      <td>23</td>
+      <td>21.0</td>
+      <td>56.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>subject A (day 45)</td>
+      <td>22.143940</td>
+      <td>1.188261</td>
+      <td>331416C9</td>
+      <td>subject A</td>
+      <td>23</td>
+      <td>45.0</td>
+      <td>56.0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>subject B (day 113)</td>
+      <td>150.568519</td>
+      <td>1.059161</td>
+      <td>948FA9B9</td>
+      <td>subject B</td>
+      <td>1C</td>
+      <td>113.0</td>
+      <td>35.0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>subject B (day 26)</td>
+      <td>57.003767</td>
+      <td>1.131689</td>
+      <td>EBAD84C3</td>
+      <td>subject B</td>
+      <td>1C</td>
+      <td>26.0</td>
+      <td>35.0</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
 
 
 ```python
