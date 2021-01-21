@@ -53,13 +53,6 @@ theme_set(theme_seaborn(style='white', context='talk', font='FreeSans', font_sca
 ```
 
 
-
-
-    <plotnine.themes.theme_seaborn.theme_seaborn at 0x7f2744d7dd50>
-
-
-
-
 ```python
 def svg_dim(svgfile, dim):
     """Get width or height `dim` of `svgfile` in points."""
@@ -972,12 +965,12 @@ display(foldchange.head())
       <th>fold_change</th>
       <th>log2_fold_change</th>
       <th>...</th>
-      <th>experiment</th>
-      <th>Sex</th>
-      <th>Age</th>
-      <th>Severity</th>
       <th>IC50_D614</th>
       <th>NT50_D614</th>
+      <th>RBD IgA</th>
+      <th>RBD IgG</th>
+      <th>RBD IgM</th>
+      <th>Spike IgG</th>
       <th>logNT50_D614</th>
       <th>logNT50_G614</th>
       <th>max_fc</th>
@@ -998,12 +991,12 @@ display(foldchange.head())
       <td>1.451173</td>
       <td>0.537220</td>
       <td>...</td>
-      <td>expt_41</td>
-      <td>Male</td>
-      <td>35.0</td>
-      <td>Symptomatic Hospitalized</td>
       <td>0.001594</td>
       <td>627.425740</td>
+      <td>9.017706</td>
+      <td>9.116395</td>
+      <td>1.568800</td>
+      <td>12.105719</td>
       <td>6.441625</td>
       <td>7.354642</td>
       <td>14.243019</td>
@@ -1022,12 +1015,12 @@ display(foldchange.head())
       <td>4.881914</td>
       <td>2.287447</td>
       <td>...</td>
-      <td>expt_41</td>
-      <td>Male</td>
-      <td>35.0</td>
-      <td>Symptomatic Hospitalized</td>
       <td>0.001594</td>
       <td>627.425740</td>
+      <td>9.017706</td>
+      <td>9.116395</td>
+      <td>1.568800</td>
+      <td>12.105719</td>
       <td>6.441625</td>
       <td>7.354642</td>
       <td>14.243019</td>
@@ -1046,12 +1039,12 @@ display(foldchange.head())
       <td>0.378838</td>
       <td>-1.400346</td>
       <td>...</td>
-      <td>expt_51</td>
-      <td>Male</td>
-      <td>35.0</td>
-      <td>Symptomatic Hospitalized</td>
       <td>0.008034</td>
       <td>124.464922</td>
+      <td>6.336336</td>
+      <td>7.169104</td>
+      <td>0.621060</td>
+      <td>10.741077</td>
       <td>4.824024</td>
       <td>5.651999</td>
       <td>14.243019</td>
@@ -1070,12 +1063,12 @@ display(foldchange.head())
       <td>1.978358</td>
       <td>0.984303</td>
       <td>...</td>
-      <td>expt_51</td>
-      <td>Male</td>
-      <td>35.0</td>
-      <td>Symptomatic Hospitalized</td>
       <td>0.008034</td>
       <td>124.464922</td>
+      <td>6.336336</td>
+      <td>7.169104</td>
+      <td>0.621060</td>
+      <td>10.741077</td>
       <td>4.824024</td>
       <td>5.651999</td>
       <td>14.243019</td>
@@ -1094,12 +1087,12 @@ display(foldchange.head())
       <td>0.711198</td>
       <td>-0.491677</td>
       <td>...</td>
-      <td>expt_35</td>
-      <td>Female</td>
-      <td>76.0</td>
-      <td>Symptomatic Non-Hospitalized</td>
       <td>0.000174</td>
       <td>5761.315215</td>
+      <td>1.880786</td>
+      <td>11.449408</td>
+      <td>5.090334</td>
+      <td>13.740618</td>
       <td>8.658921</td>
       <td>8.154701</td>
       <td>125.366727</td>
@@ -1107,7 +1100,7 @@ display(foldchange.head())
     </tr>
   </tbody>
 </table>
-<p>5 rows × 38 columns</p>
+<p>5 rows × 42 columns</p>
 </div>
 
 
@@ -1420,7 +1413,7 @@ fig, _ = fits.plotSera(xlabel='serum dilution',
                        heightscale=0.95,
                        widthscale=0.94,
                        max_viruses_per_subplot=len(viruses_to_plot),
-                       sharex=False,
+                       sharex=True,
                        )
 display(fig)
 main_fig_neut_svg = os.path.join(resultsdir, 'main_fig_neut.svg')
@@ -2005,12 +1998,6 @@ make_escape_and_ic50_plot(escape_metric='site_total_escape_frac_epistasis_model'
                           )
 display(SVG(sitetotal_fig_svg))
 ```
-
-
-    
-![svg](mutant_neuts_files/mutant_neuts_41_0.svg)
-    
-
 
 
 ```python
