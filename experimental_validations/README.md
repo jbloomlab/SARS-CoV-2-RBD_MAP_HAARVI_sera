@@ -28,4 +28,11 @@ The data that are analyzed in [this notebook](./rbd_depletions.ipynb) were pre-p
 ## Mutant virus neutralization assays
 These pseudovirus neutralization assays were performed by me (Allie Greaney) and Andrea Loes to test how well the escape maps predict which mutations can escape neutralization by the sera. 
 
-The data that are analyzed in [this notebook](./mutant_neuts.ipynb) were pre-processed by Kate's `excel_to_fracinfect` script. 
+The data that are analyzed in [this notebook](./mutant_neuts.ipynb) were pre-processed by Kate's `excel_to_fracinfect` script.
+
+## Mutant virus titering and p24 ELISAs
+The pseudoviruses produced for this study (excluding Y369N and Y396T mutants, which did not grow well in initial titerng) were titered in 293T-ACE2 cells by Kate Crawford on January 25, 2021. p24 ELISAs were conducted according to manufacturer instructions [found here](http://ablinc.com/assets/HIVp24ELISA.pdf) on January 22, 2021 using a 1:100,000 dilution of lentivirual supernatants. 
+
+Raw and analyzed plate reader data are in the `21-01-25....xlsx` and `21-01-22....xlsx` files in the [./data](./data) subdirectory. 
+
+Plate reader results were manually analyzed and organized into the [2102125_p24_titers_calc.csv](./data/210125_p24_titers_calc.csv) file. These results are plotted in the [mutant_titers](./mutant_titers.ipynb) notebook and resulting plots are saved [here](./results/p24_titering).
