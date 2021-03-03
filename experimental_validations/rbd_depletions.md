@@ -1429,94 +1429,218 @@ auc_df = (
     .reset_index()
     )
 
+auc_df.query('display_name!=@elisa_background_sample').rename(columns={'display_name':'serum'}).to_csv(f'{resultsdir}/haarvi_elisa_auc.csv', index=False)
+
+
 auc_df.tail().round(3)
 ```
 
 
+    ---------------------------------------------------------------------------
+
+    KeyError                                  Traceback (most recent call last)
+
+    /fh/fast/bloom_j/software/miniconda3/envs/SARS-CoV-2-RBD_MAP/lib/python3.7/site-packages/pandas/core/computation/scope.py in resolve(self, key, is_local)
+        183             if is_local:
+    --> 184                 return self.scope[key]
+        185 
 
 
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
+    /fh/fast/bloom_j/software/miniconda3/envs/SARS-CoV-2-RBD_MAP/lib/python3.7/collections/__init__.py in __getitem__(self, key)
+        915                 pass
+    --> 916         return self.__missing__(key)            # support subclasses that define __missing__
+        917 
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
 
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>display_name</th>
-      <th>depleted</th>
-      <th>ligand</th>
-      <th>dilution_or_ugpermL</th>
-      <th>date</th>
-      <th>replicate</th>
-      <th>AUC</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>139</th>
-      <td>subject R (day 48)</td>
-      <td>post</td>
-      <td>spike</td>
-      <td>dilution</td>
-      <td>201029.0</td>
-      <td>1.0</td>
-      <td>5.385</td>
-    </tr>
-    <tr>
-      <th>140</th>
-      <td>subject R (day 79)</td>
-      <td>pre</td>
-      <td>RBD</td>
-      <td>dilution</td>
-      <td>201108.0</td>
-      <td>1.0</td>
-      <td>1.166</td>
-    </tr>
-    <tr>
-      <th>141</th>
-      <td>subject R (day 79)</td>
-      <td>pre</td>
-      <td>spike</td>
-      <td>dilution</td>
-      <td>201108.0</td>
-      <td>1.0</td>
-      <td>4.408</td>
-    </tr>
-    <tr>
-      <th>142</th>
-      <td>subject R (day 79)</td>
-      <td>post</td>
-      <td>RBD</td>
-      <td>dilution</td>
-      <td>201108.0</td>
-      <td>1.0</td>
-      <td>0.020</td>
-    </tr>
-    <tr>
-      <th>143</th>
-      <td>subject R (day 79)</td>
-      <td>post</td>
-      <td>spike</td>
-      <td>dilution</td>
-      <td>201108.0</td>
-      <td>1.0</td>
-      <td>3.747</td>
-    </tr>
-  </tbody>
-</table>
-</div>
+    /fh/fast/bloom_j/software/miniconda3/envs/SARS-CoV-2-RBD_MAP/lib/python3.7/collections/__init__.py in __missing__(self, key)
+        907     def __missing__(self, key):
+    --> 908         raise KeyError(key)
+        909 
 
+
+    KeyError: 'elisa_background_sample'
+
+    
+    During handling of the above exception, another exception occurred:
+
+
+    KeyError                                  Traceback (most recent call last)
+
+    /fh/fast/bloom_j/software/miniconda3/envs/SARS-CoV-2-RBD_MAP/lib/python3.7/site-packages/pandas/core/computation/scope.py in resolve(self, key, is_local)
+        198                 # e.g., df[df > 0]
+    --> 199                 return self.temps[key]
+        200             except KeyError as err:
+
+
+    KeyError: 'elisa_background_sample'
+
+    
+    The above exception was the direct cause of the following exception:
+
+
+    UndefinedVariableError                    Traceback (most recent call last)
+
+    <ipython-input-38-dd2c8d0a6968> in <module>
+         14     )
+         15 
+    ---> 16 auc_df.query('display_name!=@elisa_background_sample').rename(columns={'display_name':'serum'}).to_csv(f'{resultsdir}/haarvi_elisa_auc.csv', index=False)
+         17 
+         18 
+
+
+    /fh/fast/bloom_j/software/miniconda3/envs/SARS-CoV-2-RBD_MAP/lib/python3.7/site-packages/pandas/core/frame.py in query(self, expr, inplace, **kwargs)
+       3338         kwargs["level"] = kwargs.pop("level", 0) + 1
+       3339         kwargs["target"] = None
+    -> 3340         res = self.eval(expr, **kwargs)
+       3341 
+       3342         try:
+
+
+    /fh/fast/bloom_j/software/miniconda3/envs/SARS-CoV-2-RBD_MAP/lib/python3.7/site-packages/pandas/core/frame.py in eval(self, expr, inplace, **kwargs)
+       3468         kwargs["resolvers"] = kwargs.get("resolvers", ()) + tuple(resolvers)
+       3469 
+    -> 3470         return _eval(expr, inplace=inplace, **kwargs)
+       3471 
+       3472     def select_dtypes(self, include=None, exclude=None) -> "DataFrame":
+
+
+    /fh/fast/bloom_j/software/miniconda3/envs/SARS-CoV-2-RBD_MAP/lib/python3.7/site-packages/pandas/core/computation/eval.py in eval(expr, parser, engine, truediv, local_dict, global_dict, resolvers, level, target, inplace)
+        339         )
+        340 
+    --> 341         parsed_expr = Expr(expr, engine=engine, parser=parser, env=env)
+        342 
+        343         # construct the engine and evaluate the parsed expression
+
+
+    /fh/fast/bloom_j/software/miniconda3/envs/SARS-CoV-2-RBD_MAP/lib/python3.7/site-packages/pandas/core/computation/expr.py in __init__(self, expr, engine, parser, env, level)
+        785         self.parser = parser
+        786         self._visitor = _parsers[parser](self.env, self.engine, self.parser)
+    --> 787         self.terms = self.parse()
+        788 
+        789     @property
+
+
+    /fh/fast/bloom_j/software/miniconda3/envs/SARS-CoV-2-RBD_MAP/lib/python3.7/site-packages/pandas/core/computation/expr.py in parse(self)
+        804         Parse an expression.
+        805         """
+    --> 806         return self._visitor.visit(self.expr)
+        807 
+        808     @property
+
+
+    /fh/fast/bloom_j/software/miniconda3/envs/SARS-CoV-2-RBD_MAP/lib/python3.7/site-packages/pandas/core/computation/expr.py in visit(self, node, **kwargs)
+        396         method = "visit_" + type(node).__name__
+        397         visitor = getattr(self, method)
+    --> 398         return visitor(node, **kwargs)
+        399 
+        400     def visit_Module(self, node, **kwargs):
+
+
+    /fh/fast/bloom_j/software/miniconda3/envs/SARS-CoV-2-RBD_MAP/lib/python3.7/site-packages/pandas/core/computation/expr.py in visit_Module(self, node, **kwargs)
+        402             raise SyntaxError("only a single expression is allowed")
+        403         expr = node.body[0]
+    --> 404         return self.visit(expr, **kwargs)
+        405 
+        406     def visit_Expr(self, node, **kwargs):
+
+
+    /fh/fast/bloom_j/software/miniconda3/envs/SARS-CoV-2-RBD_MAP/lib/python3.7/site-packages/pandas/core/computation/expr.py in visit(self, node, **kwargs)
+        396         method = "visit_" + type(node).__name__
+        397         visitor = getattr(self, method)
+    --> 398         return visitor(node, **kwargs)
+        399 
+        400     def visit_Module(self, node, **kwargs):
+
+
+    /fh/fast/bloom_j/software/miniconda3/envs/SARS-CoV-2-RBD_MAP/lib/python3.7/site-packages/pandas/core/computation/expr.py in visit_Expr(self, node, **kwargs)
+        405 
+        406     def visit_Expr(self, node, **kwargs):
+    --> 407         return self.visit(node.value, **kwargs)
+        408 
+        409     def _rewrite_membership_op(self, node, left, right):
+
+
+    /fh/fast/bloom_j/software/miniconda3/envs/SARS-CoV-2-RBD_MAP/lib/python3.7/site-packages/pandas/core/computation/expr.py in visit(self, node, **kwargs)
+        396         method = "visit_" + type(node).__name__
+        397         visitor = getattr(self, method)
+    --> 398         return visitor(node, **kwargs)
+        399 
+        400     def visit_Module(self, node, **kwargs):
+
+
+    /fh/fast/bloom_j/software/miniconda3/envs/SARS-CoV-2-RBD_MAP/lib/python3.7/site-packages/pandas/core/computation/expr.py in visit_Compare(self, node, **kwargs)
+        697             op = self.translate_In(ops[0])
+        698             binop = ast.BinOp(op=op, left=node.left, right=comps[0])
+    --> 699             return self.visit(binop)
+        700 
+        701         # recursive case: we have a chained comparison, a CMP b CMP c, etc.
+
+
+    /fh/fast/bloom_j/software/miniconda3/envs/SARS-CoV-2-RBD_MAP/lib/python3.7/site-packages/pandas/core/computation/expr.py in visit(self, node, **kwargs)
+        396         method = "visit_" + type(node).__name__
+        397         visitor = getattr(self, method)
+    --> 398         return visitor(node, **kwargs)
+        399 
+        400     def visit_Module(self, node, **kwargs):
+
+
+    /fh/fast/bloom_j/software/miniconda3/envs/SARS-CoV-2-RBD_MAP/lib/python3.7/site-packages/pandas/core/computation/expr.py in visit_BinOp(self, node, **kwargs)
+        518 
+        519     def visit_BinOp(self, node, **kwargs):
+    --> 520         op, op_class, left, right = self._maybe_transform_eq_ne(node)
+        521         left, right = self._maybe_downcast_constants(left, right)
+        522         return self._maybe_evaluate_binop(op, op_class, left, right)
+
+
+    /fh/fast/bloom_j/software/miniconda3/envs/SARS-CoV-2-RBD_MAP/lib/python3.7/site-packages/pandas/core/computation/expr.py in _maybe_transform_eq_ne(self, node, left, right)
+        439             left = self.visit(node.left, side="left")
+        440         if right is None:
+    --> 441             right = self.visit(node.right, side="right")
+        442         op, op_class, left, right = self._rewrite_membership_op(node, left, right)
+        443         return op, op_class, left, right
+
+
+    /fh/fast/bloom_j/software/miniconda3/envs/SARS-CoV-2-RBD_MAP/lib/python3.7/site-packages/pandas/core/computation/expr.py in visit(self, node, **kwargs)
+        396         method = "visit_" + type(node).__name__
+        397         visitor = getattr(self, method)
+    --> 398         return visitor(node, **kwargs)
+        399 
+        400     def visit_Module(self, node, **kwargs):
+
+
+    /fh/fast/bloom_j/software/miniconda3/envs/SARS-CoV-2-RBD_MAP/lib/python3.7/site-packages/pandas/core/computation/expr.py in visit_Name(self, node, **kwargs)
+        531 
+        532     def visit_Name(self, node, **kwargs):
+    --> 533         return self.term_type(node.id, self.env, **kwargs)
+        534 
+        535     def visit_NameConstant(self, node, **kwargs):
+
+
+    /fh/fast/bloom_j/software/miniconda3/envs/SARS-CoV-2-RBD_MAP/lib/python3.7/site-packages/pandas/core/computation/ops.py in __init__(self, name, env, side, encoding)
+         82         tname = str(name)
+         83         self.is_local = tname.startswith(_LOCAL_TAG) or tname in _DEFAULT_GLOBALS
+    ---> 84         self._value = self._resolve_name()
+         85         self.encoding = encoding
+         86 
+
+
+    /fh/fast/bloom_j/software/miniconda3/envs/SARS-CoV-2-RBD_MAP/lib/python3.7/site-packages/pandas/core/computation/ops.py in _resolve_name(self)
+         99 
+        100     def _resolve_name(self):
+    --> 101         res = self.env.resolve(self.local_name, is_local=self.is_local)
+        102         self.update(res)
+        103 
+
+
+    /fh/fast/bloom_j/software/miniconda3/envs/SARS-CoV-2-RBD_MAP/lib/python3.7/site-packages/pandas/core/computation/scope.py in resolve(self, key, is_local)
+        202                 from pandas.core.computation.ops import UndefinedVariableError
+        203 
+    --> 204                 raise UndefinedVariableError(key, is_local) from err
+        205 
+        206     def swapkey(self, old_key: str, new_key: str, new_value=None):
+
+
+    UndefinedVariableError: local variable 'elisa_background_sample' is not defined
 
 
 ### Get mean AUC for "background sample": the pre-pandemic 2017-2018 serum pool
@@ -1525,83 +1649,6 @@ auc_df.tail().round(3)
 ```python
 auc_df.query('display_name=="pre-pandemic"').head()
 ```
-
-
-
-
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>display_name</th>
-      <th>depleted</th>
-      <th>ligand</th>
-      <th>dilution_or_ugpermL</th>
-      <th>date</th>
-      <th>replicate</th>
-      <th>AUC</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>pre-pandemic</td>
-      <td>pre</td>
-      <td>RBD</td>
-      <td>dilution</td>
-      <td>201022.0</td>
-      <td>1.0</td>
-      <td>0.023291</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>pre-pandemic</td>
-      <td>pre</td>
-      <td>RBD</td>
-      <td>dilution</td>
-      <td>201022.0</td>
-      <td>2.0</td>
-      <td>0.060698</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>pre-pandemic</td>
-      <td>pre</td>
-      <td>spike</td>
-      <td>dilution</td>
-      <td>201022.0</td>
-      <td>1.0</td>
-      <td>0.343921</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>pre-pandemic</td>
-      <td>pre</td>
-      <td>spike</td>
-      <td>dilution</td>
-      <td>201022.0</td>
-      <td>2.0</td>
-      <td>0.384130</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-
-
 
 
 ```python
@@ -1615,48 +1662,6 @@ background = (auc_df
 
 background
 ```
-
-
-
-
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>ligand</th>
-      <th>AUC</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>RBD</td>
-      <td>0.041994</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>spike</td>
-      <td>0.364025</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-
-
 
 ### Look at AUC pre- vs. post-depletion for each individual (same data as above, but with connecting lines)
 
@@ -1693,12 +1698,6 @@ for extension in ['png', 'pdf', 'svg']:
     AUC_lines.save(f'./{resultsdir}/AUC_lines.{extension}')
 ```
 
-
-    
-![png](rbd_depletions_files/rbd_depletions_57_0.png)
-    
-
-
 ### Calculate fold-change AUC pre- vs. post-depletion.
 
 We can also sort these values based on fold-change of spike AUC, as we probably expect the most RBD-targeting samples to have the greatest reduction in spike ELISA signal. 
@@ -1719,87 +1718,6 @@ foldchange_auc = (
 #foldchange_auc.to_csv(f'{resultsdir}/rbd_depletion_foldchange_auc.csv', index=False)
 foldchange_auc.head()
 ```
-
-
-
-
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th>depleted</th>
-      <th>display_name</th>
-      <th>ligand</th>
-      <th>post-depletion_auc</th>
-      <th>pre-depletion_auc</th>
-      <th>fold_change</th>
-      <th>reciprocal_fold_change</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>pre-pandemic</td>
-      <td>RBD</td>
-      <td>NaN</td>
-      <td>0.041994</td>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>pre-pandemic</td>
-      <td>spike</td>
-      <td>NaN</td>
-      <td>0.364025</td>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>subject A (day 120)</td>
-      <td>RBD</td>
-      <td>0.392809</td>
-      <td>7.570427</td>
-      <td>0.051887</td>
-      <td>19.272549</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>subject A (day 120)</td>
-      <td>spike</td>
-      <td>10.782934</td>
-      <td>12.759970</td>
-      <td>0.845060</td>
-      <td>1.183349</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>subject A (day 21)</td>
-      <td>RBD</td>
-      <td>0.223568</td>
-      <td>7.295884</td>
-      <td>0.030643</td>
-      <td>32.633907</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-
-
 
 
 ```python
@@ -1829,99 +1747,6 @@ foldchange_wider_meta = (foldchange_wider
             )
 foldchange_wider_meta.head()
 ```
-
-
-
-
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>display_name</th>
-      <th>RBD</th>
-      <th>spike</th>
-      <th>sample</th>
-      <th>display_PID</th>
-      <th>Participant ID</th>
-      <th>Days Post-Symptom Onset</th>
-      <th>Age</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>subject A (day 120)</td>
-      <td>19.272549</td>
-      <td>1.183349</td>
-      <td>96D33AAD</td>
-      <td>subject A</td>
-      <td>23</td>
-      <td>120.0</td>
-      <td>56.0</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>subject A (day 21)</td>
-      <td>32.633907</td>
-      <td>1.111106</td>
-      <td>EDD7CFC8</td>
-      <td>subject A</td>
-      <td>23</td>
-      <td>21.0</td>
-      <td>56.0</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>subject A (day 45)</td>
-      <td>22.143940</td>
-      <td>1.188261</td>
-      <td>331416C9</td>
-      <td>subject A</td>
-      <td>23</td>
-      <td>45.0</td>
-      <td>56.0</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>subject B (day 113)</td>
-      <td>150.568519</td>
-      <td>1.059161</td>
-      <td>948FA9B9</td>
-      <td>subject B</td>
-      <td>1C</td>
-      <td>113.0</td>
-      <td>35.0</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>subject B (day 26)</td>
-      <td>57.003767</td>
-      <td>1.131689</td>
-      <td>EBAD84C3</td>
-      <td>subject B</td>
-      <td>1C</td>
-      <td>26.0</td>
-      <td>35.0</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-
-
 
 
 ```python
