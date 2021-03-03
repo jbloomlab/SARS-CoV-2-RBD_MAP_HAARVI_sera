@@ -1,7 +1,7 @@
 # Mutational antigenic profiling of SARS-CoV-2 RBD against HAARVI cohort sera
 Analysis of mutational antigenic profiling of barcoded codon variants of SARS-CoV-2 RBD against convalescent patient sera from the HAARVI cohort.
 
-Study and analysis by Allie Greaney, Andrea Loes, Kate Crawford and [Jesse Bloom](https://research.fhcrc.org/bloom/en.html) in collaboration with the [Helen Chu lab](https://www.chulab.org/). The experiments are described in this [pre-print](https://doi.org/10.1101/2020.12.31.425021).
+Study and analysis by Allie Greaney, Andrea Loes, Kate Crawford and [Jesse Bloom](https://research.fhcrc.org/bloom/en.html) in collaboration with the [Helen Chu lab](https://www.chulab.org/). The experiments are described in [Greaney, et al. (2021)](https://www.sciencedirect.com/science/article/pii/S1931312821000822).
 
 ## Summary of workflow and results
 For a summary of the workflow and links to key results files, [click here](results/summary/summary.md).
